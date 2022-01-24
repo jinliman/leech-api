@@ -1,0 +1,40 @@
+{
+  "name": "leech-api",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "install-all": "yarn && cd packages/address-book && yarn",
+    "start": "node src/app.js",
+    "test": "nyc ava",
+    "gen-abi-types": "abi-types-generator ./src/abis/matic/Telxchange/StakingRewards/StakingRewards.json --output='./src/abis/matic/Telxchange/StakingRewards/types'"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.5.6",
+    "@koa/cors": "^3.1.0",
+    "@koa/router": "^9.4.0",
+    "apollo-link-http": "^1.5.17",
+    "apollo-link-timeout": "^4.0.0",
+    "axios": "^0.20.0",
+    "bignumber.js": "^9.0.1",
+    "date-fns": "^2.21.3",
+    "eth-multicall": "^1.3.13",
+    "ethereum-abi-types-generator": "^1.1.7",
+    "ethers": "^5.0.26",
+    "graphql": "^15.5.0",
+    "graphql-tag": "^2.12.4",
+    "koa": "^2.13.0",
+    "koa-bodyparser": "^4.3.0",
+    "koa-conditional-get": "^3.0.0",
+    "koa-etag": "^4.0.0",
+    "koa-helmet": "^5.2.0",
+    "koa-router": "^9.4.0",
+    "node-fetch": "^2.6.1",
+    "web3": "^1.3.0"
+  },
+  "devDependencies": {
+    "ava": "^3.12.1",
+    "dotenv": "^8.2.0",
+    "nyc": "^15.1.0",
+    "yargs": "^17.0.1"
+  }
+}

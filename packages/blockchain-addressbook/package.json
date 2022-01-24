@@ -1,0 +1,12 @@
+{
+  "name": "blockchain-addressbook",
+  "version": "0.0.1",
+  "description": "A collection of useful addresses on various chains for defi development",
+  "main": "build/address-book/index.js",
+  "files": [
+    "build/address-book/",
+    "build/util/",
+    "build/types/"
+  ],
+  "license": "MIT"
+}
