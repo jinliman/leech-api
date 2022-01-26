@@ -19,7 +19,6 @@ const getSolarbeamDualLpApys = async () =>
     tradingFeeInfoClient: solarbeamClient,
     liquidityProviderFee: SOLAR_LPF,
     burn: 0.3,
-    // log: true,
   });
 
 module.exports = { getSolarbeamDualLpApys };

@@ -28,7 +28,6 @@ const getNetswapApys = async () =>
     decimals: getEDecimals(NETT.decimals),
     tradingFeeInfoClient: netswapClient,
     liquidityProviderFee: NET_LPF,
-    // log: true,
   });
 
 module.exports = getNetswapApys;

@@ -42,7 +42,6 @@ const getFarmApys = async pools => {
       .times(1 - transferFee)
       .dividedBy(DECIMALS);
 
-    // console.log(pool.name, totalStakedInUsd.valueOf(), yearlyRewardsInUsd.valueOf());
     apys.push(yearlyRewardsInUsd.dividedBy(totalStakedInUsd));
   }
   return apys;

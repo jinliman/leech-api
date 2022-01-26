@@ -93,7 +93,6 @@ const getLendingApr = async pool => {
     const totalSupplyInUsd = totalToken.times(tokenPrice).div('1e18');
 
     protocolApr = cakeRewardInUsd.div(totalSupplyInUsd);
-    // console.log('protocol apr', protocolApr.toNumber());
   }
 
   return lendingApr.plus(protocolApr);

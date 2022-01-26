@@ -21,7 +21,6 @@ const getSolarbeamLpApys = async () =>
     decimals: '1e18',
     tradingFeeInfoClient: solarbeamClient,
     liquidityProviderFee: SOLAR_LPF,
-    // log: true,
   });
 
 module.exports = { getSolarbeamLpApys };

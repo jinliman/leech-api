@@ -1,5 +1,4 @@
 const getNetswapApys = require('./getNetswapApys');
-
 const getApys = [getNetswapApys];
 
 const getMetisApys = async () => {
@@ -36,7 +35,6 @@ const getMetisApys = async () => {
     }
 
     apys = { ...apys, ...mappedApyValues };
-
     apyBreakdowns = { ...apyBreakdowns, ...mappedApyBreakdownValues };
   }
 

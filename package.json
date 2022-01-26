@@ -5,8 +5,7 @@
   "scripts": {
     "install-all": "yarn && cd packages/address-book && yarn",
     "start": "node src/app.js",
-    "test": "nyc ava",
-    "gen-abi-types": "abi-types-generator ./src/abis/matic/Telxchange/StakingRewards/StakingRewards.json --output='./src/abis/matic/Telxchange/StakingRewards/types'"
+    "test": "nyc ava"
   },
   "dependencies": {
     "@apollo/client": "^3.5.6",

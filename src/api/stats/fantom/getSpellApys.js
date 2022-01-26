@@ -2,9 +2,6 @@ const { fantomWeb3: web3 } = require('../../../utils/web3');
 import { FANTOM_CHAIN_ID as chainId } from '../../../constants';
 import { getMasterChefApys } from '../common/getMasterChefApys';
 import { getCurveFactoryApy } from '../common/curve/getCurveApyData';
-
-import axios from 'axios';
-import BigNumber from 'bignumber.js';
 import SpellMasterChef from '../../../abis/arbitrum/SpellMasterChef.json';
 
 const getSpellApys = async () => {

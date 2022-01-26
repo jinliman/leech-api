@@ -14,7 +14,6 @@ const getPolyzapApys = async () =>
     oracleId: 'PZAP',
     oracle: 'tokens',
     decimals: '1e18',
-    // log: true,
     tradingFeeInfoClient: polyzapClient,
     liquidityProviderFee: 0.002,
   });

@@ -33,7 +33,6 @@ const getSpellApys = async () => {
     decimals: '1e18',
     tradingAprs: tradingAprs,
     liquidityProviderFee: 0.0002,
-    // log: true,
   });
 };
 

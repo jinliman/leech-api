@@ -1,7 +1,6 @@
 const { avaxWeb3: web3 } = require('../../../utils/web3');
 import { AVAX_CHAIN_ID as chainId } from '../../../constants';
 import { getMasterChefApys } from '../common/getMasterChefApys';
-
 import axios from 'axios';
 import BigNumber from 'bignumber.js';
 import SpellMasterChef from '../../../abis/arbitrum/SpellMasterChef.json';

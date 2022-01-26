@@ -13,7 +13,6 @@ const getPolygonFarmApys = async () =>
     decimals: '1e18',
     tradingFeeInfoClient: sushiClient,
     liquidityProviderFee: 0.003,
-    // log: true,
   });
 
 module.exports = { getPolygonFarmApys };
