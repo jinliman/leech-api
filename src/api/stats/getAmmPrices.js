@@ -416,7 +416,6 @@ let tokenPricesCache;
 let lpPricesCache;
 
 const updateAmmPrices = async () => {
-  console.log('> updating amm prices');
   try {
     const coinGeckoPrices = fetchCoinGeckoPrices(coinGeckoCoins);
     const ammPrices = fetchAmmPrices(pools, knownPrices);
@@ -452,7 +451,6 @@ const updateAmmPrices = async () => {
     console.error(err);
   } finally {
     setTimeout(updateAmmPrices, REFRESH_INTERVAL);
-    console.log('> updated amm prices');
   }
 };
 

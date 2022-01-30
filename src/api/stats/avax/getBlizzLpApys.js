@@ -36,7 +36,6 @@ const getPoolApy = async (masterchef, pool) => {
     getYearlyRewardsInUsd(masterchef, pool),
     getTotalLpStakedInUsd(masterchef, pool, pool.chainId),
   ]);
-  // console.log(pool.name, totalStakedInUsd.toNumber(), yearlyRewardsInUsd.toNumber());
   return yearlyRewardsInUsd.dividedBy(totalStakedInUsd);
 };
 

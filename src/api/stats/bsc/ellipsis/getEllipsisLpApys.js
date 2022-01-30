@@ -30,7 +30,6 @@ const getEllipsisLpApys = async () => {
     const totalStakedInUsd = data.staked;
     const yearlyRewardsInUsd = data.yearlyRewardsInUsd;
     const simpleApy = yearlyRewardsInUsd.dividedBy(totalStakedInUsd);
-    // console.log(pool.name, simpleApy.valueOf(), totalStakedInUsd.valueOf(), yearlyRewardsInUsd.valueOf());
     farmApys.push(simpleApy);
   }
 

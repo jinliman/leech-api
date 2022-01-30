@@ -92,8 +92,6 @@ const getTvl = () => {
 };
 
 const updateTvl = async () => {
-  console.log('> updating tvl');
-
   try {
     let promises = [];
 
@@ -103,16 +101,11 @@ const updateTvl = async () => {
 
     for (const result of results) {
       if (result.status !== 'fulfilled') {
-        console.warn('getChainTvl error', result.reason);
         continue;
       }
       tvl = { ...tvl, ...result.value };
     }
-
-    console.log('> updated tvl');
-  } catch (err) {
-    console.error('> tvl initialization failed', err);
-  }
+  } catch (err) {}
 
   setTimeout(updateTvl, REFRESH_INTERVAL);
 };

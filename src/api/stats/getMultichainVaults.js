@@ -16,8 +16,6 @@ const getMultichainVaults = () => {
 };
 
 const updateMultichainVaults = async () => {
-  console.log('> updating vaults');
-
   // Reset entire list and counters
   multichainVaults = [];
   multichainVaultsCounter = 0;
@@ -46,14 +44,6 @@ const updateMultichainVaults = async () => {
         }
       }
     }
-
-    console.log(
-      '> updated',
-      multichainVaultsCounter,
-      'vaults (',
-      multichainActiveVaultsCounter,
-      'active )'
-    );
   } catch (err) {
     console.error('> vaults update failed', err);
   }

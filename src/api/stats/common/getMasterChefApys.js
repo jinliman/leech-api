@@ -53,18 +53,8 @@ const getFarmApys = async (params) => {
   const tokenPrice = await fetchPrice({ oracle: params.oracle, id: params.oracleId });
   const { multiplier, blockRewards, totalAllocPoint } = await getMasterChefData(params);
   const { balances, allocPoints } = await getPoolsData(params);
-
   const secondsPerBlock = params.secondsPerBlock ?? (await getBlockTime(params.chainId));
-  if (params.log) {
-    console.log(
-      params.tokenPerBlock,
-      blockRewards.div(params.decimals).toNumber(),
-      'secondsPerBlock',
-      secondsPerBlock,
-      totalAllocPoint.toNumber()
-    );
-  }
-
+  
   for (let i = 0; i < params.pools.length; i++) {
     const pool = params.pools[i];
 
@@ -89,14 +79,6 @@ const getFarmApys = async (params) => {
 
     const apy = yearlyRewardsInUsd.dividedBy(totalStakedInUsd);
     apys.push(apy);
-    if (params.log) {
-      console.log(
-        pool.name,
-        apy.toNumber(),
-        totalStakedInUsd.valueOf(),
-        yearlyRewardsInUsd.valueOf()
-      );
-    }
   }
 
   return apys;

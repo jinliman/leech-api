@@ -53,7 +53,7 @@ const getPoolApy = async (masterchef, pool) => {
   const yearlyRewardsInUsd = yearlyRewards.times(tokenPrice).dividedBy(DECIMALS);
 
   const simpleApy = yearlyRewardsInUsd.dividedBy(totalStakedInUsd);
-  // console.log(pool.name, simpleApy.valueOf(), totalStakedInUsd.valueOf(), yearlyRewardsInUsd.valueOf());
+  
   return simpleApy;
 };
 

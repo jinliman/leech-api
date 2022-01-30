@@ -44,7 +44,6 @@ const getPoolApy = async (rewardPool, pool) => {
     getTotalStakedInUsd(rewardPool, pool),
   ]);
   const simpleApy = yearlyRewardsInUsd.dividedBy(totalStakedInUsd);
-  // console.log(pool.name,totalStakedInUsd.valueOf(),yearlyRewardsInUsd.valueOf(),simpleApy.valueOf());
   return simpleApy;
 };
 

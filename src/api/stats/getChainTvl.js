@@ -42,9 +42,7 @@ const getChainTvl = async chain => {
   if (chain.governancePool) {
     let governanceTvl = await getGovernanceTvl(chainId, chain.governancePool);
     tvls[chainId] = { ...tvls[chainId], ...governanceTvl };
-  } else {
-    console.log('no gov pool');
-  }
+  } else {}
 
   return tvls;
 };

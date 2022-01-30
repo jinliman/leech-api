@@ -26,8 +26,6 @@ const getApys = () => {
 };
 
 const updateApys = async () => {
-  console.log('> updating apys');
-
   try {
     const results = await Promise.allSettled([
       getMaticApys(),
@@ -74,11 +72,7 @@ const updateApys = async () => {
 
       apyBreakdowns = { ...apyBreakdowns, ...mappedApyBreakdownValues };
     }
-
-    console.log('> updated apys');
-  } catch (err) {
-    console.error('> apy initialization failed', err);
-  }
+  } catch (err) {}
 
   setTimeout(updateApys, REFRESH_INTERVAL);
 };

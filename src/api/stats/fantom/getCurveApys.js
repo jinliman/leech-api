@@ -61,7 +61,6 @@ const getPoolApy = async pool => {
   ]);
   const rewardsApy = yearlyRewardsInUsd.dividedBy(totalStakedInUsd);
   const simpleApy = rewardsApy.plus(geistApy);
-  // console.log(pool.name,geistApy.toNumber(),rewardsApy.toNumber(),totalStakedInUsd.valueOf(),yearlyRewardsInUsd.valueOf());
   return simpleApy;
 };
 

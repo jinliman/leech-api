@@ -19,7 +19,6 @@ const getFinnLpApys = async () =>
     decimals: '1e18',
     tradingFeeInfoClient: finnClient,
     liquidityProviderFee: 0.0025,
-    // log: true,
   });
 
 module.exports = { getFinnLpApys };

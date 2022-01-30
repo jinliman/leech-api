@@ -31,10 +31,8 @@ const { MultiCall } = require('eth-multicall');
 const { bscWeb3: web3, multicallAddress } = require('../../../../utils/web3');
 
 const abi = require('../../../../abis/MasterYel.json');
-const ERC20 = require('../../../../abis/ERC20.json');
 const { BASE_HPY, BSC_CHAIN_ID } = require('../../../../constants');
 const fetchPrice = require('../../../../utils/fetchPrice');
-const getBlockNumber = require('../../../../utils/getBlockNumber');
 import { getFarmWithTradingFeesApy } from '../../../../utils/getFarmWithTradingFeesApy';
 const { getTradingFeeApr } = require('../../../../utils/getTradingFeeApr');
 const { compound } = require('../../../../utils/compound');
@@ -121,10 +119,6 @@ const getFarmApys = async params => {
     const secondsPerYear = 31536000;
     const yearlyRewards = poolSecondsRewards.times(secondsPerYear);
     const yearlyRewardsInUsd = yearlyRewards.times(tokenPrice).dividedBy(params.decimals);
-
-    if (params.log) {
-      console.log(pool.name, 'staked:', totalStakedInUsd.valueOf(), yearlyRewardsInUsd.valueOf());
-    }
 
     apys.push(yearlyRewardsInUsd.dividedBy(totalStakedInUsd));
   }

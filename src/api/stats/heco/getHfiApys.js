@@ -20,8 +20,6 @@ const getHfiApys = async () => {
     const hfiApy = compound(aprDec * 0.955, BASE_HPY, 1, 1);
     const apy = vaultDec + hfiApy;
 
-    // console.log(pool.name, apy);
-
     return { [pool.name]: apy };
   });
 

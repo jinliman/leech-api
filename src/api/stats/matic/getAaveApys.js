@@ -57,7 +57,6 @@ const getPoolApy = async pool => {
   let totalMatic = leveragedSupplyMatic.plus(leveragedBorrowMatic);
   let compoundedMatic = compound(totalMatic, BASE_HPY, 1, 0.955);
   let apy = leveragedSupplyBase.minus(leveragedBorrowBase).plus(compoundedMatic).toNumber();
-  // console.log(pool.name, apy, supplyBase.valueOf(), borrowBase.valueOf(), supplyMatic.valueOf(), borrowMatic.valueOf());
   return { [pool.name]: apy };
 };
 

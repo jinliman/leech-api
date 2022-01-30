@@ -56,8 +56,7 @@ const getJoeApys = async () => {
       1,
       shareAfterBeefyPerformanceFee
     );
-    // console.log(pool.name, simpleApy.valueOf(), tradingApr.valueOf(), apy, totalStakedInUsd.valueOf(), yearlyRewardsInUsd.valueOf());
-
+    
     // Create reference for legacy /apy
     const legacyApyValue = { [pool.name]: totalApy };
 

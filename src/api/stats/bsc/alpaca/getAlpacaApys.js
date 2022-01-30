@@ -42,7 +42,7 @@ const getPoolApy = async pool => {
   ]);
 
   const simpleApy = yearlyRewardsInUsd.dividedBy(totalStakedInUsd);
-  // console.log(pool.name, 'pool apr', simpleApy.toNumber());
+  
   return simpleApy;
 };
 
@@ -63,8 +63,7 @@ const getLendingApr = async pool => {
   const config = new web3.eth.Contract(AlpacaIbVaultConfig, configAddress);
   const rate = new BigNumber(await config.methods.getInterestRate(vaultDebtVal, floating).call());
   const lendingApr = rate.times(31536000).times(0.81).times(utilization).div('1e18');
-  // console.log(pool.name, 'lending apr', lendingApr.toNumber());
-
+  
   let protocolApr = new BigNumber(0);
   if (pool.workers) {
     const cakeApy = (await getCakeV2PoolApy())['cake-cakev2'];

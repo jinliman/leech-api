@@ -47,8 +47,7 @@ const getPoolApy = async (masterchef, pool) => {
   let simpleApy = yearlyRewardsInUsd.dividedBy(totalStakedInUsd);
   const baseApy = await fetchBeltLpBaseApr(pool);
   const apy = compound(baseApy + simpleApy * 0.955, BASE_HPY, 1, 1);
-  // console.log(pool.name, baseApy.valueOf(), simpleApy.valueOf(), apy, totalStakedInUsd.valueOf(), yearlyRewardsInUsd.valueOf());
-
+  
   const apyBreakdown = {
     vaultApr: simpleApy.toNumber(),
     compoundingsPerYear: BASE_HPY,

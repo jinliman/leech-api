@@ -19,7 +19,6 @@ const getHecoMdexMdxApy = async () => {
   ]);
   const simpleApy = yearlyRewardsInUsd.dividedBy(totalStakedInUsd);
   const apy = compound(simpleApy, process.env.BASE_HPY, 1, 0.955);
-  //console.log('mdex-mdx', simpleApy.valueOf(), simpleApy, apy, totalStakedInUsd.valueOf(), yearlyRewardsInUsd.valueOf());
   return { 'mdex-mdx': apy };
 };
 

@@ -63,7 +63,6 @@ const getFarmApys = async pools => {
 
     const apy = yearlyRewardsInUsd.plus(maticRewardsInUsd).dividedBy(totalStakedInUsd);
     apys.push(apy);
-    // console.log(pool.name, 'staked:', totalStakedInUsd.valueOf(), yearlyRewardsInUsd.valueOf(), apy.valueOf());
   }
   return apys;
 };

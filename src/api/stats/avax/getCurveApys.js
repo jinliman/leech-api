@@ -45,7 +45,6 @@ const getPoolApy = async pool => {
   ]);
   const rewardsApy = yearlyRewardsInUsd.dividedBy(totalStakedInUsd);
   const simpleApy = rewardsApy.plus(aaveMaticApy);
-  // console.log(pool.name, aaveMaticApy.toNumber(), rewardsApy.toNumber(), totalStakedInUsd.valueOf(), yearlyRewardsInUsd.valueOf());
   return simpleApy;
 };
 

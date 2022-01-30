@@ -73,7 +73,6 @@ const getPoolApy = async (pool, rewardsPerSecond, totalAllocPoint) => {
   let totalGeist = leveragedSupplyGeist.plus(leveragedBorrowGeist);
   let compoundedGeist = compound(totalGeist, BASE_HPY, 1, 0.955);
   let apy = leveragedSupplyBase.minus(leveragedBorrowBase).plus(compoundedGeist).toNumber();
-  // console.log(pool.name, apy, supplyBase.valueOf(), borrowBase.valueOf(), supplyGeist.valueOf(), borrowGeist.valueOf());
   return { [pool.name]: apy };
 };
 

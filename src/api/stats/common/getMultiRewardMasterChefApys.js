@@ -79,14 +79,6 @@ const getFarmApys = async (params) => {
 
     const apy = yearlyRewardsInUsd.dividedBy(totalStakedInUsd);
     apys.push(apy);
-    if (params.log) {
-      console.log(
-        pool.name,
-        apy.toNumber(),
-        totalStakedInUsd.valueOf(),
-        yearlyRewardsInUsd.valueOf()
-      );
-    }
   }
 
   return apys;

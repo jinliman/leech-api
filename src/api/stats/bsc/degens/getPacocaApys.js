@@ -62,7 +62,6 @@ const getPoolApy = async (masterchef, farm, pool) => {
   const simpleApyFarm = yearlyRewardsInUsd.dividedBy(totalStakedInUsd);
   const simpleApyStrat = stratYearlyRewardsInUsd.dividedBy(stratTotalStakedInUsd);
   const simpleApy = simpleApyStrat.plus(simpleApyFarm);
-  // console.log(pool.name, simpleApyStrat.valueOf(), simpleApyFarm.valueOf(), simpleApy.valueOf(), totalStakedInUsd.valueOf(), yearlyRewardsInUsd.valueOf());
   return simpleApy;
 };
 

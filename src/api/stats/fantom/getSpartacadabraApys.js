@@ -44,7 +44,6 @@ const getSpartacadabraApys = async () => {
     decimals: '1e18',
     tradingAprs: tradingAprs,
     liquidityProviderFee: SPOOKY_LPF,
-    // log: true,
   });
 };
 

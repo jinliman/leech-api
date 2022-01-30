@@ -27,8 +27,7 @@ const getFroyoLpApys = async () => {
 
     const simpleApy = yearlyRewardsInUsd.dividedBy(totalStakedInUsd);
     const apy = compound(simpleApy, process.env.BASE_HPY, 1, 0.955);
-    // console.log(pool.name, simpleApy.valueOf(), apy, totalStakedInUsd.valueOf(), yearlyRewardsInUsd.valueOf());
-
+    
     const poolApy = { [pool.name]: apy };
     apys = { ...apys, ...poolApy };
   }

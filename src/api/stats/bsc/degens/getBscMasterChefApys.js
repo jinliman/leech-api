@@ -98,10 +98,6 @@ const getFarmApys = async params => {
     const yearlyRewards = poolBlockRewards.dividedBy(secondsPerBlock).times(secondsPerYear);
     const yearlyRewardsInUsd = yearlyRewards.times(tokenPrice).dividedBy(params.decimals);
 
-    if (params.log) {
-      console.log(pool.name, 'staked:', totalStakedInUsd.valueOf(), yearlyRewardsInUsd.valueOf());
-    }
-
     apys.push(yearlyRewardsInUsd.dividedBy(totalStakedInUsd));
   }
 

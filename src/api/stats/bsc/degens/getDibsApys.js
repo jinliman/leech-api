@@ -19,7 +19,6 @@ const getDibsApys = async () =>
     decimals: '1e18',
     tradingFeeInfoClient: cakeClient,
     liquidityProviderFee: 0.003,
-    // log: true,
   });
 
 module.exports = getDibsApys;

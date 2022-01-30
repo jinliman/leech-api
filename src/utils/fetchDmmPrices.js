@@ -99,7 +99,6 @@ const fetchDmmPrices = async (pools, knownPrices) => {
           knownToken = pool.lp1;
           unknownToken = pool.lp0;
         } else {
-          console.log('unsolved: ', pool.lp0.oracleId, pool.lp1.oracleId, pool.name);
           continue;
         }
 

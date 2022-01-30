@@ -22,7 +22,6 @@ const getPopsicleApys = async () => {
     decimals: '1e18',
     liquidityProviderFee: 0.003,
     tradingFeeInfoClient: sushiFantomClient,
-    // log: true,
   });
 };
 

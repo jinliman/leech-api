@@ -49,7 +49,6 @@ const getLendhubLpApys = async () => {
     // const tradingApr = tradingAprs[pool.address.toLowerCase()] ?? new BigNumber(0);
     // const apy = getFarmWithTradingFeesApy(simpleApy, tradingApr, BASE_HPY, 1, 0.955);
     const apy = compound(simpleApy, BASE_HPY, 1, 0.955);
-    // console.log(pool.name, simpleApy.valueOf(), tradingApr.valueOf(), apy, totalStakedInUsd.valueOf(), yearlyRewardsInUsd.valueOf());
     const item = { [pool.name]: apy };
 
     apys = { ...apys, ...item };

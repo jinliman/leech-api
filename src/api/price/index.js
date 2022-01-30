@@ -6,7 +6,6 @@ async function lpsPrices(ctx) {
     ctx.status = 200;
     ctx.body = { ...lpTokenPrices };
   } catch (err) {
-    console.error(err);
     ctx.status = 500;
   }
 }

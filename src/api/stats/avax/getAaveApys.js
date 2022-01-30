@@ -57,7 +57,6 @@ const getPoolApy = async pool => {
   let totalNative = leveragedSupplyNative.plus(leveragedBorrowNative);
   let compoundedNative = compound(totalNative, BASE_HPY, 1, 0.955);
   let apy = leveragedSupplyBase.minus(leveragedBorrowBase).plus(compoundedNative).toNumber();
-  // console.log(pool.name, apy, supplyBase.valueOf(), borrowBase.valueOf(), supplyNative.valueOf(), borrowNative.valueOf());
   return { [pool.name]: apy };
 };
 
