@@ -27,7 +27,6 @@ const getIronSwapApys = async () => {
     tradingAprs: tradingAprs,
     tradingFeeInfoClient: dfynClient,
     liquidityProviderFee: DFYN_LPF,
-    // log: true,
   });
 };
 

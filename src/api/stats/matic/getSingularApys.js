@@ -16,7 +16,6 @@ const getSingularApys = async () =>
     secondsPerBlock: 1,
     tradingFeeInfoClient: apePolyClient,
     liquidityProviderFee: APEPOLY_LPF,
-    // log: true,
   });
 
 module.exports = { getSingularApys };

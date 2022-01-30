@@ -19,7 +19,6 @@ const getSingularApys = async () =>
     secondsPerBlock: 1,
     tradingFeeInfoClient: spookyClient,
     liquidityProviderFee: SPOOKY_LPF,
-    // log: true,
   });
 
 module.exports = getSingularApys;

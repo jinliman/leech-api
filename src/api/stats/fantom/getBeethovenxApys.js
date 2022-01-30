@@ -22,7 +22,6 @@ const getBeethovenxApys = async () =>
     tradingFeeInfoClient: beetClient,
     liquidityProviderFee: 0.0025,
     burn: 0.128,
-    // log: true,
   });
 
 module.exports = getBeethovenxApys;

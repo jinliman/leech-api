@@ -31,19 +31,19 @@ import {
 } from '../constants';
 
 const MULTICALLS = {
-  [ChainId.bsc]: addressBookByChainId[ChainId.bsc].platforms.beefyfinance.multicall,
-  [ChainId.heco]: addressBookByChainId[ChainId.heco].platforms.beefyfinance.multicall,
-  [ChainId.polygon]: addressBookByChainId[ChainId.polygon].platforms.beefyfinance.multicall,
-  [ChainId.fantom]: addressBookByChainId[ChainId.fantom].platforms.beefyfinance.multicall,
-  [ChainId.avax]: addressBookByChainId[ChainId.avax].platforms.beefyfinance.multicall,
-  [ChainId.one]: addressBookByChainId[ChainId.one].platforms.beefyfinance.multicall,
-  [ChainId.arbitrum]: addressBookByChainId[ChainId.arbitrum].platforms.beefyfinance.multicall,
-  [ChainId.celo]: addressBookByChainId[ChainId.celo].platforms.beefyfinance.multicall,
-  [ChainId.moonriver]: addressBookByChainId[ChainId.moonriver].platforms.beefyfinance.multicall,
-  [ChainId.cronos]: addressBookByChainId[ChainId.cronos].platforms.beefyfinance.multicall,
-  [ChainId.aurora]: addressBookByChainId[ChainId.aurora].platforms.beefyfinance.multicall,
-  [ChainId.fuse]: addressBookByChainId[ChainId.fuse].platforms.beefyfinance.multicall,
-  [ChainId.metis]: addressBookByChainId[ChainId.metis].platforms.beefyfinance.multicall,
+  [ChainId.bsc]: addressBookByChainId[ChainId.bsc].platforms.leechfinance.multicall,
+  [ChainId.heco]: addressBookByChainId[ChainId.heco].platforms.leechfinance.multicall,
+  [ChainId.polygon]: addressBookByChainId[ChainId.polygon].platforms.leechfinance.multicall,
+  [ChainId.fantom]: addressBookByChainId[ChainId.fantom].platforms.leechfinance.multicall,
+  [ChainId.avax]: addressBookByChainId[ChainId.avax].platforms.leechfinance.multicall,
+  [ChainId.one]: addressBookByChainId[ChainId.one].platforms.leechfinance.multicall,
+  [ChainId.arbitrum]: addressBookByChainId[ChainId.arbitrum].platforms.leechfinance.multicall,
+  [ChainId.celo]: addressBookByChainId[ChainId.celo].platforms.leechfinance.multicall,
+  [ChainId.moonriver]: addressBookByChainId[ChainId.moonriver].platforms.leechfinance.multicall,
+  [ChainId.cronos]: addressBookByChainId[ChainId.cronos].platforms.leechfinance.multicall,
+  [ChainId.aurora]: addressBookByChainId[ChainId.aurora].platforms.leechfinance.multicall,
+  [ChainId.fuse]: addressBookByChainId[ChainId.fuse].platforms.leechfinance.multicall,
+  [ChainId.metis]: addressBookByChainId[ChainId.metis].platforms.leechfinance.multicall,
 };
 
 const clients = {

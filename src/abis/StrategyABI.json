@@ -10,7 +10,7 @@
       { "type": "address", "name": "_unirouter", "internalType": "address" },
       { "type": "address", "name": "_keeper", "internalType": "address" },
       { "type": "address", "name": "_strategist", "internalType": "address" },
-      { "type": "address", "name": "_beefyFeeRecipient", "internalType": "address" }
+      { "type": "address", "name": "_leechFeeRecipient", "internalType": "address" }
     ]
   },
   {
@@ -106,14 +106,14 @@
     "type": "function",
     "stateMutability": "view",
     "outputs": [{ "type": "uint256", "name": "", "internalType": "uint256" }],
-    "name": "beefyFee",
+    "name": "leechFee",
     "inputs": []
   },
   {
     "type": "function",
     "stateMutability": "view",
     "outputs": [{ "type": "address", "name": "", "internalType": "address" }],
-    "name": "beefyFeeRecipient",
+    "name": "leechFeeRecipient",
     "inputs": []
   },
   {
@@ -274,8 +274,8 @@
     "type": "function",
     "stateMutability": "nonpayable",
     "outputs": [],
-    "name": "setBeefyFeeRecipient",
-    "inputs": [{ "type": "address", "name": "_beefyFeeRecipient", "internalType": "address" }]
+    "name": "setLeechFeeRecipient",
+    "inputs": [{ "type": "address", "name": "_leechFeeRecipient", "internalType": "address" }]
   },
   {
     "type": "function",

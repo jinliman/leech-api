@@ -16,7 +16,6 @@ const getViralataApys = async () =>
     oracle: 'tokens',
     decimals: '1e18',
     liquidityProviderFee: 0.003,
-    // log: true,
   });
 
 module.exports = getViralataApys;

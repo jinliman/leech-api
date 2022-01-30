@@ -28,7 +28,6 @@ const getArbiNyanApys = async () =>
     decimals: '1e18',
     tradingFeeInfoClient: sushiArbitrumClient,
     liquidityProviderFee: SUSHI_LPF,
-    // log: true,
   });
 
 module.exports = { getArbiNyanApys };

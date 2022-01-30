@@ -21,8 +21,8 @@ const DECIMALS = '1e18';
 const SECONDS_PER_YEAR = 31536000;
 
 const liquidityProviderFee = 0.0003;
-const beefyPerformanceFee = 0.045;
-const shareAfterBeefyPerformanceFee = 1 - beefyPerformanceFee;
+const leechPerformanceFee = 0.045;
+const shareAfterleechPerformanceFee = 1 - leechPerformanceFee;
 
 const getSpookyBooApy = async () => {
   const BOOPrice = await fetchPrice({ oracle, id: oracleId });
@@ -47,15 +47,15 @@ const getSpookyBooApy = async () => {
   const yearlyRewardsInUsd = yearlyRewards.times(rewardPrice).dividedBy(pool.rewardDecimals);
 
   const simpleApr = yearlyRewardsInUsd.dividedBy(totalStakedInUsd);
-  const vaultApr = simpleApr.times(shareAfterBeefyPerformanceFee);
-  const vaultApy = compound(simpleApr, BASE_HPY, 1, shareAfterBeefyPerformanceFee);
+  const vaultApr = simpleApr.times(shareAfterLeechPerformanceFee);
+  const vaultApy = compound(simpleApr, BASE_HPY, 1, shareAfterLeechPerformanceFee);
   const tradingApr = yearlyTradingFees.div(totalStakedInxBOOInUsd);
   const totalApy = getFarmWithTradingFeesApy(
     simpleApr,
     tradingApr,
     BASE_HPY,
     1,
-    shareAfterBeefyPerformanceFee
+    shareAfterLeechPerformanceFee
   );
   const apys = { 'boo-boo': totalApy };
 
@@ -64,7 +64,7 @@ const getSpookyBooApy = async () => {
     'boo-boo': {
       vaultApr: vaultApr.toNumber(),
       compoundingsPerYear: BASE_HPY,
-      beefyPerformanceFee: beefyPerformanceFee,
+      leechPerformanceFee: leechPerformanceFee,
       vaultApy: vaultApy,
       lpFee: liquidityProviderFee,
       tradingApr: tradingApr.toNumber(),

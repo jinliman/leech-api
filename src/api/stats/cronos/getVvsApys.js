@@ -27,7 +27,6 @@ const getVvsApys = async () =>
     decimals: '1e18',
     tradingFeeInfoClient: vvsClient,
     liquidityProviderFee: 0.003,
-    // log: true,
   });
 
 module.exports = getVvsApys;

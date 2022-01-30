@@ -27,7 +27,6 @@ const getBabyApys = () =>
     decimals: '1e18',
     tradingFeeInfoClient: babyClient,
     liquidityProviderFee: 0.003,
-    // log: true,
   });
 
 module.exports = getBabyApys;

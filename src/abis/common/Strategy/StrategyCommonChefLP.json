@@ -38,7 +38,7 @@
       },
       {
         "internalType": "address",
-        "name": "_beefyFeeRecipient",
+        "name": "_leechFeeRecipient",
         "type": "address"
       },
       {
@@ -262,7 +262,7 @@
   },
   {
     "inputs": [],
-    "name": "beefyFee",
+    "name": "leechFee",
     "outputs": [
       {
         "internalType": "uint256",
@@ -275,7 +275,7 @@
   },
   {
     "inputs": [],
-    "name": "beefyFeeRecipient",
+    "name": "leechFeeRecipient",
     "outputs": [
       {
         "internalType": "address",
@@ -650,11 +650,11 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "_beefyFeeRecipient",
+        "name": "_leechFeeRecipient",
         "type": "address"
       }
     ],
-    "name": "setBeefyFeeRecipient",
+    "name": "setLeechFeeRecipient",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"

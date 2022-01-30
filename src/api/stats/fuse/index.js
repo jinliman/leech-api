@@ -1,7 +1,7 @@
 const getFusefiLpApys = require('./getFusefiLpApys');
-const getFuseBeefySingleApy = require('./getFuseBeefySingleApy');
+const getFuseLeechSingleApy = require('./getFuseLeechSingleApy');
 
-const getApys = [getFusefiLpApys, getFuseBeefySingleApy];
+const getApys = [getFusefiLpApys, getFuseLeechSingleApy];
 
 const getFuseApys = async () => {
   let apys = {};

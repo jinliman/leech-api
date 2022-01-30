@@ -19,7 +19,6 @@ const getBlockMineLpApys = async () =>
     tradingFeeInfoClient: apeClient,
     liquidityProviderFee: 0.0015,
     burn: 0.1,
-    // log: true,
   });
 
 module.exports = getBlockMineLpApys;

@@ -19,8 +19,8 @@ const DECIMALS = '1e18';
 const BLOCKS_PER_DAY = 28800;
 
 const liquidityProviderFee = 0.003;
-const beefyPerformanceFee = 0.045;
-const shareAfterBeefyPerformanceFee = 1 - beefyPerformanceFee;
+const leechPerformanceFee = 0.045;
+const shareAfterLeechPerformanceFee = 1 - leechPerformanceFee;
 
 const getPangolinLpApys = async () => {
   let apys = {};
@@ -32,8 +32,8 @@ const getPangolinLpApys = async () => {
 
   pools.forEach((pool, i) => {
     const simpleApy = farmApys[i];
-    const vaultApr = simpleApy.times(shareAfterBeefyPerformanceFee);
-    const vaultApy = compound(simpleApy, BASE_HPY, 1, shareAfterBeefyPerformanceFee);
+    const vaultApr = simpleApy.times(shareAfterLeechPerformanceFee);
+    const vaultApy = compound(simpleApy, BASE_HPY, 1, shareAfterLeechPerformanceFee);
     const tradingApr = tradingAprs[pool.address.toLowerCase()] ?? new BigNumber(0);
     const totalApy = getFarmWithTradingFeesApy(simpleApy, tradingApr, BASE_HPY, 1, 0.955);
     const legacyApyValue = { [pool.name]: totalApy };
@@ -45,7 +45,7 @@ const getPangolinLpApys = async () => {
       [pool.name]: {
         vaultApr: vaultApr.toNumber(),
         compoundingsPerYear: BASE_HPY,
-        beefyPerformanceFee: beefyPerformanceFee,
+        leechPerformanceFee: leechPerformanceFee,
         vaultApy: vaultApy,
         lpFee: liquidityProviderFee,
         tradingApr: tradingApr.toNumber(),

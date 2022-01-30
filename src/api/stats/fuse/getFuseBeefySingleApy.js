@@ -1,11 +1,10 @@
 const BigNumber = require('bignumber.js');
 const { web3Factory } = require('../../../utils/web3');
-
 const Rewarder = require('../../../abis/fuse/IRewarder.json');
 const Staker = require('../../../abis/fuse/IStaker.json');
 const { compound } = require('../../../utils/compound');
-
 import { getEDecimals } from '../../../utils/getEDecimals';
+
 const { FUSE_CHAIN_ID: chainId, BASE_HPY } = require('../../../constants');
 
 import { addressBook } from '../../../../packages/address-book/address-book';
@@ -19,9 +18,9 @@ const {
 } = addressBook;
 
 const BLOCKS_PER_DAY = 17280; // 5 Second Block Times
-const beefyPerformanceFee = 0.045;
+const leechPerformanceFee = 0.045;
 
-const getFuseBeefySingleApy = async () => {
+const getFuseLeechSingleApy = async () => {
   const [yearlyRewardsInUsd, totalStakedInUsd] = await Promise.all([
     getYearlyRewardsInUsd(),
     getTotalStakedInUsd(),
@@ -38,7 +37,7 @@ const getFuseBeefySingleApy = async () => {
       'fuse-fuse': {
         vaultApr: apr,
         compoundingsPerYear: BASE_HPY,
-        beefyPerformanceFee: beefyPerformanceFee,
+        leechPerformanceFee: leechPerformanceFee,
         vaultApy: apy,
         totalApy: apy,
       },
@@ -66,4 +65,4 @@ const getTotalStakedInUsd = async () => {
   return totalStaked.dividedBy(getEDecimals(WFUSE.decimals));
 };
 
-module.exports = getFuseBeefySingleApy;
+module.exports = getFuseLeechSingleApy;

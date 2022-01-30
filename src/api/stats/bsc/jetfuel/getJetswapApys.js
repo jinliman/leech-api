@@ -14,7 +14,6 @@ const getJetswapApys = async () => {
     oracleId: 'WINGS',
     oracle: 'tokens',
     decimals: '1e18',
-    // log: true,
     tradingFeeInfoClient: jetswapClient,
     liquidityProviderFee: 0.0025,
   });
@@ -37,7 +36,6 @@ const getJetswapApys = async () => {
     oracle: 'tokens',
     oracleId: 'WINGS',
     decimals: '1e18',
-    // log: true,
   });
 
   let apys = {};

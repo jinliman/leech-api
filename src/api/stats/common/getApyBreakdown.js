@@ -1,16 +1,13 @@
-import BigNumber from 'bignumber.js';
-
 import { getFarmWithTradingFeesApy } from '../../../utils/getFarmWithTradingFeesApy';
 import { compound } from '../../../utils/compound';
-
-import { BASE_HPY, BEEFY_PERFORMANCE_FEE, SHARE_AFTER_PERFORMANCE_FEE } from '../../../constants';
+import { BASE_HPY, LEECH_PERFORMANCE_FEE, SHARE_AFTER_PERFORMANCE_FEE } from '../../../constants';
 
 export const getApyBreakdown = (
   pools,
   tradingAprs,
   farmAprs,
   providerFee,
-  performanceFee = BEEFY_PERFORMANCE_FEE
+  performanceFee = LEECH_PERFORMANCE_FEE
 ) => {
   const result = {
     apys: {},
@@ -35,7 +32,7 @@ export const getApyBreakdown = (
     result.apyBreakdowns[pool.name] = {
       vaultApr: vaultApr,
       compoundingsPerYear: BASE_HPY,
-      beefyPerformanceFee: performanceFee,
+      leechPerformanceFee: performanceFee,
       vaultApy: vaultApy,
       lpFee: providerFee,
       tradingApr: tradingApr,

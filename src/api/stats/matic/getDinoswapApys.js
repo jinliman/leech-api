@@ -25,7 +25,6 @@ const getDinoswapApys = async () => {
     oracle: 'tokens',
     decimals: '1e18',
     tradingAprs: tradingAprs,
-    // log: true,
   });
 };
 

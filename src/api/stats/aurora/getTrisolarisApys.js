@@ -15,7 +15,6 @@ const getTrisolarisApys = async () =>
     oracle: 'tokens',
     decimals: '1e18',
     secondsPerBlock: 1,
-    // log: true,
   });
 
 module.exports = getTrisolarisApys;

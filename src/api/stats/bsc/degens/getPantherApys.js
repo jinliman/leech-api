@@ -14,7 +14,6 @@ const getPantherApys = async () =>
     oracleId: 'PANTHER',
     oracle: 'tokens',
     decimals: '1e18',
-    // log: true,
     tradingFeeInfoClient: pantherClient,
     liquidityProviderFee: 0.0017,
   });

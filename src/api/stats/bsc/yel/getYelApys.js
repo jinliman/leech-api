@@ -21,7 +21,6 @@ const getYelApys = () =>
     decimals: '1e18',
     tradingFeeInfoClient: apeClient,
     liquidityProviderFee: 0.0015,
-    // log: true,
   });
 
 module.exports = getYelApys;
@@ -71,7 +70,7 @@ const getMasterChefApys = async masterchefParams => {
       [pool.name]: {
         vaultApr: vaultApr.toNumber(),
         compoundingsPerYear: hpy,
-        beefyPerformanceFee: perfFee,
+        leechPerformanceFee: perfFee,
         vaultApy: vaultApy,
         lpFee: params.liquidityProviderFee,
         tradingApr: tradingApr.toNumber(),

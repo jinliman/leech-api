@@ -13,7 +13,6 @@ const getZefiLpApys = async () =>
     oracleId: 'ZEFI',
     oracle: 'tokens',
     decimals: '1e18',
-    // log: true,
   });
 
 module.exports = getZefiLpApys;

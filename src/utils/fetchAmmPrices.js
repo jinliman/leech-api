@@ -18,7 +18,7 @@ const MULTICALLS = {
   1088: '0xfcDD5a02C611ba6Fe2802f885281500EC95805d7',
 };
 
-const MulticallAbi = require('../abis/BeefyPriceMulticall.json');
+const MulticallAbi = require('../abis/LeechPriceMulticall.json');
 const BATCH_SIZE = 128;
 
 const sortByKeys = o => {

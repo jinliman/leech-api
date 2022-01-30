@@ -26,7 +26,6 @@ const getJetswapApys = async () =>
     decimals: '1e18',
     tradingFeeInfoClient: jetswapPolyClient,
     liquidityProviderFee: 0.001,
-    // log: true,
   });
 
 module.exports = getJetswapApys;

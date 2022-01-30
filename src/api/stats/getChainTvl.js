@@ -5,7 +5,7 @@ const getVaults = require('../../utils/getVaults.js');
 const fetchPrice = require('../../utils/fetchPrice');
 const { EXCLUDED_IDS_FROM_TVL } = require('../../constants');
 
-const BeefyVaultV6ABI = require('../../abis/BeefyVaultV6.json');
+const LeechVaultV6ABI = require('../../abis/LeechVaultV6.json');
 const { getTotalStakedInUsd } = require('../../utils/getTotalStakedInUsd');
 
 const getChainTvl = async chain => {
@@ -52,7 +52,7 @@ const getVaultBalances = async (chainId, vaults) => {
   const multicall = new MultiCall(web3, multicallAddress(chainId));
   const balanceCalls = [];
   vaults.forEach(vault => {
-    const vaultContract = new web3.eth.Contract(BeefyVaultV6ABI, vault.earnedTokenAddress);
+    const vaultContract = new web3.eth.Contract(LeechVaultV6ABI, vault.earnedTokenAddress);
     balanceCalls.push({
       balance: vaultContract.methods.balance(),
     });

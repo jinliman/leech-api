@@ -19,7 +19,6 @@ const getOliveApys = async () =>
     secondsPerBlock: await getBlockTime(chainId),
     tradingFeeInfoClient: oliveClient,
     liquidityProviderFee: 0.003,
-    // log: true,
   });
 
 module.exports = getOliveApys;

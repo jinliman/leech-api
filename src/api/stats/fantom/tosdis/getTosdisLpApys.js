@@ -16,8 +16,8 @@ const oracle = 'tokens';
 const DECIMALS = '1e18';
 
 const liquidityProviderFee = 0.0025; // 0.003 * 5/6
-const beefyPerformanceFee = 0.045;
-const shareAfterBeefyPerformanceFee = 1 - beefyPerformanceFee;
+const leechPerformanceFee = 0.045;
+const shareAfterLeechPerformanceFee = 1 - leechPerformanceFee;
 
 const getTosdisLpApys = async () => {
   let apys = {};
@@ -34,8 +34,8 @@ const getTosdisLpApys = async () => {
 
   for (let item of values) {
     const simpleApr = item.simpleApr;
-    const vaultApr = simpleApr.times(shareAfterBeefyPerformanceFee);
-    const vaultApy = compound(simpleApr, BASE_HPY, 1, shareAfterBeefyPerformanceFee);
+    const vaultApr = simpleApr.times(shareAfterLeechPerformanceFee);
+    const vaultApy = compound(simpleApr, BASE_HPY, 1, shareAfterLeechPerformanceFee);
     const tradingApr = tradingAprs[item.address.toLowerCase()] ?? new BigNumber(0);
     const totalApy = getFarmWithTradingFeesApy(simpleApr, tradingApr, BASE_HPY, 1, 0.955);
     const legacyApyValue = { [item.name]: totalApy };
@@ -47,7 +47,7 @@ const getTosdisLpApys = async () => {
       [item.name]: {
         vaultApr: vaultApr.toNumber(),
         compoundingsPerYear: BASE_HPY,
-        beefyPerformanceFee: beefyPerformanceFee,
+        leechPerformanceFee: leechPerformanceFee,
         vaultApy: vaultApy,
         lpFee: liquidityProviderFee,
         tradingApr: tradingApr.toNumber(),

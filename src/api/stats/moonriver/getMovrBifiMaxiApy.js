@@ -6,7 +6,7 @@ import { addressBook } from '../../../../packages/address-book/address-book';
 const {
   moonriver: {
     platforms: {
-      beefyfinance: { rewardPool },
+      leechfinance: { rewardPool },
     },
     tokens: { BIFI, WMOVR }
   },

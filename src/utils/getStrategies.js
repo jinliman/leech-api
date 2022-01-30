@@ -4,7 +4,7 @@ const { _web3Factory } = require('./web3Helpers');
 import { ChainId } from '../../packages/address-book/address-book';
 
 const BATCH_SIZE = 128;
-const vaultAbi = require('../abis/BeefyVaultV6.json');
+const vaultAbi = require('../abis/LeechVaultV6.json');
 
 const getStrategies = async (vaults, chain) => {
   // Setup multichain

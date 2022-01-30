@@ -45,7 +45,7 @@ const getMasterChefApys = async masterchefParams => {
       [pool.name]: {
         vaultApr: vaultApr.toNumber(),
         compoundingsPerYear: hpy,
-        beefyPerformanceFee: perfFee,
+        leechPerformanceFee: perfFee,
         vaultApy: vaultApy,
         lpFee: params.liquidityProviderFee,
         tradingApr: tradingApr.toNumber(),

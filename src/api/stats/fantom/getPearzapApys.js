@@ -18,7 +18,6 @@ const getPearzapApys = async () =>
     decimals: '1e18',
     tradingFeeInfoClient: spiritClient,
     liquidityProviderFee: 0.003,
-    // log: true,
   });
 
 module.exports = getPearzapApys;

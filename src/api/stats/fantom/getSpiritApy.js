@@ -25,7 +25,6 @@ const getSpiritApys = async () => {
     decimals: '1e18',
     tradingFeeInfoClient: spiritClient,
     liquidityProviderFee: SPIRIT_LPF,
-    // log: true,
   });
 
   const gaugeAPYs = getGaugeAPYs();
@@ -59,7 +58,6 @@ const getGaugeAPYs = async () => {
     decimals: '1e18',
     tradingFeeInfoClient: spiritClient,
     liquidityProviderFee: SPIRIT_LPF,
-    //log: true,
   });
 };
 

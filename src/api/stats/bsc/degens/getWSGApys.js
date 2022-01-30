@@ -28,5 +28,4 @@ export const getWSGApys = async () =>
     decimals: '1e18',
     tradingFeeInfoClient: cakeClient,
     liquidityProviderFee: PCS_LPF,
-    // log: true,
   });

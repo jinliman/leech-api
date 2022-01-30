@@ -20,8 +20,8 @@ const secondsPerBlock = 1;
 const secondsPerYear = 31536000;
 
 const spookyLiquidityProviderFee = 0.002;
-const beefyPerformanceFee = 0.045;
-const shareAfterBeefyPerformanceFee = 1 - beefyPerformanceFee;
+const leechPerformanceFee = 0.045;
+const shareAfterLeechPerformanceFee = 1 - leechPerformanceFee;
 
 const getSteakHouseLpApys = async () => {
   let apys = {};
@@ -52,8 +52,8 @@ const getSteakHouseLpApys = async () => {
     const yearlyRewardsInUsd = yearlyRewards.times(tokenPrice).dividedBy(DECIMALS);
 
     const simpleApy = yearlyRewardsInUsd.dividedBy(totalStakedInUsd);
-    const vaultApr = simpleApy.times(shareAfterBeefyPerformanceFee);
-    const vaultApy = compound(simpleApy, BASE_HPY, 1, shareAfterBeefyPerformanceFee);
+    const vaultApr = simpleApy.times(shareAfterLeechPerformanceFee);
+    const vaultApy = compound(simpleApy, BASE_HPY, 1, shareAfterLeechPerformanceFee);
 
     const tradingApr = tradingAprs[pool.address.toLowerCase()] ?? new BigNumber(0);
     const totalApy = getFarmWithTradingFeesApy(
@@ -61,7 +61,7 @@ const getSteakHouseLpApys = async () => {
       tradingApr,
       BASE_HPY,
       1,
-      shareAfterBeefyPerformanceFee
+      shareAfterLeechPerformanceFee
     );
     
     // Create reference for legacy /apy
@@ -74,7 +74,7 @@ const getSteakHouseLpApys = async () => {
       [pool.name]: {
         vaultApr: vaultApr.toNumber(),
         compoundingsPerYear: BASE_HPY,
-        beefyPerformanceFee: beefyPerformanceFee,
+        leechPerformanceFee: leechPerformanceFee,
         vaultApy: vaultApy,
         lpFee: spookyLiquidityProviderFee,
         tradingApr: tradingApr.toNumber(),

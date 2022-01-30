@@ -19,8 +19,8 @@ const xToken = '0x37619cC85325aFea778830e184CB60a3ABc9210B';
 const SECONDS_PER_YEAR = 31536000;
 
 const liquidityProviderFee = 0.0005;
-const beefyPerformanceFee = 0.045;
-const shareAfterBeefyPerformanceFee = 1 - beefyPerformanceFee;
+const leechPerformanceFee = 0.045;
+const shareAfterLeechPerformanceFee = 1 - leechPerformanceFee;
 
 const getFinnApy = async () => {
   const tokenPrice = await fetchPrice({ oracle, id: oracleId });
@@ -41,15 +41,15 @@ const getFinnApy = async () => {
   const yearlyRewardsInUsd = yearlyRewards.times(tokenPrice).dividedBy(pool.decimals);
 
   const simpleApr = yearlyRewardsInUsd.dividedBy(totalStakedInUsd);
-  const vaultApr = simpleApr.times(shareAfterBeefyPerformanceFee);
-  const vaultApy = compound(simpleApr, BASE_HPY, 1, shareAfterBeefyPerformanceFee);
+  const vaultApr = simpleApr.times(shareAfterLeechPerformanceFee);
+  const vaultApy = compound(simpleApr, BASE_HPY, 1, shareAfterLeechPerformanceFee);
   const tradingApr = yearlyTradingFees.div(totalStakedInxTokenInUsd);
   const totalApy = getFarmWithTradingFeesApy(
     simpleApr,
     tradingApr,
     BASE_HPY,
     1,
-    shareAfterBeefyPerformanceFee
+    shareAfterLeechPerformanceFee
   );
   const apys = { [pool.name]: totalApy };
 
@@ -57,7 +57,7 @@ const getFinnApy = async () => {
     [pool.name]: {
       vaultApr: vaultApr.toNumber(),
       compoundingsPerYear: BASE_HPY,
-      beefyPerformanceFee: beefyPerformanceFee,
+      leechPerformanceFee: leechPerformanceFee,
       vaultApy: vaultApy,
       lpFee: liquidityProviderFee,
       tradingApr: tradingApr.toNumber(),

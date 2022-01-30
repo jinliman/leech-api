@@ -16,7 +16,6 @@ const getCafeLpApys = async () =>
     oracle: 'tokens',
     decimals: '1e18',
     liquidityProviderFee: 0.002,
-    // log: true,
   });
 
 module.exports = getCafeLpApys;

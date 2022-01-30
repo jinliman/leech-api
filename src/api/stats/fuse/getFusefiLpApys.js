@@ -24,8 +24,8 @@ const oracle = 'tokens';
 const oracleId = 'WFUSE';
 const DECIMALS = '1e18';
 
-const beefyPerformanceFee = 0.045;
-const shareAfterBeefyPerformanceFee = 1 - beefyPerformanceFee;
+const leechPerformanceFee = 0.045;
+const shareAfterLeechPerformanceFee = 1 - leechPerformanceFee;
 
 const getFusefiLpApys = async () => {
   let apys = {};
@@ -37,8 +37,8 @@ const getFusefiLpApys = async () => {
 
   pools.forEach((pool, i) => {
     const simpleApy = farmApys[i];
-    const vaultApr = simpleApy.times(shareAfterBeefyPerformanceFee);
-    const vaultApy = compound(simpleApy, BASE_HPY, 1, shareAfterBeefyPerformanceFee);
+    const vaultApr = simpleApy.times(shareAfterLeechPerformanceFee);
+    const vaultApy = compound(simpleApy, BASE_HPY, 1, shareAfterLeechPerformanceFee);
     const tradingApr = tradingAprs[pool.address.toLowerCase()] ?? new BigNumber(0);
     const totalApy = getFarmWithTradingFeesApy(simpleApy, tradingApr, BASE_HPY, 1, 0.955);
     const legacyApyValue = { [pool.name]: totalApy };
@@ -50,7 +50,7 @@ const getFusefiLpApys = async () => {
       [pool.name]: {
         vaultApr: vaultApr.toNumber(),
         compoundingsPerYear: BASE_HPY,
-        beefyPerformanceFee: beefyPerformanceFee,
+        leechPerformanceFee: leechPerformanceFee,
         vaultApy: vaultApy,
         lpFee: FUSEFI_LPF,
         tradingApr: tradingApr.toNumber(),

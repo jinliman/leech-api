@@ -35,7 +35,6 @@ const getApeApys = () =>
     decimals: '1e18',
     tradingFeeInfoClient: apeClient,
     liquidityProviderFee: 0.0015,
-    // log: true,
   });
 
 module.exports = getApeApys;

@@ -10,7 +10,7 @@ const { compound } = require('../../../../utils/compound');
 const {
   BSC_CHAIN_ID,
   BASE_HPY,
-  BEEFY_PERFORMANCE_FEE,
+  LEECH_PERFORMANCE_FEE,
   SHARE_AFTER_PERFORMANCE_FEE,
 } = require('../../../../constants');
 const getBlockNumber = require('../../../../utils/getBlockNumber');
@@ -51,7 +51,7 @@ const getPoolApy = async (masterchef, pool) => {
   const apyBreakdown = {
     vaultApr: simpleApy.toNumber(),
     compoundingsPerYear: BASE_HPY,
-    beefyPerformanceFee: BEEFY_PERFORMANCE_FEE,
+    leechPerformanceFee: LEECH_PERFORMANCE_FEE,
     vaultApy: compound(simpleApy, BASE_HPY, 1, SHARE_AFTER_PERFORMANCE_FEE),
     lpFee: 0.001,
     tradingApr: baseApy,

@@ -2,7 +2,7 @@ import { multicallAddress, web3Factory } from './web3';
 import { MultiCall } from 'eth-multicall';
 const BigNumber = require('bignumber.js');
 
-const IVault = require('../abis/BeefyVaultV6');
+const IVault = require('../abis/LeechVaultV6');
 
 const fetchMooPrices = async (pools, tokenPrices, lpPrices) => {
   let moo = {};

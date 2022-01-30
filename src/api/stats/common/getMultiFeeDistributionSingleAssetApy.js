@@ -4,7 +4,7 @@ import {
 } from '../../../abis/common/MultiFeeDistribution';
 import fetchPrice from '../../../utils/fetchPrice';
 import { compound } from '../../../utils/compound';
-import { BASE_HPY, BEEFY_PERFORMANCE_FEE, SHARE_AFTER_PERFORMANCE_FEE } from '../../../constants';
+import { BASE_HPY, LEECH_PERFORMANCE_FEE, SHARE_AFTER_PERFORMANCE_FEE } from '../../../constants';
 
 const oracle = 'tokens';
 
@@ -68,7 +68,7 @@ const getBreakdown = (poolName, apr) => {
     vaultApy: vaultApy,
     totalApy: totalApy,
     compoundingsPerYear: BASE_HPY,
-    beefyPerformanceFee: BEEFY_PERFORMANCE_FEE,
+    leechPerformanceFee: LEECH_PERFORMANCE_FEE,
   };
   return result;
 };

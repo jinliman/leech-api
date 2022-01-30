@@ -20,8 +20,8 @@ const STAKED_DECIMALS = '1e18';
 const SECONDS_PER_YEAR = 31536000;
 
 const liquidityProviderFee = 0.0004;
-const beefyPerformanceFee = 0.045;
-const shareAfterBeefyPerformanceFee = 1 - beefyPerformanceFee;
+const leechPerformanceFee = 0.045;
+const shareAfterLeechPerformanceFee = 1 - leechPerformanceFee;
 
 const getQuickSingleApys = async () => {
   let apys = {};
@@ -49,15 +49,15 @@ const getQuickSingleApys = async () => {
     const yearlyRewardsInUsd = yearlyRewards.times(tokenPrice).dividedBy(pool.rewardDecimals);
 
     const simpleApr = yearlyRewardsInUsd.dividedBy(totalStakedInUsd);
-    const vaultApr = simpleApr.times(shareAfterBeefyPerformanceFee);
-    const vaultApy = compound(simpleApr, BASE_HPY, 1, shareAfterBeefyPerformanceFee);
+    const vaultApr = simpleApr.times(shareAfterLeechPerformanceFee);
+    const vaultApy = compound(simpleApr, BASE_HPY, 1, shareAfterLeechPerformanceFee);
     const tradingApr = yearlyTradingFees.div(totalStakedInDragonsLairInUsd);
     const totalApy = getFarmWithTradingFeesApy(
       simpleApr,
       tradingApr,
       BASE_HPY,
       1,
-      shareAfterBeefyPerformanceFee
+      shareAfterLeechPerformanceFee
     );
     const legacyApyValue = { [pool.name]: totalApy };
     // Add token to APYs object
@@ -68,7 +68,7 @@ const getQuickSingleApys = async () => {
       [pool.name]: {
         vaultApr: vaultApr.toNumber(),
         compoundingsPerYear: BASE_HPY,
-        beefyPerformanceFee: beefyPerformanceFee,
+        leechPerformanceFee: leechPerformanceFee,
         vaultApy: vaultApy,
         lpFee: liquidityProviderFee,
         tradingApr: tradingApr.toNumber(),
