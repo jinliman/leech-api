@@ -1,6 +1,6 @@
 const { getMasterChefApys } = require('./getMaticMasterChefApys');
 const pools = require('../../../data/matic/polygonFarmLpPools.json');
-import { sushiClient } from '../../../apollo/client';
+const { sushiClient } = require('../../../apollo/client');
 
 const getPolygonFarmApys = async () =>
   await getMasterChefApys({

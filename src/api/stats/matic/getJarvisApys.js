@@ -6,8 +6,8 @@ const pools = require('../../../data/matic/jarvisPools.json');
 const fetchPrice = require('../../../utils/fetchPrice');
 const { getTotalLpStakedInUsd } = require('../../../utils/getTotalStakedInUsd');
 const getBlockTime = require('../../../utils/getBlockTime');
-import getApyBreakdown from '../common/getApyBreakdown';
-import { getCurveFactoryApy } from '../common/curve/getCurveApyData';
+const getApyBreakdown = require('../common/getApyBreakdown');
+const { getCurveFactoryApy } = require('../common/curve/getCurveApyData');
 
 const DECIMALS = '1e18';
 

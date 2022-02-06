@@ -1,10 +1,8 @@
-import { BEET_LPF } from '../../../constants';
-
 const { getMasterChefApys } = require('../common/getMasterChefApys');
 const MasterChefAbi = require('../../../abis/fantom/BeethovenxChef.json');
 const { fantomWeb3 } = require('../../../utils/web3');
 const pools = require('../../../data/fantom/beethovenxPools.json');
-import { beetClient } from '../../../apollo/client';
+const { beetClient } = require('../../../apollo/client');
 
 const getBeethovenxApys = async () =>
   await getMasterChefApys({
@@ -24,4 +22,6 @@ const getBeethovenxApys = async () =>
     burn: 0.128,
   });
 
-module.exports = getBeethovenxApys;
+module.exports = {
+  getBeethovenxApys
+};

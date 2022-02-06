@@ -77,4 +77,6 @@ const getTotalLpStakedInUsd = async pool => {
   return totalStakedInUsd;
 };
 
-module.exports = getBlizzardLpApys;
+module.exports = {
+  getBlizzardLpApys
+};

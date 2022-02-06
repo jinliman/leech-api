@@ -1,11 +1,11 @@
 const { oneWeb3: web3 } = require('../../../utils/web3');
 
-import {
+const {
   getCurveBaseApys,
   getTotalStakedInUsd,
   getYearlyRewardsInUsd,
-} from '../common/curve/getCurveApyData';
-import getApyBreakdown from '../common/getApyBreakdown';
+} = require('../common/curve/getCurveApyData');
+const getApyBreakdown = require('../common/getApyBreakdown');
 
 const pools = require('../../../data/one/curvePools.json');
 const baseApyUrl = 'https://stats.curve.fi/raw-stats-harmony/apys.json';
@@ -38,4 +38,4 @@ const getPoolApy = async pool => {
   return simpleApy;
 };
 
-module.exports = getCurveApys;
+module.exports = { getCurveApys };

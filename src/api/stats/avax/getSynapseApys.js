@@ -1,12 +1,11 @@
-import { avaxWeb3 } from '../../../utils/web3';
-import { AVAX_CHAIN_ID } from '../../../constants';
-import { getMiniChefApys } from '../common/getMiniChefApys';
-import SynapseMiniChefV2 from '../../../abis/avax/SynapseMiniChefV2.json';
-import _pools from '../../../data/avax/synapsePools.json';
+const { avaxWeb3 } = require('../../../utils/web3');
+const { AVAX_CHAIN_ID } = require('../../../constants');
+const { getMiniChefApys } = require('../common/getMiniChefApys');
+const SynapseMiniChefV2 = require('../../../abis/avax/SynapseMiniChefV2.json');
+const _pools = require('../../../data/avax/synapsePools.json');
 const pools = _pools;
 
-import { addressBook } from '../../../../packages/address-book/address-book';
-import { AbiItem } from 'web3-utils';
+const { addressBook } = require('../../../../packages/blockchain-addressbook/build/address-book');
 
 const {
   avax: {
@@ -17,7 +16,7 @@ const {
   },
 } = addressBook;
 
-export const getSynapseApys = () => {
+const getSynapseApys = () => {
   return getMiniChefApys({
     minichefConfig: {
       minichef: chef,
@@ -29,4 +28,8 @@ export const getSynapseApys = () => {
     web3: avaxWeb3,
     chainId: AVAX_CHAIN_ID,
   });
+};
+
+module.exports = {
+  getSynapseApys
 };

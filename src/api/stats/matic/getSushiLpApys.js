@@ -1,13 +1,11 @@
-import { polygonWeb3 } from '../../../utils/web3';
-import { POLYGON_CHAIN_ID } from '../../../constants';
+const { polygonWeb3 } = require('../../../utils/web3');
+const { POLYGON_CHAIN_ID } = require('../../../constants');
+const { getMiniChefApys } = require('../common/getMiniChefApys');
+const { sushiClient } = require('../../../apollo/client');
+const pools = require('../../../data/matic/sushiLpPools.json');
+const SushiMiniChefV2 = require('../../../abis/matic/SushiMiniChefV2.json');
+const { addressBook } = require('../../../../packages/blockchain-addressbook/build/address-book');
 
-import { getMiniChefApys } from '../common/getMiniChefApys';
-import { sushiClient } from '../../../apollo/client';
-
-import pools from '../../../data/matic/sushiLpPools.json';
-import SushiMiniChefV2 from '../../../abis/matic/SushiMiniChefV2.json';
-
-import { addressBook } from '../../../../packages/address-book/address-book';
 const {
   polygon: {
     platforms: {
@@ -17,7 +15,7 @@ const {
   },
 } = addressBook;
 
-export const getSushiLpApys = () => {
+const getSushiLpApys = () => {
   return getMiniChefApys({
     minichefConfig: {
       minichef,
@@ -35,4 +33,8 @@ export const getSushiLpApys = () => {
     web3: polygonWeb3,
     chainId: POLYGON_CHAIN_ID,
   });
+};
+
+module.exports = {
+  getSushiLpApys,
 };

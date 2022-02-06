@@ -57,4 +57,6 @@ const getYearlyRewardsInUsd = async (originalGangsterAddr, oracle, oracleId) => 
   return yearlyRewardsInUsd;
 };
 
-module.exports = getBaseDrugsApy;
+module.exports = {
+  getBaseDrugsApy
+};

@@ -10,7 +10,7 @@ const pools = require('../../../data/matic/sushiOhmLpPools.json');
 const { POLYGON_CHAIN_ID, SUSHI_LPF } = require('../../../constants');
 const { getTradingFeeAprSushi: getTradingFeeApr } = require('../../../utils/getTradingFeeApr');
 const { sushiClient } = require('../../../apollo/client');
-import getApyBreakdown from '../common/getApyBreakdown';
+const getApyBreakdown = require('../common/getApyBreakdown');
 
 const minichef = '0x0769fd68dFb93167989C6f7254cd0D766Fb2841F';
 const oracleId = 'SUSHI';

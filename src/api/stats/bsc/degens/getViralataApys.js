@@ -18,4 +18,6 @@ const getViralataApys = async () =>
     liquidityProviderFee: 0.003,
   });
 
-module.exports = getViralataApys;
+module.exports = {
+  getViralataApys
+};

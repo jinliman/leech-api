@@ -8,7 +8,7 @@ const fetchPrice = require('../../../utils/fetchPrice');
 const pools = require('../../../data/fantom/stakesteakLpPools.json');
 const { BASE_HPY, FANTOM_CHAIN_ID } = require('../../../constants');
 const { getTradingFeeApr } = require('../../../utils/getTradingFeeApr');
-import { getFarmWithTradingFeesApy } from '../../../utils/getFarmWithTradingFeesApy';
+const getFarmWithTradingFeesApy = require('../../../utils/getFarmWithTradingFeesApy');
 const { spiritClient } = require('../../../apollo/client');
 const { compound } = require('../../../utils/compound');
 
@@ -18,7 +18,7 @@ const {
       tokens: { STEAK },
     },
   },
-} = require('../../../../packages/address-book/address-book');
+} = require('../../../../packages/blockchain-addressbook/build/address-book');
 
 const masterchef = '0x5bC37CAAA3b490b65F5A50E2553f4312126A8b7e';
 const rewardToken = STEAK;
@@ -133,4 +133,6 @@ const getPoolsData = async pools => {
   return { balances, allocPoints };
 };
 
-module.exports = getStakeSteakLpApys;
+module.exports = {
+  getStakeSteakLpApys
+};

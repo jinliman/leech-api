@@ -18,4 +18,6 @@ const getBlockNumber = async chainId => {
   return blockNumberPromise;
 };
 
-module.exports = getBlockNumber;
+module.exports = {
+  getBlockNumber
+};

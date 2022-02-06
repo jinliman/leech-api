@@ -1,15 +1,15 @@
 const { fantomWeb3: web3 } = require('../../../utils/web3');
 
-import {
+const {
   getCurveBaseApys,
   getTotalStakedInUsd,
   getYearlyRewardsInUsd,
-} from '../common/curve/getCurveApyData';
-import getApyBreakdown from '../common/getApyBreakdown';
-import ICurvePool from '../../../abis/ICurvePool.json';
-import fetchPrice from '../../../utils/fetchPrice';
-import axios from 'axios';
-import BigNumber from 'bignumber.js';
+} = require('../common/curve/getCurveApyData');
+const getApyBreakdown = require('../common/getApyBreakdown');
+const ICurvePool = require('../../../abis/ICurvePool.json');
+const fetchPrice = require('../../../utils/fetchPrice');
+const axios = require('axios');
+const BigNumber = require('bignumber.js');
 
 const pools = require('../../../data/fantom/curvePools.json');
 const baseApyUrl = 'https://stats.curve.fi/raw-stats-ftm/apys.json';
@@ -95,4 +95,6 @@ const getTokenBalance = async (curvePool, token, index) => {
   return new BigNumber(balance).times(price).dividedBy(token.decimals);
 };
 
-module.exports = getCurveApys;
+module.exports = {
+  getCurveApys
+};

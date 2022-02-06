@@ -25,17 +25,6 @@
   ],
   "pools": [
     {
-      "name": "BIFI Maxi",
-      "pair": "BIFI",
-      "pairLink": "https://app.leech.finance/",
-      "logo": "https://leech.finance/vaults/bifi/BIFI.png",
-      "poolRewards": ["BIFI"],
-      "apyId": "bifi-maxi",
-      "contract": "0xf7069e41C57EcC5F122093811d8c75bdB5f7c14e",
-      "oracle": "tokens",
-      "oracleId": "BIFI"
-    },
-    {
       "name": "CAKE SMART",
       "pair": "CAKE",
       "pairLink": "https://app.leech.finance/",

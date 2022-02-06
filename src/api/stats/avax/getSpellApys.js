@@ -1,9 +1,9 @@
 const { avaxWeb3: web3 } = require('../../../utils/web3');
-import { AVAX_CHAIN_ID as chainId } from '../../../constants';
-import { getMasterChefApys } from '../common/getMasterChefApys';
-import axios from 'axios';
-import BigNumber from 'bignumber.js';
-import SpellMasterChef from '../../../abis/arbitrum/SpellMasterChef.json';
+const { AVAX_CHAIN_ID: chainId } = require('../../../constants');
+const { getMasterChefApys } = require('../common/getMasterChefApys');
+const axios = require('axios');
+const BigNumber = require('bignumber.js');
+const SpellMasterChef = require('../../../abis/arbitrum/SpellMasterChef.json');
 
 const getSpellApys = async () => {
   const pool = '0xAEA2E71b631fA93683BCF256A8689dFa0e094fcD';
@@ -52,4 +52,6 @@ const getCurveBaseApy = async address => {
   return apys;
 };
 
-module.exports = getSpellApys;
+module.exports = {
+  getSpellApys
+};

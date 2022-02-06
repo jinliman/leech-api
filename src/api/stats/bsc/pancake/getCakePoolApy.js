@@ -54,4 +54,6 @@ const getYearlyRewardsInUsd = async (masterChefAddr, oracle, oracleId) => {
   return yearlyRewardsInUsd;
 };
 
-module.exports = getCakePoolApy;
+module.exports = {
+  getCakePoolApy
+};

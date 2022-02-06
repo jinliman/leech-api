@@ -1,8 +1,8 @@
-import { getMasterChefApys } from '../common/getMasterChefApys';
-import { fantomWeb3 as web3 } from '../../../utils/web3';
-import { FANTOM_CHAIN_ID as chainId } from '../../../constants';
-import pools from '../../../data/fantom/jetswapLpPools.json';
-import { jetswapFantomClient } from '../../../apollo/client';
+const { getMasterChefApys } = require('../common/getMasterChefApys');
+const { fantomWeb3: web3 } = require('../../../utils/web3');
+const { FANTOM_CHAIN_ID: chainId } = require('../../../constants');
+const pools = require('../../../data/fantom/jetswapLpPools.json');
+const { jetswapFantomClient } = require('../../../apollo/client');
 
 const getJetswapApys = async () =>
   await getMasterChefApys({
@@ -30,4 +30,6 @@ const getJetswapApys = async () =>
     liquidityProviderFee: 0.001,
   });
 
-module.exports = getJetswapApys;
+module.exports = {
+  getJetswapApys
+};

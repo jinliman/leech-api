@@ -37,4 +37,6 @@ const getLiquidusApys = async () => {
   return { [id]: apy };
 };
 
-module.exports = getLiquidusApys;
+module.exports = {
+  getLiquidusApys
+};

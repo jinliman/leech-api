@@ -19,4 +19,6 @@ const dailyEarnings = async () => {
   return earned;
 };
 
-module.exports = dailyEarnings;
+module.exports = {
+  dailyEarnings
+};

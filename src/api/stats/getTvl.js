@@ -112,4 +112,6 @@ const updateTvl = async () => {
 
 setTimeout(updateTvl, INIT_DELAY);
 
-module.exports = getTvl;
+module.exports = {
+  getTvl
+};

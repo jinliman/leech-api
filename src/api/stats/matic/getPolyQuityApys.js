@@ -9,7 +9,7 @@ const pools = require('../../../data/matic/polyQuityLpPools.json');
 const { POLYGON_CHAIN_ID, SUSHI_LPF } = require('../../../constants');
 const { getTradingFeeAprSushi } = require('../../../utils/getTradingFeeApr');
 const { sushiClient } = require('../../../apollo/client');
-import getApyBreakdown from '../common/getApyBreakdown';
+const getApyBreakdown = require('../common/getApyBreakdown');
 
 const oracle = 'tokens';
 const oracleId = 'PYQ';

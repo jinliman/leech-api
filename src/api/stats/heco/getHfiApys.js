@@ -44,4 +44,6 @@ const fetchHfiStats = async () => {
   }
 };
 
-module.exports = getHfiApys;
+module.exports = {
+  getHfiApys
+};

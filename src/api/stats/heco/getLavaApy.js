@@ -41,4 +41,6 @@ const getYearlyRewardsInUsd = async () => {
   return yearlyRewardsInUsd;
 };
 
-module.exports = getLavaApy;
+module.exports = {
+  getLavaApy
+};

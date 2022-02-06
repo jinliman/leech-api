@@ -29,4 +29,6 @@ const getBabyApys = () =>
     liquidityProviderFee: 0.003,
   });
 
-module.exports = getBabyApys;
+module.exports = {
+  getBabyApys
+};

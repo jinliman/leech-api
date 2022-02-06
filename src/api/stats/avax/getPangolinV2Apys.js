@@ -1,15 +1,13 @@
-import { avaxWeb3 } from '../../../utils/web3';
-import { AVAX_CHAIN_ID } from '../../../constants';
-
-import { getMiniChefApys } from '../common/getMiniChefApys';
+const { avaxWeb3 } = require('../../../utils/web3');
+const { AVAX_CHAIN_ID } = require('../../../constants');
+const { getMiniChefApys } = require('../common/getMiniChefApys');
 const { pangolinClient } = require('../../../apollo/client');
 
-import pools from '../../../data/avax/pangolinv2LpPools.json';
-import PangolinChef from '../../../abis/avax/PangolinChef.json';
-import { PANGOLIN_LPF } from '../../../constants';
-import { AbiItem } from 'web3-utils';
+const pools = require('../../../data/avax/pangolinv2LpPools.json');
+const PangolinChef = require('../../../abis/avax/PangolinChef.json');
+const { PANGOLIN_LPF } = require('../../../constants');
 
-import { addressBook } from '../../../../packages/address-book/address-book';
+const { addressBook } = require('../../../../packages/blockchain-addressbook/build/address-book');
 const {
   avax: {
     platforms: {
@@ -19,7 +17,7 @@ const {
   },
 } = addressBook;
 
-export const getPangolinV2Apys = () => {
+const getPangolinV2Apys = () => {
   return getMiniChefApys({
     minichefConfig: {
       minichef,
@@ -34,4 +32,8 @@ export const getPangolinV2Apys = () => {
     web3: avaxWeb3,
     chainId: AVAX_CHAIN_ID,
   });
+};
+
+module.exports = {
+  getPangolinV2Apys
 };

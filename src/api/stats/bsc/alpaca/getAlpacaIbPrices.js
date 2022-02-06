@@ -37,4 +37,6 @@ const getPoolPrice = async (pool, tokenPrices) => {
   return { [pool.name]: tokenPrice };
 };
 
-module.exports = getAlpacaIbPrices;
+module.exports = {
+  getAlpacaIbPrices
+};

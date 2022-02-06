@@ -3,7 +3,6 @@ const { avaxWeb3: web3 } = require('../../../utils/web3');
 
 const fetchPrice = require('../../../utils/fetchPrice');
 const { compound } = require('../../../utils/compound');
-const Comptroller = require('../../../abis/heco/Comptroller.json');
 const RewardDistributor = require('../../../abis/avax/RewardDistributor.json');
 const IToken = require('../../../abis/avax/BankerJoeIToken.json');
 const pools = require('../../../data/avax/bankerJoePools.json');
@@ -162,4 +161,6 @@ const getLeveragedApys = (supplyBase, borrowBase, supplyVxs, borrowVxs, depth, b
   };
 };
 
-module.exports = getBankerJoeApys;
+module.exports = {
+  getBankerJoeApys
+};

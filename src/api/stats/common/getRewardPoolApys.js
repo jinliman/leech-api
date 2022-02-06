@@ -5,11 +5,11 @@ const { multicallAddress } = require('../../../utils/web3');
 const IRewardPool = require('../../../abis/IRewardPool.json');
 const ERC20 = require('../../../abis/ERC20.json');
 const fetchPrice = require('../../../utils/fetchPrice');
-import getApyBreakdown from '../common/getApyBreakdown';
-import { isSushiClient } from '../../../apollo/client';
-import { getTradingFeeApr, getTradingFeeAprSushi } from '../../../utils/getTradingFeeApr';
+const getApyBreakdown = require('../common/getApyBreakdown');
+const { isSushiClient } = require('../../../apollo/client');
+const { getTradingFeeApr, getTradingFeeAprSushi } = require('../../../utils/getTradingFeeApr');
 
-export const getRewardPoolApys = async params => {
+const getRewardPoolApys = async params => {
   const tradingAprs = await getTradingAprs(params);
   const farmApys = await getFarmApys(params);
 

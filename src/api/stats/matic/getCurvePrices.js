@@ -6,4 +6,6 @@ const getCurvePolygonPrices = async tokenPrices => {
   return await getCurvePricesCommon(web3, pools, tokenPrices);
 };
 
-module.exports = getCurvePolygonPrices;
+module.exports = {
+  getCurvePolygonPrices
+};

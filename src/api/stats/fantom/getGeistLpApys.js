@@ -1,10 +1,10 @@
 const BigNumber = require('bignumber.js');
 const { fantomWeb3: web3 } = require('../../../utils/web3');
 
-import getApyBreakdown from '../common/getApyBreakdown';
-import { getTradingFeeApr } from '../../../utils/getTradingFeeApr';
-import { spookyClient } from '../../../apollo/client';
-import { SPOOKY_LPF } from '../../../constants';
+const getApyBreakdown = require('../common/getApyBreakdown');
+const { getTradingFeeApr } = require('../../../utils/getTradingFeeApr');
+const { spookyClient } = require('../../../apollo/client');
+const { SPOOKY_LPF } = require('../../../constants');
 
 const fetchPrice = require('../../../utils/fetchPrice');
 const { getTotalLpStakedInUsd } = require('../../../utils/getTotalStakedInUsd');
@@ -60,4 +60,6 @@ const getYearlyRewardsInUsd = async (masterchef, pool) => {
   return yearlyRewardsInUsd;
 };
 
-module.exports = getGeistLpApys;
+module.exports = {
+  getGeistLpApys
+};

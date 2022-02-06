@@ -7,7 +7,7 @@ const { compound } = require('../../../../utils/compound');
 const { FANTOM_CHAIN_ID, BASE_HPY } = require('../../../../constants');
 const { getTotalLpStakedInUsd } = require('../../../../utils/getTotalStakedInUsd');
 const { getTradingFeeApr } = require('../../../../utils/getTradingFeeApr');
-import { getFarmWithTradingFeesApy } from '../../../../utils/getFarmWithTradingFeesApy';
+const { getFarmWithTradingFeesApy } = require('../../../../utils/getFarmWithTradingFeesApy');
 const { spiritClient } = require('../../../../apollo/client');
 const pools = require('../../../../data/degens/tosdisLpPools.json');
 
@@ -89,4 +89,6 @@ const getYearlyRewardsInUsd = async stakingPoolAddress => {
   return yearlyRewardsInUsd;
 };
 
-module.exports = getTosdisLpApys;
+module.exports = {
+  getTosdisLpApys
+};

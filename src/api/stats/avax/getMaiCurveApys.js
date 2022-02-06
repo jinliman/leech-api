@@ -1,11 +1,10 @@
 const { avaxWeb3: web3 } = require('../../../utils/web3');
-import { AVAX_CHAIN_ID as chainId } from '../../../constants';
-import { getMasterChefApys } from '../common/getMasterChefApys';
-import { addressBook } from '../../../../packages/address-book/address-book';
-
-import axios from 'axios';
-import BigNumber from 'bignumber.js';
-import MasterChefAbi from '../../../abis/matic/MaiFarmChef.json';
+const { AVAX_CHAIN_ID: chainId } = require('../../../constants');
+const { getMasterChefApys } = require('../common/getMasterChefApys');
+const { addressBook } = require('../../../../packages/blockchain-addressbook/build/address-book');
+const axios = require('axios');
+const BigNumber = require('bignumber.js');
+const MasterChefAbi = require('../../../abis/matic/MaiFarmChef.json');
 const mai = addressBook.avax.platforms.mai;
 
 const getMaiCurveApys = async () => {
@@ -53,4 +52,6 @@ const getCurveBaseApy = async address => {
   return apys;
 };
 
-module.exports = getMaiCurveApys;
+module.exports = {
+  getMaiCurveApys
+};

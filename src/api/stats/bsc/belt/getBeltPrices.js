@@ -65,4 +65,6 @@ const getBeltTokenPrice = async (beltToken, tokenPrices) => {
   return { [beltToken.name]: price };
 };
 
-module.exports = getBeltPrices;
+module.exports = {
+  getBeltPrices
+};

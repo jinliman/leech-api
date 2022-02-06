@@ -1,9 +1,9 @@
-import { SPOOKY_LPF } from '../../../constants';
+const { SPOOKY_LPF } = require('../../../constants');
 
 const { getMasterChefApys } = require('../common/getMasterChefApys');
 const { fantomWeb3 } = require('../../../utils/web3');
 const pools = require('../../../data/fantom/singularLpPools.json');
-import { spookyClient } from '../../../apollo/client';
+const { spookyClient } = require('../../../apollo/client');
 
 const getSingularApys = async () =>
   await getMasterChefApys({
@@ -21,4 +21,6 @@ const getSingularApys = async () =>
     liquidityProviderFee: SPOOKY_LPF,
   });
 
-module.exports = getSingularApys;
+module.exports = {
+  getSingularApys
+};

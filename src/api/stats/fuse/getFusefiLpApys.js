@@ -8,11 +8,10 @@ const fetchPrice = require('../../../utils/fetchPrice');
 const pools = require('../../../data/fuse/fusefiLpPools.json');
 const { BASE_HPY, FUSE_CHAIN_ID, FUSEFI_LPF } = require('../../../constants');
 const { getTradingFeeApr } = require('../../../utils/getTradingFeeApr');
-import { getFarmWithTradingFeesApy } from '../../../utils/getFarmWithTradingFeesApy';
+const getFarmWithTradingFeesApy = require('../../../utils/getFarmWithTradingFeesApy');
 const { fusefiClient } = require('../../../apollo/client');
 const { compound } = require('../../../utils/compound');
-const getBlockTime = require('../../../utils/getBlockTime');
-import { addressBook } from '../../../../packages/address-book/address-book';
+const { addressBook } = require('../../../../packages/blockchain-addressbook/build/address-book');
 
 const {
   fuse: {
@@ -109,4 +108,6 @@ const getPoolsData = async pools => {
   return { balances, rewardRates };
 };
 
-module.exports = getFusefiLpApys;
+module.exports = {
+  getFusefiLpApys
+};

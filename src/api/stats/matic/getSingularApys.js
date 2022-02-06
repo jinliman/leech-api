@@ -1,8 +1,7 @@
-import { APEPOLY_LPF } from '../../../constants';
-
+const { APEPOLY_LPF } = require('../../../constants');
 const { getMasterChefApys } = require('./getMaticMasterChefApys');
 const pools = require('../../../data/matic/singularLpPools.json');
-import { apePolyClient } from '../../../apollo/client';
+const { apePolyClient } = require('../../../apollo/client');
 
 const getSingularApys = async () =>
   await getMasterChefApys({

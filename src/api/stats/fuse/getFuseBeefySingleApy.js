@@ -3,11 +3,9 @@ const { web3Factory } = require('../../../utils/web3');
 const Rewarder = require('../../../abis/fuse/IRewarder.json');
 const Staker = require('../../../abis/fuse/IStaker.json');
 const { compound } = require('../../../utils/compound');
-import { getEDecimals } from '../../../utils/getEDecimals';
-
+const { getEDecimals } = require('../../../utils/getEDecimals');
 const { FUSE_CHAIN_ID: chainId, BASE_HPY } = require('../../../constants');
-
-import { addressBook } from '../../../../packages/address-book/address-book';
+const { addressBook } = require('../../../../packages/blockchain-addressbook/build/address-book');
 const {
   fuse: {
     platforms: {
@@ -65,4 +63,6 @@ const getTotalStakedInUsd = async () => {
   return totalStaked.dividedBy(getEDecimals(WFUSE.decimals));
 };
 
-module.exports = getFuseLeechSingleApy;
+module.exports = {
+  getFuseLeechSingleApy
+};

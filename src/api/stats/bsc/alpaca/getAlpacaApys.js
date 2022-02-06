@@ -1,13 +1,13 @@
-import BigNumber from 'bignumber.js';
-import { bscWeb3 as web3 } from '../../../../utils/web3';
+const BigNumber = require('bignumber.js');
+const { bscWeb3: web3 } = require('../../../../utils/web3');
 
-import ERC20 from '../../../../abis/ERC20.json';
-import AlpacaIbVault from '../../../../abis/AlpacaIbVault.json';
-import AlpacaIbVaultConfig from '../../../../abis/AlpacaIbVaultConfig.json';
+const ERC20 = require('../../../../abis/ERC20.json');
+const AlpacaIbVault = require('../../../../abis/AlpacaIbVault.json');
+const AlpacaIbVaultConfig = require('../../../../abis/AlpacaIbVaultConfig.json');
 
-import getCakeV2PoolApy from '../pancake/getCakeV2PoolApy';
-import fetchPrice from '../../../../utils/fetchPrice';
-import getApyBreakdown from '../../common/getApyBreakdown';
+const getCakeV2PoolApy = require('../pancake/getCakeV2PoolApy');
+const fetchPrice = require('../../../../utils/fetchPrice');
+const getApyBreakdown = require('../../common/getApyBreakdown');
 
 const { getTotalStakedInUsd } = require('../../../../utils/getTotalStakedInUsd');
 const getYearlyRewardsInUsd = require('./getYearlyRewardsInUsd');
@@ -97,8 +97,11 @@ const getLendingApr = async pool => {
   return lendingApr.plus(protocolApr);
 };
 
-export const calcApr = apy => {
+const calcApr = apy => {
   return (Math.pow(10, Math.log10(apy + 1) / 365) - 1) * 365;
 };
 
-module.exports = getAlpacaApys;
+module.exports = {
+  calcApr,
+  getAlpacaApys,
+};

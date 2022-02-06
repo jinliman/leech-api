@@ -1,13 +1,13 @@
 const BigNumber = require('bignumber.js');
 const { avaxWeb3: web3 } = require('../../../utils/web3');
 
-import fetchPrice from '../../../utils/fetchPrice';
-import getApyBreakdown from '../common/getApyBreakdown';
-import {
+const fetchPrice = require('../../../utils/fetchPrice');
+const getApyBreakdown = require('../common/getApyBreakdown');
+const {
   getCurveBaseApys,
   getTotalStakedInUsd,
   getYearlyRewardsInUsd,
-} from '../common/curve/getCurveApyData';
+} = require('../common/curve/getCurveApyData');
 
 const ICurvePool = require('../../../abis/ICurvePool.json');
 const { getAavePoolData } = require('./getAaveApys');
@@ -93,4 +93,4 @@ const getTokenBalance = async (curvePool, token, index) => {
   return new BigNumber(balance).times(price).dividedBy(token.decimals);
 };
 
-module.exports = getCurveApys;
+module.exports = { getCurveApys };

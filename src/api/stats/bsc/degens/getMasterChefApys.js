@@ -86,4 +86,6 @@ const getYearlyRewardsInUsd = async (params, pool) => {
   return yearlyRewardsInUsd;
 };
 
-module.exports = getMasterChefApys;
+module.exports = {
+  getMasterChefApys
+};

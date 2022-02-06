@@ -7,8 +7,8 @@ const lpPools = require('../../../../data/degens/bisonLpPools.json');
 const fetchPrice = require('../../../../utils/fetchPrice');
 const { getTradingFeeApr } = require('../../../../utils/getTradingFeeApr');
 const { apeClient } = require('../../../../apollo/client');
-import { APE_LPF } from '../../../../constants';
-import getApyBreakdown from '../../common/getApyBreakdown';
+const { APE_LPF } = require('../../../../constants');
+const getApyBreakdown = require('../../common/getApyBreakdown');
 
 const oracleId = 'BISON';
 const oracle = 'tokens';
@@ -67,4 +67,6 @@ const getYearlyRewardsInUsd = async pool => {
   return yearlyRewardsInUsd;
 };
 
-module.exports = getBisonApys;
+module.exports = {
+  getBisonApys
+};

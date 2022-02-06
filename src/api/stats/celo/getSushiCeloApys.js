@@ -1,13 +1,10 @@
-import { celoWeb3 } from '../../../utils/web3';
-import { CELO_CHAIN_ID } from '../../../constants';
-
-import { getMiniChefApys } from '../common/getMiniChefApys';
-import { sushiCeloClient } from '../../../apollo/client';
-
-import pools from '../../../data/celo/sushiv2LpPools.json';
-import SushiMiniChefV2 from '../../../abis/matic/SushiMiniChefV2.json';
-
-import { addressBook } from '../../../../packages/address-book/address-book';
+const { celoWeb3 } = require('../../../utils/web3');
+const { CELO_CHAIN_ID } = require('../../../constants');
+const { getMiniChefApys } = require('../common/getMiniChefApys');
+const { sushiCeloClient } = require('../../../apollo/client');
+const pools = require('../../../data/celo/sushiv2LpPools.json');
+const SushiMiniChefV2 = require('../../../abis/matic/SushiMiniChefV2.json');
+const { addressBook } = require('../../../../packages/blockchain-addressbook/build/address-book');
 const {
   celo: {
     platforms: {
@@ -17,7 +14,7 @@ const {
   },
 } = addressBook;
 
-export const getSushiCeloApys = () => {
+const getSushiCeloApys = () => {
   return getMiniChefApys({
     minichefConfig: {
       minichef,
@@ -36,3 +33,5 @@ export const getSushiCeloApys = () => {
     chainId: CELO_CHAIN_ID,
   });
 };
+
+module.exports = { getSushiCeloApys };

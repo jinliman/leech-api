@@ -2,7 +2,7 @@ const { bscWeb3: web3 } = require('./web3');
 const BigNumber = require('bignumber.js');
 const { sleep } = require('./time');
 const { BSC_CHAIN_ID } = require('../constants');
-const getBlockNumber = require('./getBlockNumber');
+const { getBlockNumber } = require('./getBlockNumber');
 
 const { getTopicFromSignature, getTopicFromAddress, getValueFromData } = require('./topicHelpers');
 

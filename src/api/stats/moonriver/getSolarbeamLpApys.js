@@ -1,11 +1,11 @@
 const { moonriverWeb3: web3 } = require('../../../utils/web3');
-import { MOONRIVER_CHAIN_ID as chainId } from '../../../constants';
-import { getMasterChefApys } from '../common/getMasterChefApys';
+const { MOONRIVER_CHAIN_ID: chainId } = require('../../../constants');
+const { getMasterChefApys } = require('../common/getMasterChefApys');
 const getBlockTime = require('../../../utils/getBlockTime');
 
 const pools = require('../../../data/moonriver/solarbeamLpPools.json');
 const { SOLAR_LPF } = require('../../../constants');
-import { solarbeamClient } from '../../../apollo/client';
+const { solarbeamClient } = require('../../../apollo/client');
 
 const getSolarbeamLpApys = async () =>
   await getMasterChefApys({

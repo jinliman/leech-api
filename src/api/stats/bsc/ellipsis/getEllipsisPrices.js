@@ -35,4 +35,6 @@ const getPoolPrice = async pool => {
   return { [pool.name]: tokenPrice };
 };
 
-module.exports = getEllipsisPrices;
+module.exports = {
+  getEllipsisPrices
+};

@@ -1,13 +1,11 @@
-import { oneWeb3 } from '../../../utils/web3';
-import { ONE_CHAIN_ID } from '../../../constants';
+const { oneWeb3 } = require('../../../utils/web3');
+const { ONE_CHAIN_ID } = require('../../../constants');
+const { getMiniChefApys } = require('../common/getMiniChefApys');
+const { sushiOneClient } = require('../../../apollo/client');
+const pools = require('../../../data/one/sushiLpPools.json');
+const SushiMiniChefV2 = require('../../../abis/matic/SushiMiniChefV2.json');
+const { addressBook } = require('../../../../packages/blockchain-addressbook/build/address-book');
 
-import { getMiniChefApys } from '../common/getMiniChefApys';
-import { sushiOneClient } from '../../../apollo/client';
-
-import pools from '../../../data/one/sushiLpPools.json';
-import SushiMiniChefV2 from '../../../abis/matic/SushiMiniChefV2.json';
-
-import { addressBook } from '../../../../packages/address-book/address-book';
 const {
   one: {
     platforms: {
@@ -17,7 +15,7 @@ const {
   },
 } = addressBook;
 
-export const getSushiLpApys = () => {
+const getSushiLpApys = () => {
   return getMiniChefApys({
     minichefConfig: {
       minichef,
@@ -35,4 +33,8 @@ export const getSushiLpApys = () => {
     web3: oneWeb3,
     chainId: ONE_CHAIN_ID,
   });
+};
+
+module.exports = {
+  getSushiLpApys,
 };

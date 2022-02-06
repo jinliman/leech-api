@@ -4,4 +4,6 @@ const getHolderCount = async () => {
   return await getHolders();
 };
 
-module.exports = getHolderCount;
+module.exports = {
+  getHolderCount
+};

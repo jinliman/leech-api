@@ -1,8 +1,8 @@
 const { fantomWeb3: web3 } = require('../../../utils/web3');
-import { FANTOM_CHAIN_ID as chainId } from '../../../constants';
-import { getMasterChefApys } from '../common/getMasterChefApys';
-import SpellMasterChef from '../../../abis/arbitrum/SpellMasterChef.json';
-import { sushiFantomClient } from '../../../apollo/client';
+const { FANTOM_CHAIN_ID: chainId } = require('../../../constants');
+const { getMasterChefApys } = require('../common/getMasterChefApys');
+const SpellMasterChef = require('../../../abis/arbitrum/SpellMasterChef.json');
+const { sushiFantomClient } = require('../../../apollo/client');
 
 const pools = require('../../../data/fantom/popsicleLpPools.json');
 
@@ -25,4 +25,6 @@ const getPopsicleApys = async () => {
   });
 };
 
-module.exports = getPopsicleApys;
+module.exports = {
+  getPopsicleApys
+};

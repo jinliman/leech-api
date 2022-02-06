@@ -1,3 +1,4 @@
-import _Swap_ABI from './Swap.json';
-
-export const Swap_ABI = _Swap_ABI;
+const _Swap_ABI = require('./Swap.json');
+module.exports = {
+  Swap_ABI: _Swap_ABI,
+};

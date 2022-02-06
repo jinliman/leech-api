@@ -23,7 +23,9 @@ const getYelApys = () =>
     liquidityProviderFee: 0.0015,
   });
 
-module.exports = getYelApys;
+module.exports = {
+  getYelApys
+};
 
 const BigNumber = require('bignumber.js');
 const { MultiCall } = require('eth-multicall');
@@ -32,7 +34,7 @@ const { bscWeb3: web3, multicallAddress } = require('../../../../utils/web3');
 const abi = require('../../../../abis/MasterYel.json');
 const { BASE_HPY, BSC_CHAIN_ID } = require('../../../../constants');
 const fetchPrice = require('../../../../utils/fetchPrice');
-import { getFarmWithTradingFeesApy } from '../../../../utils/getFarmWithTradingFeesApy';
+const { getFarmWithTradingFeesApy } = require('../../../../utils/getFarmWithTradingFeesApy');
 const { getTradingFeeApr } = require('../../../../utils/getTradingFeeApr');
 const { compound } = require('../../../../utils/compound');
 

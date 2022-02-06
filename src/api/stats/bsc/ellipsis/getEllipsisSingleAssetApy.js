@@ -1,6 +1,6 @@
-import { bscWeb3 as web3 } from '../../../../utils/web3';
-import getMultiFeeDistributionSingleAssetApy from '../../common/getMultiFeeDistributionSingleAssetApy';
-import { addressBook } from '../../../../../packages/address-book/address-book';
+const { bscWeb3: web3 } = require('../../../../utils/web3');
+const getMultiFeeDistributionSingleAssetApy = require('../../common/getMultiFeeDistributionSingleAssetApy');
+const { addressBook } = require('../../../../../packages/blockchain-addressbook/build/address-book');
 
 const {
   bsc: {
@@ -21,4 +21,6 @@ const getEllipsisSingleAssetApy = async () => {
   return apy;
 };
 
-module.exports = getEllipsisSingleAssetApy;
+module.exports = {
+  getEllipsisSingleAssetApy
+};

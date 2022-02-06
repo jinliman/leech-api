@@ -1,3 +1,4 @@
-import _FarmHeroChef_ABI from './FarmHeroChef.json';
-
-export const FarmHeroChef_ABI = _FarmHeroChef_ABI;
+const _FarmHeroChef_ABI = require('./FarmHeroChef.json');
+module.exports = {
+  FarmHeroChef_ABI: _FarmHeroChef_ABI,
+};

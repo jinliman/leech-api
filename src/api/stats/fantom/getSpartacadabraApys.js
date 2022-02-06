@@ -1,12 +1,12 @@
 const { fantomWeb3: web3 } = require('../../../utils/web3');
-import { FANTOM_CHAIN_ID as chainId, SPOOKY_LPF } from '../../../constants';
-import { getMasterChefApys } from '../common/getMasterChefApys';
-import { getCurveFactoryApy } from '../common/curve/getCurveApyData';
-import { getTradingFeeApr } from '../../../utils/getTradingFeeApr';
-import { spookyClient } from '../../../apollo/client';
+const { FANTOM_CHAIN_ID: chainId, SPOOKY_LPF } = require('../../../constants');
+const { getMasterChefApys } = require('../common/getMasterChefApys');
+const { getCurveFactoryApy } = require('../common/curve/getCurveApyData');
+const { getTradingFeeApr } = require('../../../utils/getTradingFeeApr');
+const { spookyClient } = require('../../../apollo/client');
 
-import SpellMasterChef from '../../../abis/arbitrum/SpellMasterChef.json';
-import lpPools from '../../../data/fantom/charmLpPools.json';
+const SpellMasterChef = require('../../../abis/arbitrum/SpellMasterChef.json');
+const lpPools = require('../../../data/fantom/charmLpPools.json');
 
 const getSpartacadabraApys = async () => {
   const pool = '0x075C1D1d7E9E1aF077B0b6117C6eA06CD0a260b5';
@@ -47,4 +47,6 @@ const getSpartacadabraApys = async () => {
   });
 };
 
-module.exports = getSpartacadabraApys;
+module.exports = {
+  getSpartacadabraApys
+};

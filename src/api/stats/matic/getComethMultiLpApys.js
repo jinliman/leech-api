@@ -9,7 +9,7 @@ const pools = require('../../../data/matic/comethMultiLpPools.json');
 const { POLYGON_CHAIN_ID, COMETH_LPF } = require('../../../constants');
 const { getTradingFeeApr } = require('../../../utils/getTradingFeeApr');
 const { comethClient } = require('../../../apollo/client');
-import getApyBreakdown from '../common/getApyBreakdown';
+const getApyBreakdown = require('../common/getApyBreakdown');
 
 const oracle = 'tokens';
 const oracleId = 'MUST';
@@ -18,9 +18,6 @@ const DECIMALS = '1e18';
 const BLOCKS_PER_DAY = 28800;
 
 const getComethMultiLpApys = async () => {
-  let apys = {};
-  let apyBreakdowns = {};
-
   const pairAddresses = pools.map(pool => pool.address);
   const tradingAprs = await getTradingFeeApr(comethClient, pairAddresses, COMETH_LPF);
   const farmApys = await getFarmApys(pools);
@@ -77,4 +74,6 @@ const getPoolsData = async pools => {
   return { balances, rewardRates, secondRewardRates };
 };
 
-module.exports = getComethMultiLpApys;
+module.exports = {
+  getComethMultiLpApys
+};

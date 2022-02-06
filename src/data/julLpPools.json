@@ -95,25 +95,6 @@
     }
   },
   {
-    "name": "jul-bifi-bnb",
-    "address": "0xd3665568474cC090aB6B243333c2A1A3f13a9C7F",
-    "decimals": "1e18",
-    "poolId": 0,
-    "chainId": 56,
-    "lp0": {
-      "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
-      "oracle": "tokens",
-      "oracleId": "BNB",
-      "decimals": "1e18"
-    },
-    "lp1": {
-      "address": "0xCa3F508B8e4Dd382eE878A314789373D80A5190A",
-      "oracle": "tokens",
-      "oracleId": "BIFI",
-      "decimals": "1e18"
-    }
-  },
-  {
     "name": "jul-juld-busd",
     "address": "0xd72CeE36E22779A2035f1B56eE8466621cE34928",
     "decimals": "1e18",

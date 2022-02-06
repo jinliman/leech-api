@@ -1,8 +1,8 @@
 const { fantomWeb3: web3 } = require('../../../utils/web3');
-import { FANTOM_CHAIN_ID as chainId } from '../../../constants';
-import { getMasterChefApys } from '../common/getMasterChefApys';
-import { getCurveFactoryApy } from '../common/curve/getCurveApyData';
-import SpellMasterChef from '../../../abis/arbitrum/SpellMasterChef.json';
+const { FANTOM_CHAIN_ID: chainId } = require('../../../constants');
+const { getMasterChefApys } = require('../common/getMasterChefApys');
+const { getCurveFactoryApy } = require('../common/curve/getCurveApyData');
+const SpellMasterChef = require('../../../abis/arbitrum/SpellMasterChef.json');
 
 const getSpellApys = async () => {
   const pool = '0x2dd7C9371965472E5A5fD28fbE165007c61439E1';
@@ -37,4 +37,6 @@ const getSpellApys = async () => {
   });
 };
 
-module.exports = getSpellApys;
+module.exports = {
+  getSpellApys
+};

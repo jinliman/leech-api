@@ -18,4 +18,6 @@ const getPolyzapApys = async () =>
     liquidityProviderFee: 0.002,
   });
 
-module.exports = getPolyzapApys;
+module.exports = {
+  getPolyzapApys
+};

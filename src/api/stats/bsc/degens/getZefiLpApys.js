@@ -15,4 +15,6 @@ const getZefiLpApys = async () =>
     decimals: '1e18',
   });
 
-module.exports = getZefiLpApys;
+module.exports = {
+  getZefiLpApys
+};

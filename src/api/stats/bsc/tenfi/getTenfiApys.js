@@ -12,7 +12,7 @@ const {
   getTotalStakedInUsd,
 } = require('../../../../utils/getTotalStakedInUsd');
 const { getTradingFeeApr } = require('../../../../utils/getTradingFeeApr');
-import { getFarmWithTradingFeesApy } from '../../../../utils/getFarmWithTradingFeesApy';
+const { getFarmWithTradingFeesApy } = require('../../../../utils/getFarmWithTradingFeesApy');
 const { cakeClient } = require('../../../../apollo/client');
 
 const masterchef = '0x264A1b3F6db28De4D3dD4eD23Ab31A468B0C1A96';
@@ -121,4 +121,6 @@ const getYearlyRewardsInUsd = async (masterchef, pool) => {
   return yearlyRewardsInUsd;
 };
 
-module.exports = getTenfiApys;
+module.exports = {
+  getTenfiApys
+};

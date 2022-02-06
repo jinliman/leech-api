@@ -1,7 +1,7 @@
-import Web3 from 'web3';
-import { addressBookByChainId, ChainId } from '../../packages/address-book/address-book';
+const Web3 = require('web3');
+const { addressBookByChainId, ChainId } = require('../../packages/blockchain-addressbook/build/address-book');
 
-import {
+const {
   BSC_RPC_ENDPOINTS,
   HECO_RPC,
   AVAX_RPC,
@@ -28,7 +28,7 @@ import {
   FUSE_CHAIN_ID,
   METIS_RPC,
   METIS_CHAIN_ID,
-} from '../constants';
+} = require('../constants');
 
 const MULTICALLS = {
   [ChainId.bsc]: addressBookByChainId[ChainId.bsc].platforms.leechfinance.multicall,
@@ -77,7 +77,7 @@ clients.aurora.push(new Web3(AURORA_RPC));
 clients.fuse.push(new Web3(FUSE_RPC));
 clients.metis.push(new Web3(METIS_RPC));
 
-export const chainRandomClients = {
+const chainRandomClients = {
   bscRandomClient: () => clients.bsc[~~(clients.bsc.length * Math.random())],
   hecoRandomClient: () => clients.heco[~~(clients.heco.length * Math.random())],
   avaxRandomClient: () => clients.avax[~~(clients.avax.length * Math.random())],
@@ -93,7 +93,7 @@ export const chainRandomClients = {
   metisRandomClient: () => clients.metis[~~(clients.metis.length * Math.random())],
 };
 
-export const _web3Factory = (chainId) => {
+const _web3Factory = (chainId) => {
   switch (chainId) {
     case BSC_CHAIN_ID:
       return chainRandomClients.bscRandomClient();
@@ -124,4 +124,10 @@ export const _web3Factory = (chainId) => {
   }
 };
 
-export const _multicallAddress = (chainId) => MULTICALLS[chainId];
+const _multicallAddress = (chainId) => MULTICALLS[chainId];
+
+module.exports = {
+  chainRandomClients,
+  _web3Factory,
+  _multicallAddress,
+};

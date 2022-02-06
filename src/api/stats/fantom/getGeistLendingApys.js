@@ -178,4 +178,6 @@ const getLeveragedApys = (
   };
 };
 
-module.exports = getGeistLendingApys;
+module.exports = {
+  getGeistLendingApys
+};

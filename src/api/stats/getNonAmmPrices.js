@@ -1,19 +1,19 @@
-import getBeltPrices from './bsc/belt/getBeltPrices';
-import getEllipsisPrices from './bsc/ellipsis/getEllipsisPrices';
-import getSnob3PoolPrice from './avax/getSnob3PoolPrice';
-import getFroyoPrices from './fantom/getFroyoPrices';
-import getGondolaPrices from './avax/getGondolaPrices';
-import getCurvePolygonPrices from './matic/getCurvePrices';
-import getCurveFantomPrices from './fantom/getCurvePrices';
-import getDopplePrices from './bsc/dopple/getDopplePrices';
-import { getIronSwapPrices } from './matic/getIronSwapPrices';
-import getAlpacaIbPrices from './bsc/alpaca/getAlpacaIbPrices';
-import getCurveArbitrumPrices from './arbitrum/getCurvePrices';
-import getCurveAvaxPrices from './avax/getCurvePrices';
-import getCurveHarmonyPrices from './one/getCurvePrices';
-import getBeethovenxPrices from './fantom/getBeethovenxPrices';
-import { getSynapsePrices } from './avax/getSynapsePrices';
-import getJarvisPrices from './matic/getJarvisPrices';
+const getBeltPrices = require('./bsc/belt/getBeltPrices');
+const getEllipsisPrices = require('./bsc/ellipsis/getEllipsisPrices');
+const getSnob3PoolPrice = require('./avax/getSnob3PoolPrice');
+const getFroyoPrices = require('./fantom/getFroyoPrices');
+const getGondolaPrices = require('./avax/getGondolaPrices');
+const getCurvePolygonPrices = require('./matic/getCurvePrices');
+const getCurveFantomPrices = require('./fantom/getCurvePrices');
+const getDopplePrices = require('./bsc/dopple/getDopplePrices');
+const { getIronSwapPrices } = require('./matic/getIronSwapPrices');
+const getAlpacaIbPrices = require('./bsc/alpaca/getAlpacaIbPrices');
+const getCurveArbitrumPrices = require('./arbitrum/getCurvePrices');
+const getCurveAvaxPrices = require('./avax/getCurvePrices');
+const getCurveHarmonyPrices = require('./one/getCurvePrices');
+const getBeethovenxPrices = require('./fantom/getBeethovenxPrices');
+const { getSynapsePrices } = require('./avax/getSynapsePrices');
+const getJarvisPrices = require('./matic/getJarvisPrices');
 
 const getNonAmmPrices = async tokenPrices => {
   let prices = {};
@@ -51,4 +51,6 @@ const getNonAmmPrices = async tokenPrices => {
   return prices;
 };
 
-export default getNonAmmPrices;
+module.exports = {
+  getNonAmmPrices
+};

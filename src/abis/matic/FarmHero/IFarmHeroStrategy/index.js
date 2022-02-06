@@ -1,3 +1,4 @@
-import _IFarmHeroStrategy_ABI from './IFarmHeroStrategy.json';
-
-export const IFarmHeroStrategy_ABI = _IFarmHeroStrategy_ABI;
+const _IFarmHeroStrategy_ABI = require('./IFarmHeroStrategy.json');
+module.exports = {
+  IFarmHeroStrategy_ABI: _IFarmHeroStrategy_ABI,
+};

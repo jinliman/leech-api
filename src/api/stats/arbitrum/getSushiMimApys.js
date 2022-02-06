@@ -10,7 +10,7 @@ const pools = require('../../../data/arbitrum/sushiLpMimPools.json');
 const { ARBITRUM_CHAIN_ID, SUSHI_LPF } = require('../../../constants');
 const { getTradingFeeAprSushi: getTradingFeeApr } = require('../../../utils/getTradingFeeApr');
 const { sushiArbitrumClient } = require('../../../apollo/client');
-import getApyBreakdown from '../common/getApyBreakdown';
+const getApyBreakdown = require('../common/getApyBreakdown');
 
 const minichef = '0xF4d73326C13a4Fc5FD7A064217e12780e9Bd62c3';
 const oracleId = 'SUSHI';

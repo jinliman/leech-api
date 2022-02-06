@@ -13,4 +13,6 @@ const getVaults = async vaultsEndpoint => {
   }
 };
 
-module.exports = getVaults;
+module.exports = {
+  getVaults
+};

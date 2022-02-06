@@ -1,10 +1,10 @@
 const { arbitrumWeb3: web3 } = require('../../../utils/web3');
-import { ARBITRUM_CHAIN_ID as chainId } from '../../../constants';
-import { getRewardPoolApys } from '../common/getRewardPoolApys';
+const { ARBITRUM_CHAIN_ID: chainId } = require('../../../constants');
+const { getRewardPoolApys } = require('../common/getRewardPoolApys');
 
 const pools = require('../../../data/arbitrum/arbiNyanLpPools.json');
 const { SUSHI_LPF } = require('../../../constants');
-import { sushiArbitrumClient } from '../../../apollo/client';
+const { sushiArbitrumClient } = require('../../../apollo/client');
 
 const getArbiNyanApys = async () =>
   await getRewardPoolApys({

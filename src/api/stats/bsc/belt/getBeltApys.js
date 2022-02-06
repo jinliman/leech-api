@@ -124,4 +124,6 @@ const getYearlyRewardsInUsd = async (masterbelt, pool) => {
   return yearlyRewardsInUsd;
 };
 
-module.exports = getBeltApys;
+module.exports = {
+  getBeltApys
+};

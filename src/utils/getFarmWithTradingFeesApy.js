@@ -1,6 +1,6 @@
-import { compound } from './compound';
+const { compound } = require('./compound');
 
-export const getFarmWithTradingFeesApy = (
+const getFarmWithTradingFeesApy = (
   farmApr,
   tradingApr,
   compoundingsPerYear,
@@ -12,4 +12,8 @@ export const getFarmWithTradingFeesApy = (
     : 0;
   const finalAPY = (1 + farmApy) * (1 + Number(tradingApr || 0)) - 1;
   return finalAPY;
+};
+
+module.exports = {
+  getFarmWithTradingFeesApy
 };

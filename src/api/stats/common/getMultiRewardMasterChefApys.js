@@ -1,19 +1,19 @@
-import BigNumber from 'bignumber.js';
-import { MultiCall } from 'eth-multicall';
-import { multicallAddress } from '../../../utils/web3';
-import MasterChefAbi from '../../../abis/IMultiRewardMasterChef.json';
-import { isSushiClient, isBeetClient } from '../../../apollo/client';
-import getApyBreakdown from '../common/getApyBreakdown';
-import fetchPrice from '../../../utils/fetchPrice';
-import getBlockTime from '../../../utils/getBlockTime';
-import { getEDecimals } from '../../../utils/getEDecimals';
-import {
+const BigNumber = require('bignumber.js');
+const { MultiCall } = require('eth-multicall');
+const { multicallAddress } = require('../../../utils/web3');
+const MasterChefAbi = require('../../../abis/IMultiRewardMasterChef.json');
+const { isSushiClient, isBeetClient } = require('../../../apollo/client');
+const getApyBreakdown = require('../common/getApyBreakdown');
+const fetchPrice = require('../../../utils/fetchPrice');
+const getBlockTime = require('../../../utils/getBlockTime');
+const { getEDecimals } = require('../../../utils/getEDecimals');
+const {
   getTradingFeeAprSushi,
   getTradingFeeAprBalancer,
   getTradingFeeApr,
-} from '../../../utils/getTradingFeeApr';
+} = require('../../../utils/getTradingFeeApr');
 
-export const getMultiRewardMasterChefApys = async (
+const getMultiRewardMasterChefApys = async (
   masterchefParams
 ) => {
   masterchefParams.pools = [
@@ -102,4 +102,8 @@ const getPoolsData = async (params) => {
   const rewardDecimals = res[0].map(v => v.rewards['2']);
   const rewardsPerSec = res[0].map(v => v.rewards['3']);
   return { balances, rewardTokens, rewardDecimals, rewardsPerSec };
+};
+
+module.exports = {
+  getMultiRewardMasterChefApys,
 };

@@ -80,4 +80,6 @@ const getJetswapApys = async () => {
   };
 };
 
-module.exports = getJetswapApys;
+module.exports = {
+  getJetswapApys
+};

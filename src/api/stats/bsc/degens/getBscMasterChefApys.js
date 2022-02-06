@@ -7,7 +7,7 @@ const ERC20 = require('../../../../abis/ERC20.json');
 const { BASE_HPY, BSC_CHAIN_ID } = require('../../../../constants');
 const fetchPrice = require('../../../../utils/fetchPrice');
 const getBlockNumber = require('../../../../utils/getBlockNumber');
-import { getFarmWithTradingFeesApy } from '../../../../utils/getFarmWithTradingFeesApy';
+const { getFarmWithTradingFeesApy } = require('../../../../utils/getFarmWithTradingFeesApy');
 const { getTradingFeeApr } = require('../../../../utils/getTradingFeeApr');
 const { compound } = require('../../../../utils/compound');
 
@@ -156,4 +156,6 @@ const chefAbi = tokenPerBlock => {
   return cakeAbi;
 };
 
-module.exports = getMasterChefApys;
+module.exports = {
+  getMasterChefApys
+};

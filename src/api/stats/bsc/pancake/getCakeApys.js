@@ -58,4 +58,6 @@ const getYearlyRewardsInUsd = async (smartChefAddr, oracle, oracleId, decimals) 
   return yearlyRewardsInUsd;
 };
 
-module.exports = getCakeApys;
+module.exports = {
+  getCakeApys
+};

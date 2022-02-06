@@ -1,10 +1,10 @@
-import getApyBreakdown from '../common/getApyBreakdown';
-import { getTradingFeeApr } from '../../../utils/getTradingFeeApr';
-import fetchPrice from '../../../utils/fetchPrice';
-import { MultiCall } from 'eth-multicall';
-import { multicallAddress } from '../../../utils/web3';
-import IRewardPool from '../../../abis/IRewardPool.json';
-import BigNumber from 'bignumber.js';
+const getApyBreakdown = require('../common/getApyBreakdown');
+const { getTradingFeeApr } = require('../../../utils/getTradingFeeApr');
+const fetchPrice = require('../../../utils/fetchPrice');
+const { MultiCall } = require('eth-multicall');
+const { multicallAddress } = require('../../../utils/web3');
+const IRewardPool = require('../../../abis/IRewardPool.json');
+const BigNumber = require('bignumber.js');
 
 const { fantomWeb3: web3 } = require('../../../utils/web3');
 const { FANTOM_CHAIN_ID: chainId, SPIRIT_LPF } = require('../../../constants');
@@ -121,4 +121,6 @@ const getPoolsData = async params => {
   return { balances, rewardRates };
 };
 
-module.exports = getSpiritApys;
+module.exports = {
+  getSpiritApys
+};

@@ -133,4 +133,6 @@ const getLeveragedApys = (supplyBase, borrowBase, supplyVxs, borrowVxs, depth, b
   };
 };
 
-module.exports = getVenusApys;
+module.exports = {
+  getVenusApys
+};

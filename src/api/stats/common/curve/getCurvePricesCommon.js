@@ -79,4 +79,6 @@ const getTokenPrice = (tokenPrices, oracleId) => {
   return tokenPrice;
 };
 
-module.exports = getCurvePricesCommon;
+module.exports = {
+  getCurvePricesCommon
+};

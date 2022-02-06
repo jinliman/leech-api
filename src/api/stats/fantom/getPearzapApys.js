@@ -20,4 +20,6 @@ const getPearzapApys = async () =>
     liquidityProviderFee: 0.003,
   });
 
-module.exports = getPearzapApys;
+module.exports = {
+  getPearzapApys
+};

@@ -141,4 +141,6 @@ const getLeveragedApys = (supplyBase, borrowBase, supplyVxs, borrowVxs, depth, b
   };
 };
 
-module.exports = getScreamApys;
+module.exports = {
+  getScreamApys
+};

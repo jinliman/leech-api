@@ -30,4 +30,6 @@ const getNftyApys = async () => {
   return { 'nfty-nfty': apy };
 };
 
-module.exports = getNftyApys;
+module.exports = {
+  getNftyApys
+};

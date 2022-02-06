@@ -8,7 +8,7 @@ const pools = require('../../../../data/mdexBscLpPools.json');
 const getBlockNumber = require('../../../../utils/getBlockNumber');
 const { getTotalStakedInUsd } = require('../../../../utils/getTotalStakedInUsd');
 const { getTradingFeeApr } = require('../../../../utils/getTradingFeeApr');
-import { getFarmWithTradingFeesApy } from '../../../../utils/getFarmWithTradingFeesApy';
+const { getFarmWithTradingFeesApy } = require('../../../../utils/getFarmWithTradingFeesApy');
 const { mdexBscClient } = require('../../../../apollo/client');
 const { compound } = require('../../../../utils/compound');
 const { BASE_HPY } = require('../../../../constants');
@@ -29,8 +29,8 @@ const getMdexBscLpApys = async () => {
   const allPools = [...pools];
 
   const pairAddresses = pools.map(pool => pool.address);
-  const tradingAprs = {}; //await getTradingFeeApr(mdexBscClient, pairAddresses, liquidityProviderFee);
-
+  const tradingAprs = {};
+  
   let promises = [];
   allPools.forEach(pool => promises.push(getPoolApy(mdxPool, pool)));
   const values = await Promise.all(promises);
@@ -113,4 +113,6 @@ const getYearlyRewardsInUsd = async (mdxPool, pool) => {
   return yearlyRewardsInUsd;
 };
 
-module.exports = getMdexBscLpApys;
+module.exports = {
+  getMdexBscLpApys
+};

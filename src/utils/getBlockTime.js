@@ -24,4 +24,6 @@ const getBlockTime = async chainId => {
   return blockTimePromise;
 };
 
-module.exports = getBlockTime;
+module.exports = {
+  getBlockTime
+};

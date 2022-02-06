@@ -63,15 +63,6 @@
   },
   {
     "constant": true,
-    "inputs": [],
-    "name": "bifi",
-    "outputs": [{ "internalType": "contract IERC20", "name": "", "type": "address" }],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
     "inputs": [{ "internalType": "address", "name": "account", "type": "address" }],
     "name": "earned",
     "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],

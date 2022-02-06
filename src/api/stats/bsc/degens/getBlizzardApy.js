@@ -63,4 +63,6 @@ const getTotalStakedInUsd = async () => {
   return totalStakedInUsd;
 };
 
-module.exports = getBlizzardApy;
+module.exports = {
+  getBlizzardApy
+};

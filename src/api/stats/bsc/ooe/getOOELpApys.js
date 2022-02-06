@@ -48,4 +48,6 @@ const getYearlyRewardsInUsd = async pool => {
   return yearlyRewardsInUsd;
 };
 
-module.exports = getOOELpApys;
+module.exports = {
+  getOOELpApys
+};

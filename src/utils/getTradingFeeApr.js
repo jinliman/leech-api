@@ -1,17 +1,19 @@
-import { getUtcSecondsFromDayRange } from './getUtcSecondsFromDayRange';
-import {
+const { getUtcSecondsFromDayRange } = require('./getUtcSecondsFromDayRange');
+const {
   pairDayDataQuery,
   pairDayDataSushiQuery,
   poolsDataQuery,
   dayDataQuery,
   joeDayDataQuery,
   balancerDataQuery,
-} from '../apollo/queries';
-import getBlockTime from './getBlockTime';
-import getBlockNumber from './getBlockNumber';
-import BigNumber from 'bignumber.js';
+} = require('../apollo/queries');
 
-export const getTradingFeeApr = async (
+const { getBlockTime } = require('./getBlockTime');
+const { getBlockNumber } = require('./getBlockNumber');
+
+const BigNumber = require('bignumber.js');
+
+const getTradingFeeApr = async (
   client,
   pairAddresses,
   liquidityProviderFee
@@ -40,7 +42,7 @@ export const getTradingFeeApr = async (
   return pairAddressToAprMap;
 };
 
-export const getTradingFeeAprSushi = async (
+const getTradingFeeAprSushi = async (
   client,
   pairAddresses,
   liquidityProviderFee
@@ -83,7 +85,7 @@ export const getTradingFeeAprSushi = async (
   return pairAddressToAprMap;
 };
 
-export const getTradingFeeAprBalancer = async (
+const getTradingFeeAprBalancer = async (
   client,
   pairAddresses,
   liquidityProviderFee
@@ -122,7 +124,7 @@ export const getTradingFeeAprBalancer = async (
   return pairAddressesToAprMap;
 };
 
-export const getVariableTradingFeeApr = async (
+const getVariableTradingFeeApr = async (
   client,
   pairAddresses,
   liquidityProviderFee
@@ -163,7 +165,7 @@ const zip = arrays => {
   });
 };
 
-export const getYearlyPlatformTradingFees = async (
+const getYearlyPlatformTradingFees = async (
   client,
   liquidityProviderFee
 ) => {
@@ -183,7 +185,7 @@ export const getYearlyPlatformTradingFees = async (
   return yearlyTradingFeesUsd;
 };
 
-export const getYearlyJoePlatformTradingFees = async (
+const getYearlyJoePlatformTradingFees = async (
   client,
   liquidityProviderFee
 ) => {
@@ -203,7 +205,7 @@ export const getYearlyJoePlatformTradingFees = async (
   return yearlyTradingFeesUsd;
 };
 
-export const getYearlyBalancerPlatformTradingFees = async (
+const getYearlyBalancerPlatformTradingFees = async (
   client,
   liquidityProviderFeeShare
 ) => {
@@ -227,4 +229,14 @@ export const getYearlyBalancerPlatformTradingFees = async (
   }
 
   return yearlyTradingFeesUsd;
+};
+
+module.exports = {
+  getTradingFeeApr,
+  getTradingFeeAprSushi,
+  getTradingFeeAprBalancer,
+  getVariableTradingFeeApr,
+  getYearlyPlatformTradingFees,
+  getYearlyJoePlatformTradingFees,
+  getYearlyBalancerPlatformTradingFees,
 };

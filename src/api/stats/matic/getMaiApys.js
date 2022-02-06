@@ -1,8 +1,8 @@
-import { getMasterChefApys } from './getMaticMasterChefApys';
-import MasterChefAbi from '../../../abis/matic/MaiFarmChef.json';
-import pools from '../../../data/matic/maiLpPools.json';
-import { quickClient } from '../../../apollo/client';
-import { addressBook } from '../../../../packages/address-book/address-book';
+const { getMasterChefApys } = require('./getMaticMasterChefApys');
+const MasterChefAbi = require('../../../abis/matic/MaiFarmChef.json');
+const pools = require('../../../data/matic/maiLpPools.json');
+const { quickClient } = require('../../../apollo/client');
+const { addressBook } = require('../../../../packages/blockchain-addressbook/build/address-book');
 
 const mai = addressBook.polygon.platforms.mai;
 
@@ -21,4 +21,6 @@ const getMaiApys = async () =>
     liquidityProviderFee: 0.0025,
   });
 
-export default getMaiApys;
+module.exports = {
+  getMaiApys
+};

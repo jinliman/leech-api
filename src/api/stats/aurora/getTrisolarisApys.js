@@ -17,4 +17,6 @@ const getTrisolarisApys = async () =>
     secondsPerBlock: 1,
   });
 
-module.exports = getTrisolarisApys;
+module.exports = {
+  getTrisolarisApys
+};

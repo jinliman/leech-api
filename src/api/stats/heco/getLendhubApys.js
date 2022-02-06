@@ -140,4 +140,6 @@ const getLeveragedApys = (supplyBase, borrowBase, supplyVxs, borrowVxs, depth, b
   };
 };
 
-module.exports = getLendhubApys;
+module.exports = {
+  getLendhubApys
+};

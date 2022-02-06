@@ -93,4 +93,6 @@ const getPoolData = async () => {
   return poolsData;
 };
 
-module.exports = getFroyoLpApys;
+module.exports = {
+  getFroyoLpApys
+};

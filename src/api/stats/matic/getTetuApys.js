@@ -5,8 +5,8 @@ const { polygonWeb3: web3, multicallAddress } = require('../../../utils/web3');
 const ISmartVault = require('../../../abis/matic/TetuSmartVault.json');
 const fetchPrice = require('../../../utils/fetchPrice');
 const pools = require('../../../data/matic/tetuLpPools');
-import { POLYGON_CHAIN_ID } from '../../../constants';
-import getApyBreakdown from '../common/getApyBreakdown';
+const { POLYGON_CHAIN_ID } = require('../../../constants');
+const getApyBreakdown = require('../common/getApyBreakdown');
 
 const xTETUAddress = '0x225084D30cc297F3b177d9f93f5C3Ab8fb6a1454';
 const afterBurnFee = 0.3;

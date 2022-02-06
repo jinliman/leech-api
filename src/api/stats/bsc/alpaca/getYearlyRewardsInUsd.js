@@ -34,4 +34,6 @@ const getYearlyRewardsInUsd = async (fairLaunch, pool) => {
   return yearlyRewardsInUsd;
 };
 
-module.exports = getYearlyRewardsInUsd;
+module.exports = {
+  getYearlyRewardsInUsd
+};

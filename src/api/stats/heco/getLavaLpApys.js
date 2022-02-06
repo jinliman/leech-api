@@ -54,4 +54,6 @@ const getYearlyRewardsInUsd = async (lavaPool, pool) => {
   return yearlyRewardsInUsd;
 };
 
-module.exports = getLavaLpApys;
+module.exports = {
+  getLavaLpApys
+};

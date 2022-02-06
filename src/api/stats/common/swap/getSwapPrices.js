@@ -1,9 +1,5 @@
-import BigNumber from 'bignumber.js';
-
-import { Swap_ABI } from '../../../../abis/common/Swap';
-
-// gets the prices of LPToken contracts deployed from Swap contracts.
-// Example is IronSwap (0x837503e8A8753ae17fB8C8151B8e6f586defCb57) on polygon
+const BigNumber = require('bignumber.js');
+const { Swap_ABI } = require('../../../../abis/common/Swap');
 
 const getSwapPrices = async ({
   web3,
@@ -38,4 +34,4 @@ const _getPrice = async (web3, pool) => {
   return [pool.name, tokenPrice];
 };
 
-export { getSwapPrices };
+module.exports = { getSwapPrices };

@@ -8,7 +8,7 @@ const { compound } = require('../../../utils/compound');
 const { getTotalLpStakedInUsd } = require('../../../utils/getTotalStakedInUsd');
 const { BASE_HPY, HECO_CHAIN_ID } = require('../../../constants');
 const { getTradingFeeApr } = require('../../../utils/getTradingFeeApr');
-import { getFarmWithTradingFeesApy } from '../../../utils/getFarmWithTradingFeesApy';
+const getFarmWithTradingFeesApy = require('../../../utils/getFarmWithTradingFeesApy');
 const { mdexHecoClient } = require('../../../apollo/client');
 const getBlockNumber = require('../../../utils/getBlockNumber');
 
@@ -97,4 +97,6 @@ const getYearlyRewardsInUsd = async (hecoPool, pool) => {
   return yearlyRewardsInUsd;
 };
 
-module.exports = getMdexLpApys;
+module.exports = {
+  getMdexLpApys
+};

@@ -3,8 +3,6 @@ const getHfiLpApys = require('./getHfiLpApys');
 const getLavaLpApys = require('./getLavaLpApys');
 const getLavaApy = require('./getLavaApy');
 const getMdexLpApys = require('./getMdexLpApys');
-const getHecoBifiGovApy = require('./getHecoBifiGovApy');
-const { getHecoBifiMaxiApy } = require('./getHecoBifiMaxiApy');
 const getHecoMdexMdxApy = require('./getHecoMdexMdxApy');
 const getLendhubApys = require('./getLendhubApys');
 const getLendhubLpApys = require('./getLendhubLpApys');
@@ -15,8 +13,6 @@ const getApys = [
   getLavaApy,
   getHfiLpApys,
   getMdexLpApys,
-  getHecoBifiGovApy,
-  getHecoBifiMaxiApy,
   getHecoMdexMdxApy,
   getLendhubApys,
   getLendhubLpApys,

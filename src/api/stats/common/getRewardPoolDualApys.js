@@ -1,14 +1,14 @@
-import BigNumber from 'bignumber.js';
-import { MultiCall } from 'eth-multicall';
-import { multicallAddress } from '../../../utils/web3';
-import IStakingDualRewards from '../../../abis/StakingDualRewards.json';
-import { ERC20_ABI } from '../../../abis/common/ERC20';
-import fetchPrice from '../../../utils/fetchPrice';
-import getApyBreakdown from './getApyBreakdown';
-import { isSushiClient } from '../../../apollo/client';
-import { getTradingFeeApr, getTradingFeeAprSushi } from '../../../utils/getTradingFeeApr';
+const BigNumber = require('bignumber.js');
+const { MultiCall } = require('eth-multicall');
+const { multicallAddress } = require('../../../utils/web3');
+const IStakingDualRewards = require('../../../abis/StakingDualRewards.json');
+const { ERC20_ABI } = require('../../../abis/common/ERC20');
+const fetchPrice = require('../../../utils/fetchPrice');
+const getApyBreakdown = require('./getApyBreakdown');
+const { isSushiClient } = require('../../../apollo/client');
+const { getTradingFeeApr, getTradingFeeAprSushi } = require('../../../utils/getTradingFeeApr');
 
-export const getRewardPoolDualApys = async (params) => {
+const getRewardPoolDualApys = async (params) => {
   const tradingAprs = await getTradingAprs(params);
   const farmApys = await getFarmApys(params);
 
@@ -117,4 +117,8 @@ const getXPrice = async (tokenPrice, params) => {
   const totalXSupply = new BigNumber(await xTokenContract.methods.totalSupply().call());
 
   return stakedInXPool.times(tokenPrice).dividedBy(totalXSupply);
+};
+
+module.exports = {
+  getRewardPoolDualApys,
 };

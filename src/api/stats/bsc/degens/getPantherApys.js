@@ -18,4 +18,6 @@ const getPantherApys = async () =>
     liquidityProviderFee: 0.0017,
   });
 
-module.exports = getPantherApys;
+module.exports = {
+  getPantherApys
+};

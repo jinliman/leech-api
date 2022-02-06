@@ -1,23 +1,23 @@
-import BigNumber from 'bignumber.js';
-import { MultiCall } from 'eth-multicall';
-import { polygonWeb3 as web3, multicallAddress } from '../../../utils/web3';
+const BigNumber = require('bignumber.js');
+const { MultiCall } = require('eth-multicall');
+const { polygonWeb3: web3, multicallAddress } = require('../../../utils/web3');
 
 // abis
-import { FarmHeroChef_ABI } from '../../../abis/matic/FarmHero/FarmHeroChef';
-import {
+const { FarmHeroChef_ABI } = require('../../../abis/matic/FarmHero/FarmHeroChef');
+const {
   IFarmHeroStrategy_ABI,
-} from '../../../abis/matic/FarmHero/IFarmHeroStrategy';
+} = require('../../../abis/matic/FarmHero/IFarmHeroStrategy');
 // json data
-import _pools from '../../../data/matic/farmheroPools.json';
+const _pools = require('../../../data/matic/farmheroPools.json');
 const pools = _pools;
 
-import fetchPrice from '../../../utils/fetchPrice';
-import { POLYGON_CHAIN_ID, QUICK_LPF } from '../../../constants';
-import { getTradingFeeApr } from '../../../utils/getTradingFeeApr';
-import { quickClient } from '../../../apollo/client';
-import getApyBreakdown from '../common/getApyBreakdown';
-import { addressBook } from '../../../../packages/address-book/address-book/';
-import { getEDecimals } from '../../../utils/getEDecimals';
+const fetchPrice = require('../../../utils/fetchPrice');
+const { POLYGON_CHAIN_ID, QUICK_LPF } = require('../../../constants');
+const { getTradingFeeApr } = require('../../../utils/getTradingFeeApr');
+const { quickClient } = require('../../../apollo/client');
+const getApyBreakdown = require('../common/getApyBreakdown');
+const { addressBook } = require('../../../../packages/blockchain-addressbook/build/address-book');
+const { getEDecimals } = require('../../../utils/getEDecimals');
 
 const {
   platforms: { farmhero },
@@ -31,7 +31,7 @@ const DECIMALS = getEDecimals(HONOR.decimals);
 const secondsPerBlock = 1;
 const secondsPerYear = 31536000;
 
-export const getFarmheroApys = async () => {
+const getFarmheroApys = async () => {
   const pairAddresses = pools
     .filter(pool => pool.platform === 'quickswap') // no trading APR reported for waultswap ATM
     .map(pool => pool.address);
@@ -99,4 +99,8 @@ const getPoolsData = async (
   const balances = res[0].map(v => new BigNumber(v.balance));
   const allocPoints = res[1].map(v => v.allocPoint['2']);
   return { balances, allocPoints };
+};
+
+module.exports = {
+  getFarmheroApys,
 };

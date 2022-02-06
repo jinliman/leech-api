@@ -51,4 +51,6 @@ const fetchPrice = async ({ oracle, id }) => {
   return price;
 };
 
-module.exports = fetchPrice;
+module.exports = {
+  fetchPrice
+};

@@ -1,2 +1,4 @@
-import _ERC20_ABI from './ERC20.json';
-export const ERC20_ABI = _ERC20_ABI;
+const _ERC20_ABI = require('./ERC20.json');
+module.exports = {
+  ERC20_ABI: _ERC20_ABI,
+};

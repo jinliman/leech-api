@@ -64,4 +64,6 @@ const getTokenPrice = (tokenPrices, oracleId) => {
   return tokenPrice;
 };
 
-module.exports = getBalancerPrices;
+module.exports = {
+  getBalancerPrices
+};

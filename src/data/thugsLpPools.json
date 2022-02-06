@@ -302,24 +302,5 @@
       "oracleId": "BLIQ",
       "decimals": "1e18"
     }
-  },
-  {
-    "name": "street-bifi-bnb",
-    "address": "0x223B53b64AA5F87D2De194a15701Fc0bC7474A31",
-    "poolId": 14,
-    "decimals": "1e18",
-    "chainId": 56,
-    "lp0": {
-      "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
-      "oracle": "tokens",
-      "oracleId": "WBNB",
-      "decimals": "1e18"
-    },
-    "lp1": {
-      "address": "0xCa3F508B8e4Dd382eE878A314789373D80A5190A",
-      "oracle": "tokens",
-      "oracleId": "BIFI",
-      "decimals": "1e18"
-    }
   }
 ]

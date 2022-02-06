@@ -1,8 +1,7 @@
-import { APE_LPF } from '../../../../constants';
-
+const { APE_LPF } = require('../../../../constants');
 const getMasterChefApys = require('./getBscMasterChefApys');
 const pools = require('../../../../data/degens/singularLpPools.json');
-import { apeClient } from '../../../../apollo/client';
+const { apeClient } = require('../../../../apollo/client');
 
 const getSingularApys = async () =>
   await getMasterChefApys({
@@ -18,4 +17,6 @@ const getSingularApys = async () =>
     liquidityProviderFee: APE_LPF,
   });
 
-module.exports = getSingularApys;
+module.exports = {
+  getSingularApys
+};

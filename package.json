@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "install-all": "yarn && cd packages/address-book && yarn",
-    "start": "node src/app.js",
+    "install-all": "yarn && cd packages/blockchain-addressbook && yarn",
+    "start": "node -r dotenv/config src/app.js dotenv_config_path=.env", 
     "test": "nyc ava"
   },
   "dependencies": {

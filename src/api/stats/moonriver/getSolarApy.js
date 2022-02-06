@@ -2,15 +2,15 @@ const BigNumber = require('bignumber.js');
 const { MultiCall } = require('eth-multicall');
 const { multicallAddress } = require('../../../utils/web3');
 const { moonriverWeb3: web3 } = require('../../../utils/web3');
-import { MOONRIVER_CHAIN_ID as chainId } from '../../../constants';
+const { MOONRIVER_CHAIN_ID: chainId } = require('../../../constants');
 
 const ISolarVault = require('../../../abis/moonriver/ISolarVault.json');
 const fetchPrice = require('../../../utils/fetchPrice');
-import getApyBreakdown from '../common/getApyBreakdown';
+const getApyBreakdown = require('../common/getApyBreakdown');
 const getBlockTime = require('../../../utils/getBlockTime');
 const pool = require('../../../data/moonriver/solarPool.json');
 
-export const getSolarApy = async () => {
+const getSolarApy = async () => {
   const farmApys = await getFarmApys(pool[0]);
   return getApyBreakdown(pool, 0, farmApys, 0);
 };

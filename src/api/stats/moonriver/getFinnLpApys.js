@@ -1,9 +1,9 @@
 const { moonriverWeb3: web3 } = require('../../../utils/web3');
-import { MOONRIVER_CHAIN_ID as chainId } from '../../../constants';
-import { getMasterChefApys } from '../common/getMasterChefApys';
+const { MOONRIVER_CHAIN_ID: chainId } = require('../../../constants');
+const { getMasterChefApys } = require('../common/getMasterChefApys');
 
 const pools = require('../../../data/moonriver/finnLpPools.json');
-import { finnClient } from '../../../apollo/client';
+const { finnClient } = require('../../../apollo/client');
 
 const getFinnLpApys = async () =>
   await getMasterChefApys({

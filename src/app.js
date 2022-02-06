@@ -7,9 +7,9 @@ const cors = require('@koa/cors');
 const conditional = require('koa-conditional-get');
 const etag = require('koa-etag');
 
-const rt = require('./middleware/rt');
-const powered = require('./middleware/powered');
-const router = require('./router');
+const { rt } = require('./middleware/rt');
+const { powered } = require('./middleware/powered');
+const { router } = require('./router');
 
 const app = new Koa();
 
@@ -26,6 +26,6 @@ app.context.cache = {};
 app.use(router.routes());
 app.use(router.allowedMethods());
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4000;
 app.listen(port);
 console.log(`> leech-api running! (:${port})`);

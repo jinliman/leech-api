@@ -1,9 +1,9 @@
-import { JOE_LPF } from '../../../constants';
+const { JOE_LPF } = require('../../../constants');
 
 const { getMasterChefApys } = require('../common/getMasterChefApys');
 const { avaxWeb3 } = require('../../../utils/web3');
 const pools = require('../../../data/avax/singularLpPools.json');
-import { joeClient } from '../../../apollo/client';
+const { joeClient } = require('../../../apollo/client');
 
 const getSingularApys = async () =>
   await getMasterChefApys({
@@ -21,4 +21,6 @@ const getSingularApys = async () =>
     liquidityProviderFee: JOE_LPF,
   });
 
-module.exports = getSingularApys;
+module.exports = {
+  getSingularApys
+};

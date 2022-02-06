@@ -30,4 +30,6 @@ const getBetuApys = async () => {
   return { 'betu-betu': apy };
 };
 
-module.exports = getBetuApys;
+module.exports = {
+  getBetuApys
+};

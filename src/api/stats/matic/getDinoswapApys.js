@@ -1,6 +1,6 @@
-import { getTradingFeeApr, getTradingFeeAprSushi } from '../../../utils/getTradingFeeApr';
-import { dinoClient, quickClient, sushiClient } from '../../../apollo/client';
-import { QUICK_LPF, SUSHI_LPF } from '../../../constants';
+const { getTradingFeeApr, getTradingFeeAprSushi } = require('../../../utils/getTradingFeeApr');
+const { dinoClient, quickClient, sushiClient } = require('../../../apollo/client');
+const { QUICK_LPF, SUSHI_LPF } = require('../../../constants');
 
 const { getMasterChefApys } = require('./getMaticMasterChefApys');
 const MasterChefAbi = require('../../../abis/matic/DinoMasterChef.json');
@@ -28,4 +28,6 @@ const getDinoswapApys = async () => {
   });
 };
 
-module.exports = getDinoswapApys;
+module.exports = {
+  getDinoswapApys
+};

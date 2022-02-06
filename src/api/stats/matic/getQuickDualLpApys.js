@@ -1,10 +1,9 @@
-import { QUICK_LPF } from '../../../constants';
-
-import { getRewardPoolDualApys } from '../common/getRewardPoolDualApys';
-import pools from '../../../data/matic/quickDualLpPools.json';
-import { quickClient } from '../../../apollo/client';
-import { addressBook } from '../../../../packages/address-book/address-book';
-import { getEDecimals } from '../../../utils/getEDecimals';
+const { QUICK_LPF } = require('../../../constants');
+const { getRewardPoolDualApys } = require('../common/getRewardPoolDualApys');
+const pools = require('../../../data/matic/quickDualLpPools.json');
+const { quickClient } = require('../../../apollo/client');
+const { addressBook } = require('../../../../packages/blockchain-addressbook/build/address-book');
+const { getEDecimals } = require('../../../utils/getEDecimals');
 const { polygonWeb3 } = require('../../../utils/web3');
 const {
   polygon: {
@@ -12,7 +11,7 @@ const {
   },
 } = addressBook;
 
-export const getQuickDualLpApys = async () =>
+const getQuickDualLpApys = async () =>
   await getRewardPoolDualApys({
     pools,
     oracleIdA: QUICK.symbol,
@@ -32,3 +31,7 @@ export const getQuickDualLpApys = async () =>
       isXTokenAorB: 'A',
     },
   });
+
+module.exports = {
+  getQuickDualLpApys,
+};

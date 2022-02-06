@@ -1,14 +1,11 @@
-import { moonriverWeb3 } from '../../../utils/web3';
-import { MOONRIVER_CHAIN_ID } from '../../../constants';
+const { moonriverWeb3 } = require('../../../utils/web3');
+const { MOONRIVER_CHAIN_ID } = require('../../../constants');
+const { getMiniChefApys } = require('../common/getMiniChefApys');
+const { sushiMoonriverClient } = require('../../../apollo/client');
+const pools = require('../../../data/moonriver/sushiLpPools.json');
+const SushiMiniChefV2 = require('../../../abis/matic/SushiMiniChefV2.json');
+const { addressBook } = require('../../../../packages/blockchain-addressbook/build/address-book');
 
-import { getMiniChefApys } from '../common/getMiniChefApys';
-import { sushiMoonriverClient } from '../../../apollo/client';
-
-import pools from '../../../data/moonriver/sushiLpPools.json';
-import SushiMiniChefV2 from '../../../abis/matic/SushiMiniChefV2.json';
-import { AbiItem } from 'web3-utils';
-
-import { addressBook } from '../../../../packages/address-book/address-book';
 const {
   moonriver: {
     platforms: {
@@ -18,7 +15,7 @@ const {
   },
 } = addressBook;
 
-export const getSushiLpApys = () => {
+const getSushiLpApys = () => {
   return getMiniChefApys({
     minichefConfig: {
       minichef,
@@ -36,4 +33,8 @@ export const getSushiLpApys = () => {
     web3: moonriverWeb3,
     chainId: MOONRIVER_CHAIN_ID,
   });
+};
+
+module.exports = {
+  getSushiLpApys,
 };

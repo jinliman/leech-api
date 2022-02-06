@@ -1,12 +1,12 @@
-import { getRewardPoolApys } from '../../common/getRewardPoolApys';
-import pools from '../../../../data/degens/wsgLpPools.json';
-import { PCS_LPF } from '../../../../constants';
-import { cakeClient } from '../../../../apollo/client';
+const { getRewardPoolApys } = require('../../common/getRewardPoolApys');
+const pools = require('../../../../data/degens/wsgLpPools.json');
+const { PCS_LPF } = require('../../../../constants');
+const { cakeClient } = require('../../../../apollo/client');
 
 const { BSC_CHAIN_ID: chainId } = require('../../../../constants');
 const { bscWeb3: web3 } = require('../../../../utils/web3');
 
-export const getWSGApys = async () =>
+const getWSGApys = async () =>
   await getRewardPoolApys({
     web3: web3,
     chainId: chainId,
@@ -29,3 +29,7 @@ export const getWSGApys = async () =>
     tradingFeeInfoClient: cakeClient,
     liquidityProviderFee: PCS_LPF,
   });
+
+module.exports = {
+  getWSGApys,
+};

@@ -29,4 +29,6 @@ const getPrice = async pool => {
   return { [pool.name]: tokenPrice };
 };
 
-module.exports = getDopplePrices;
+module.exports = {
+  getDopplePrices
+};

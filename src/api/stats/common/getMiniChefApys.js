@@ -1,25 +1,24 @@
-import BigNumber from 'bignumber.js';
-import Web3 from 'web3';
-import { MultiCall } from 'eth-multicall';
-import { multicallAddress } from '../../../utils/web3';
+const BigNumber = require('bignumber.js');
+const { MultiCall } = require('eth-multicall');
+const { multicallAddress } = require('../../../utils/web3');
 
-import fetchPrice from '../../../utils/fetchPrice';
-import { getApyBreakdown } from './getApyBreakdown';
+const fetchPrice = require('../../../utils/fetchPrice');
+const { getApyBreakdown } = require('./getApyBreakdown');
 
 // trading apr
-import { SUSHI_LPF } from '../../../constants';
-import { getTradingFeeAprSushi, getTradingFeeApr } from '../../../utils/getTradingFeeApr';
+const { SUSHI_LPF } = require('../../../constants');
+const { getTradingFeeAprSushi, getTradingFeeApr } = require('../../../utils/getTradingFeeApr');
 
 // abis
-import SushiComplexRewarderTime from '../../../abis/matic/SushiComplexRewarderTime.json';
-import ERC20 from '../../../abis/ERC20.json';
+const SushiComplexRewarderTime = require('../../../abis/matic/SushiComplexRewarderTime.json');
+const ERC20 = require('../../../abis/ERC20.json');
 
 const oracle = 'tokens';
 const DECIMALS = '1e18';
 const secondsPerBlock = 1;
 const secondsPerYear = 31536000;
 
-export const getMiniChefApys = async (params) => {
+const getMiniChefApys = async (params) => {
   const { pools, tradingClient, sushiClient, liquidityProviderFee } = params;
   const pairAddresses = pools.map(pool => pool.address);
   let tradingAprs;
@@ -162,4 +161,8 @@ const getPoolsData = async (params) => {
   const allocPoints = res[1].map(v => v.allocPoint['2']);
   const rewardAllocPoints = rewarderConfig ? res[2].map(v => v.allocPoint['2']) : {};
   return { balances, allocPoints, rewardAllocPoints };
+};
+
+module.exports = {
+  getMiniChefApys,
 };

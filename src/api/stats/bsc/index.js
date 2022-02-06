@@ -16,21 +16,15 @@ const getMdexMdxApy = require('./mdex/getMdexMdxApy');
 const getTenfiApys = require('./tenfi/getTenfiApys');
 const getYelApys = require('./yel/getYelApys');
 const getCakeV2PoolApy = require('./pancake/getCakeV2PoolApy');
-const getBifiMaxiApy = require('./leech/getBifiMaxiApy');
 const getOOELpApys = require('./ooe/getOOELpApys');
 const { getFarmheroApys } = require('./farmhero/getFarmheroApys');
 const getOmnifarmApys = require('./omnifarm/getOmnifarmApys');
-const getBifiMaxiV2Apy = require('./leech/getBifiMaxiV2Apy');
-const getBifiGovApy = require('./leech/getBifiGovApy');
 const getMoonpotApys = require('./pots/getMoonpotApys');
 const getBiswapApys = require('./biswap/getBiswapApys');
 
 const getApys = [
   getAlpacaApys,
   getBeltApys,
-  getBifiGovApy,
-  getBifiMaxiApy,
-  getBifiMaxiV2Apy,
   getBiswapApys,
   getCakeApys,
   getCakePoolApy,

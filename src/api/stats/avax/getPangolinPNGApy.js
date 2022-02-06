@@ -47,4 +47,6 @@ const getTotalStakedInUsd = async () => {
   return totalStaked.times(tokenPrice).dividedBy(DECIMALS);
 };
 
-module.exports = getPangolinPNGApy;
+module.exports = {
+  getPangolinPNGApy
+};

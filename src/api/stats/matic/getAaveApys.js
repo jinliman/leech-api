@@ -20,14 +20,6 @@ const getAaveApys = async () => {
   const allPools = [];
   pools.forEach(pool => {
     allPools.push(pool);
-    // const newPool = { ...pool };
-    // const newPool8 = { ...pool };
-    // newPool.name = pool.name + '-delev';
-    // newPool.borrowDepth = 0;
-    // newPool8.name = pool.name + '-8';
-    // newPool8.borrowDepth = 8;
-    // allPools.push(newPool8);
-    // allPools.push(newPool);
   });
 
   let promises = [];

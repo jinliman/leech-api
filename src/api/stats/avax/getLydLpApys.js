@@ -8,7 +8,7 @@ const { compound } = require('../../../utils/compound');
 const { AVAX_CHAIN_ID, BASE_HPY } = require('../../../constants');
 const getBlockNumber = require('../../../utils/getBlockNumber');
 const { getTradingFeeApr } = require('../../../utils/getTradingFeeApr');
-import { getFarmWithTradingFeesApy } from '../../../utils/getFarmWithTradingFeesApy';
+const getFarmWithTradingFeesApy = require('../../../utils/getFarmWithTradingFeesApy');
 const { lydiaClient } = require('../../../apollo/client');
 
 const ERC20 = require('../../../abis/ERC20.json');
@@ -115,4 +115,6 @@ const getTotalLpStakedInUsd = async (targetAddr, pool) => {
   return totalStakedInUsd;
 };
 
-module.exports = getLydLpApys;
+module.exports = {
+  getLydLpApys
+};

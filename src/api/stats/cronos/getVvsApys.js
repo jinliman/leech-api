@@ -2,7 +2,7 @@ const { cronosWeb3: web3 } = require('../../../utils/web3');
 const { CRONOS_CHAIN_ID: chainId } = require('../../../constants');
 const { getMasterChefApys } = require('../common/getMasterChefApys');
 const pools = require('../../../data/cronos/vvsLpPools.json');
-import { vvsClient } from '../../../apollo/client';
+const { vvsClient } = require('../../../apollo/client');
 
 const getVvsApys = async () =>
   await getMasterChefApys({
@@ -29,4 +29,6 @@ const getVvsApys = async () =>
     liquidityProviderFee: 0.003,
   });
 
-module.exports = getVvsApys;
+module.exports = {
+  getVvsApys
+};

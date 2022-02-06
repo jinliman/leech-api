@@ -11,7 +11,7 @@ const pools = require('../../../data/matic/apePolyLpPools.json');
 const { POLYGON_CHAIN_ID, APEPOLY_LPF } = require('../../../constants');
 const { getTradingFeeApr } = require('../../../utils/getTradingFeeApr');
 const { apePolyClient } = require('../../../apollo/client');
-import getApyBreakdown from '../common/getApyBreakdown';
+const getApyBreakdown = require('../common/getApyBreakdown');
 
 const minichef = '0x54aff400858Dcac39797a81894D9920f16972D1D';
 const oracleId = 'BANANApoly';

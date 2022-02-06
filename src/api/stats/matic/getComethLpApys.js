@@ -8,7 +8,8 @@ const fetchPrice = require('../../../utils/fetchPrice');
 const pools = require('../../../data/matic/comethLpPools.json');
 const { BASE_HPY, POLYGON_CHAIN_ID, COMETH_LPF } = require('../../../constants');
 const { getTradingFeeApr } = require('../../../utils/getTradingFeeApr');
-import { getFarmWithTradingFeesApy } from '../../../utils/getFarmWithTradingFeesApy';
+const getFarmWithTradingFeesApy = require('../../../utils/getFarmWithTradingFeesApy');
+
 const { comethClient } = require('../../../apollo/client');
 const { compound } = require('../../../utils/compound');
 
@@ -102,4 +103,6 @@ const getPoolsData = async pools => {
   return { balances, rewardRates };
 };
 
-module.exports = getComethLpApys;
+module.exports = {
+  getComethLpApys
+};

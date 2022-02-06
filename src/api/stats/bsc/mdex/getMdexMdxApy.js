@@ -43,4 +43,6 @@ const getYearlyRewardsInUsd = async () => {
   return yearlyRewardsInUsd;
 };
 
-module.exports = getMdexMdxApy;
+module.exports = {
+  getMdexMdxApy
+};

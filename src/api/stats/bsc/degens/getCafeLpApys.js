@@ -18,4 +18,6 @@ const getCafeLpApys = async () =>
     liquidityProviderFee: 0.003,
   });
 
-module.exports = getCafeLpApys;
+module.exports = {
+  getCafeLpApys
+};

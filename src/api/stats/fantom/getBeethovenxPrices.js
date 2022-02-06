@@ -10,4 +10,6 @@ const getBeethovenxPrices = async tokenPrices => {
   return await getBalancerPrices(web3, FANTOM_CHAIN_ID, pools, tokenPrices);
 };
 
-module.exports = getBeethovenxPrices;
+module.exports = {
+  getBeethovenxPrices
+};

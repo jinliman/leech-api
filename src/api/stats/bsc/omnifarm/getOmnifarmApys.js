@@ -7,7 +7,7 @@ const { compound } = require('../../../../utils/compound');
 const { BSC_CHAIN_ID, BASE_HPY } = require('../../../../constants');
 const { getTotalLpStakedInUsd } = require('../../../../utils/getTotalStakedInUsd');
 const { getTradingFeeApr } = require('../../../../utils/getTradingFeeApr');
-import { getFarmWithTradingFeesApy } from '../../../../utils/getFarmWithTradingFeesApy';
+const { getFarmWithTradingFeesApy } = require('../../../../utils/getFarmWithTradingFeesApy');
 const { cakeClient } = require('../../../../apollo/client');
 const getBlockNumber = require('../../../../utils/getBlockNumber');
 const pools = require('../../../../data/degens/omnifarmLpPools.json');
@@ -98,4 +98,6 @@ const getYearlyRewardsInUsd = async stakingPoolAddress => {
   return yearlyRewardsInUsd;
 };
 
-module.exports = getOmnifarmApys;
+module.exports = {
+  getOmnifarmApys
+};

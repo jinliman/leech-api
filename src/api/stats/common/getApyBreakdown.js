@@ -1,8 +1,8 @@
-import { getFarmWithTradingFeesApy } from '../../../utils/getFarmWithTradingFeesApy';
-import { compound } from '../../../utils/compound';
-import { BASE_HPY, LEECH_PERFORMANCE_FEE, SHARE_AFTER_PERFORMANCE_FEE } from '../../../constants';
+const getFarmWithTradingFeesApy = require('../../../utils/getFarmWithTradingFeesApy');
+const { compound } = require('../../../utils/compound');
+const { BASE_HPY, LEECH_PERFORMANCE_FEE, SHARE_AFTER_PERFORMANCE_FEE } = require('../../../constants');
 
-export const getApyBreakdown = (
+const getApyBreakdown = (
   pools,
   tradingAprs,
   farmAprs,
@@ -43,4 +43,6 @@ export const getApyBreakdown = (
   return result;
 };
 
-export default getApyBreakdown;
+module.exports = {
+  getApyBreakdown
+};

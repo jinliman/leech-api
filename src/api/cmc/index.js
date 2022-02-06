@@ -1,7 +1,7 @@
 const { BigNumber, utils, ethers } = require('ethers');
 const axios = require('axios');
 
-const fetchPrice = require('../../utils/fetchPrice');
+const { fetchPrice } = require('../../utils/fetchPrice');
 const { API_BASE_URL, BSC_RPC } = require('../../constants');
 
 const vaults_json = require('../../data/cmc.json');

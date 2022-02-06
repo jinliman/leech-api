@@ -1,5 +1,5 @@
-import { multicallAddress, web3Factory } from './web3';
-import { MultiCall } from 'eth-multicall';
+const { multicallAddress, web3Factory } = require('./web3');
+const { MultiCall } = require('eth-multicall');
 const BigNumber = require('bignumber.js');
 
 const IVault = require('../abis/LeechVaultV6');

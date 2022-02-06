@@ -53,4 +53,6 @@ const getTotalStakedInUsd = async () => {
   return totalStaked.times(tokenPrice).dividedBy(DECIMALS);
 };
 
-module.exports = getHecoMdexMdxApy;
+module.exports = {
+  getHecoMdexMdxApy
+};

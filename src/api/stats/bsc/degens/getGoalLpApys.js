@@ -15,4 +15,6 @@ const getGoalLpApys = async () =>
     decimals: '1e18',
   });
 
-module.exports = getGoalLpApys;
+module.exports = {
+  getGoalLpApys
+};

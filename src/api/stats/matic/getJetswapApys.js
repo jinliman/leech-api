@@ -2,7 +2,7 @@ const { getMasterChefApys } = require('./getMaticMasterChefApys');
 
 const MasterChefAbi = require('../../../abis/MasterChef.json');
 const pools = require('../../../data/matic/jetswapLpPools.json');
-import { jetswapPolyClient } from '../../../apollo/client';
+const { jetswapPolyClient } = require('../../../apollo/client');
 
 const getJetswapApys = async () =>
   await getMasterChefApys({
@@ -28,4 +28,6 @@ const getJetswapApys = async () =>
     liquidityProviderFee: 0.001,
   });
 
-module.exports = getJetswapApys;
+module.exports = {
+  getJetswapApys
+};

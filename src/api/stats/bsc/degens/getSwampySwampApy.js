@@ -60,4 +60,6 @@ const getTotalStakedInUsd = async () => {
   return totalStakedInUsd;
 };
 
-module.exports = getSwampySwampApy;
+module.exports = {
+  getSwampySwampApy
+};

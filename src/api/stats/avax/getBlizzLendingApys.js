@@ -172,4 +172,6 @@ const getLeveragedApys = (
   };
 };
 
-module.exports = getBlizzLendingApys;
+module.exports = {
+  getBlizzLendingApys
+};

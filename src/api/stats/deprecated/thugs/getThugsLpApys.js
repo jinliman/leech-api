@@ -65,4 +65,6 @@ const getYearlyRewardsInUsd = async (gangster, pool) => {
   return yearlyRewardsInUsd;
 };
 
-module.exports = getThugsLpApys;
+module.exports = {
+  getThugsLpApys
+};

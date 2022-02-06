@@ -1,6 +1,6 @@
 const axios = require('axios');
 const BigNumber = require('bignumber.js');
-import { DFYN_LPF } from '../../../constants';
+const { DFYN_LPF } = require('../../../constants');
 
 const { polygonWeb3: web3 } = require('../../../utils/web3');
 const ERC20 = require('../../../abis/ERC20.json');
@@ -9,7 +9,7 @@ const { getMasterChefApys } = require('./getMaticMasterChefApys');
 const fetchPrice = require('../../../utils/fetchPrice');
 const pools = require('../../../data/matic/ironSwapPools.json');
 const lpPools = require('../../../data/matic/ironSwapLpPools.json');
-import { dfynClient } from '../../../apollo/client';
+const { dfynClient } = require('../../../apollo/client');
 
 const getIronSwapApys = async () => {
   const tradingAprs = await get3PoolBaseApy();
@@ -51,4 +51,6 @@ const get3PoolBaseApy = async () => {
   return { [address.toLowerCase()]: tradingApr };
 };
 
-module.exports = getIronSwapApys;
+module.exports = {
+  getIronSwapApys
+};

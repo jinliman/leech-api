@@ -8,7 +8,7 @@ const fetchPrice = require('../../../utils/fetchPrice');
 const pools = require('../../../data/matic/kyberLpPools.json');
 const { BASE_HPY, POLYGON_CHAIN_ID } = require('../../../constants');
 const { getVariableTradingFeeApr } = require('../../../utils/getTradingFeeApr');
-import { getFarmWithTradingFeesApy } from '../../../utils/getFarmWithTradingFeesApy';
+const getFarmWithTradingFeesApy = require('../../../utils/getFarmWithTradingFeesApy');
 const { kyberClient } = require('../../../apollo/client');
 const { compound } = require('../../../utils/compound');
 
@@ -111,4 +111,6 @@ const getPoolsData = async pools => {
   return { balances, rewardPerBlocks, tradingFees };
 };
 
-module.exports = getKyberLpApys;
+module.exports = {
+  getKyberLpApys
+};

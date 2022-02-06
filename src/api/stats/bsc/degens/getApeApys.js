@@ -37,4 +37,6 @@ const getApeApys = () =>
     liquidityProviderFee: 0.0015,
   });
 
-module.exports = getApeApys;
+module.exports = {
+  getApeApys
+};

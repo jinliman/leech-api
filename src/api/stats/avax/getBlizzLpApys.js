@@ -1,10 +1,10 @@
 const BigNumber = require('bignumber.js');
 const { avaxWeb3: web3 } = require('../../../utils/web3');
 
-import getApyBreakdown from '../common/getApyBreakdown';
-import { getTradingFeeAprSushi } from '../../../utils/getTradingFeeApr';
-import { joeClient } from '../../../apollo/client';
-import { JOE_LPF } from '../../../constants';
+const getApyBreakdown = require('../common/getApyBreakdown');
+const { getTradingFeeAprSushi } = require('../../../utils/getTradingFeeApr');
+const { joeClient } = require('../../../apollo/client');
+const { JOE_LPF } = require('../../../constants');
 
 const fetchPrice = require('../../../utils/fetchPrice');
 const { getTotalLpStakedInUsd } = require('../../../utils/getTotalStakedInUsd');
@@ -60,4 +60,6 @@ const getYearlyRewardsInUsd = async (masterchef, pool) => {
   return yearlyRewardsInUsd;
 };
 
-module.exports = getBlizzLpApys;
+module.exports = {
+  getBlizzLpApys
+};

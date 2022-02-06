@@ -1,6 +1,5 @@
-import { ChainId } from '../packages/address-book/address-book';
-
-const API_BASE_URL = process.env.API_BASE_URL || 'http://localhost:3000';
+const { ChainId } = require('../packages/blockchain-addressbook/build/address-book');
+const API_BASE_URL = process.env.API_BASE_URL || 'http://localhost:4000';
 
 const BASE_HPY = 2190;
 const MINUTELY_HPY = 525600;
@@ -137,7 +136,7 @@ const SHARE_AFTER_PERFORMANCE_FEE = 1 - LEECH_PERFORMANCE_FEE;
 
 const EXCLUDED_IDS_FROM_TVL = ['venus-wbnb'];
 
-export {
+module.exports = {
   API_BASE_URL,
   BSC_RPC,
   BSC_RPC_ENDPOINTS,

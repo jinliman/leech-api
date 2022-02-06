@@ -3,7 +3,7 @@ const { AVAX_CHAIN_ID: chainId } = require('../../../constants');
 const { getMasterChefApys } = require('../common/getMasterChefApys');
 const getBlockTime = require('../../../utils/getBlockTime');
 const pools = require('../../../data/avax/oliveLpPools.json');
-import { oliveClient } from '../../../apollo/client';
+const { oliveClient } = require('../../../apollo/client');
 
 const getOliveApys = async () =>
   await getMasterChefApys({
@@ -21,4 +21,6 @@ const getOliveApys = async () =>
     liquidityProviderFee: 0.003,
   });
 
-module.exports = getOliveApys;
+module.exports = {
+  getOliveApys
+};

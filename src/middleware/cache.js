@@ -23,4 +23,6 @@ async function cache(ctx, next) {
   };
 }
 
-module.exports = cache;
+module.exports = {
+  cache
+};

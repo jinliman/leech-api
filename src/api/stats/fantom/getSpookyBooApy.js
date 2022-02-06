@@ -7,7 +7,7 @@ const fetchPrice = require('../../../utils/fetchPrice');
 const pool = require('../../../data/fantom/spookySinglePool.json');
 const { BASE_HPY } = require('../../../constants');
 const { compound } = require('../../../utils/compound');
-import { getFarmWithTradingFeesApy } from '../../../utils/getFarmWithTradingFeesApy';
+const getFarmWithTradingFeesApy = require('../../../utils/getFarmWithTradingFeesApy');
 const { getYearlyPlatformTradingFees } = require('../../../utils/getTradingFeeApr');
 const { spookyClient } = require('../../../apollo/client');
 
@@ -87,4 +87,6 @@ const getPoolData = async () => {
   return { balance, rewardRate };
 };
 
-module.exports = getSpookyBooApy;
+module.exports = {
+  getSpookyBooApy
+};

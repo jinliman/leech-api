@@ -9,7 +9,7 @@ const { getTotalLpStakedInUsd } = require('../../../../utils/getTotalStakedInUsd
 const { BSC_CHAIN_ID, BASE_HPY } = require('../../../../constants');
 const getBlockNumber = require('../../../../utils/getBlockNumber');
 const { getTradingFeeApr } = require('../../../../utils/getTradingFeeApr');
-import { getFarmWithTradingFeesApy } from '../../../../utils/getFarmWithTradingFeesApy';
+const { getFarmWithTradingFeesApy } = require('../../../../utils/getFarmWithTradingFeesApy');
 const { cakeClient } = require('../../../../apollo/client');
 
 const masterchef = '0x33AdBf5f1ec364a4ea3a5CA8f310B597B8aFDee3';
@@ -106,4 +106,6 @@ const getYearlyRewardsInUsd = async (masterchef, pool) => {
   return yearlyRewardsInUsd;
 };
 
-module.exports = getSwampyLpApys;
+module.exports = {
+  getSwampyLpApys
+};

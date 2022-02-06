@@ -14,4 +14,6 @@ const getSnob3PoolPrice = async () => {
   return { 'snob-3pool': tokenPrice };
 };
 
-module.exports = getSnob3PoolPrice;
+module.exports = {
+  getSnob3PoolPrice
+};

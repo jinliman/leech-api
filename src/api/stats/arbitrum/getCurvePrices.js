@@ -6,4 +6,6 @@ const getCurveArbitrumPrices = async tokenPrices => {
   return await getCurvePricesCommon(web3, pools, tokenPrices);
 };
 
-module.exports = getCurveArbitrumPrices;
+module.exports = {
+  getCurveArbitrumPrices
+};

@@ -1,12 +1,16 @@
-import { avaxWeb3 } from '../../../utils/web3';
-import { getSwapPrices } from '../common/swap/getSwapPrices';
+const { avaxWeb3 } = require('../../../utils/web3');
+const { getSwapPrices } = require('../common/swap/getSwapPrices');
 
-import _pools from '../../../data/avax/synapsePools.json';
+const _pools = require('../../../data/avax/synapsePools.json');
 const pools = _pools;
 
-export const getSynapsePrices = async () => {
+const getSynapsePrices = async () => {
   return getSwapPrices({
     web3: avaxWeb3,
     pools,
   });
+};
+
+module.exports = {
+  getSynapsePrices,
 };

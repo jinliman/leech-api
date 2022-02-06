@@ -7,8 +7,8 @@ const fetchPrice = require('../../../utils/fetchPrice');
 const { getTotalLpStakedInUsd } = require('../../../utils/getTotalStakedInUsd');
 const { getTradingFeeApr } = require('../../../utils/getTradingFeeApr');
 const { spookyClient } = require('../../../apollo/client');
-import { SPOOKY_LPF } from '../../../constants';
-import getApyBreakdown from '../common/getApyBreakdown';
+const { SPOOKY_LPF } = require('../../../constants');
+const getApyBreakdown = require('../common/getApyBreakdown');
 
 const rewardPool = '0xcc0a87F7e7c693042a9Cc703661F5060c80ACb43';
 const oracleId = 'TSHARE';
@@ -62,4 +62,6 @@ const getYearlyRewardsInUsd = async (rewardPool, poolId) => {
   return yearlyRewardsInUsd;
 };
 
-module.exports = getTombApys;
+module.exports = {
+  getTombApys
+};

@@ -7,7 +7,8 @@ const fetchPrice = require('../../../utils/fetchPrice');
 const pool = require('../../../data/fantom/fBeetsPool.json');
 const { BASE_HPY } = require('../../../constants');
 const { compound } = require('../../../utils/compound');
-import { getFarmWithTradingFeesApy } from '../../../utils/getFarmWithTradingFeesApy';
+const getFarmWithTradingFeesApy = require('../../../utils/getFarmWithTradingFeesApy');
+
 const { getYearlyBalancerPlatformTradingFees } = require('../../../utils/getTradingFeeApr');
 const { beetClient } = require('../../../apollo/client');
 const getBlockTime = require('../../../utils/getBlockTime');
@@ -100,4 +101,6 @@ const getPoolData = async () => {
   return { balance, allocPoint };
 };
 
-module.exports = getfBeetsApy;
+module.exports = {
+  getfBeetsApy
+};

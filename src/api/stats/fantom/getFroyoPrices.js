@@ -28,4 +28,6 @@ const getFroyo3PoolPrice = async () => {
   return { 'froyo-3pool': tokenPrice };
 };
 
-module.exports = getFroyoPrices;
+module.exports = {
+  getFroyoPrices
+};

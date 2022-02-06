@@ -1,10 +1,10 @@
 const { moonriverWeb3: web3 } = require('../../../utils/web3');
-import { MOONRIVER_CHAIN_ID as chainId } from '../../../constants';
-import { getMultiRewardMasterChefApys } from '../common/getMultiRewardMasterChefApys';
+const { MOONRIVER_CHAIN_ID: chainId } = require('../../../constants');
+const { getMultiRewardMasterChefApys } = require('../common/getMultiRewardMasterChefApys');
 
 const pools = require('../../../data/moonriver/solarbeamDualLpV2Pools.json');
 const { SOLAR_LPF } = require('../../../constants');
-import { solarbeamClient } from '../../../apollo/client';
+const { solarbeamClient } = require('../../../apollo/client');
 
 const getSolarbeamDualLpV2Apys = async () =>
   await getMultiRewardMasterChefApys({

@@ -27,4 +27,6 @@ const getCronaApys = async () =>
     secondsPerBlock: 1,
   });
 
-module.exports = getCronaApys;
+module.exports = {
+  getCronaApys
+};

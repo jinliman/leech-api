@@ -1,3 +1,4 @@
-import _StakingMultiRewards_ABI from './StakingMultiRewards.json';
-
-export const StakingMultiRewards_ABI = _StakingMultiRewards_ABI;
+const _StakingMultiRewards_ABI = require('./StakingMultiRewards.json');
+module.exports = {
+  StakingMultiRewards_ABI: _StakingMultiRewards_ABI,
+};

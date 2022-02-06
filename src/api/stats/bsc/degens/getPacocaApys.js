@@ -1,5 +1,5 @@
-import { getTradingFeeApr } from '../../../../utils/getTradingFeeApr';
-import getApyBreakdown from '../../common/getApyBreakdown';
+const { getTradingFeeApr } = require('../../../../utils/getTradingFeeApr');
+const getApyBreakdown = require('../../common/getApyBreakdown');
 
 const BigNumber = require('bignumber.js');
 const { bscWeb3: web3 } = require('../../../../utils/web3');
@@ -140,4 +140,6 @@ const getTotalLpStakedInUsd = async pool => {
   return totalStaked.times(tokenPrice).dividedBy('1e18');
 };
 
-module.exports = getPacocaApys;
+module.exports = {
+  getPacocaApys
+};

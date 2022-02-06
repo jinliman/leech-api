@@ -16,4 +16,6 @@ const getCZFApys = async () =>
     liquidityProviderFee: 0.003,
   });
 
-module.exports = getCZFApys;
+module.exports = {
+  getCZFApys
+};

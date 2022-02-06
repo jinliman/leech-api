@@ -1,20 +1,20 @@
-import BigNumber from 'bignumber.js';
-import { MultiCall } from 'eth-multicall';
-import { multicallAddress } from '../../../utils/web3';
-import MasterChefAbi from '../../../abis/MasterChef.json';
-import { ERC20_ABI } from '../../../abis/common/ERC20';
-import { isSushiClient, isBeetClient } from '../../../apollo/client';
-import getApyBreakdown from '../common/getApyBreakdown';
-import fetchPrice from '../../../utils/fetchPrice';
-import getBlockNumber from '../../../utils/getBlockNumber';
-import getBlockTime from '../../../utils/getBlockTime';
-import {
+const BigNumber = require('bignumber.js');
+const { MultiCall } = require('eth-multicall');
+const { multicallAddress } = require('../../../utils/web3');
+const MasterChefAbi = require('../../../abis/MasterChef.json');
+const { ERC20_ABI } = require('../../../abis/common/ERC20');
+const { isSushiClient, isBeetClient } = require('../../../apollo/client');
+const getApyBreakdown = require('../common/getApyBreakdown');
+const fetchPrice = require('../../../utils/fetchPrice');
+const getBlockNumber = require('../../../utils/getBlockNumber');
+const getBlockTime = require('../../../utils/getBlockTime');
+const {
   getTradingFeeAprSushi,
   getTradingFeeAprBalancer,
   getTradingFeeApr,
-} from '../../../utils/getTradingFeeApr';
+} = require('../../../utils/getTradingFeeApr');
 
-export const getMasterChefApys = async (
+const getMasterChefApys = async (
   masterchefParams
 ) => {
   masterchefParams.pools = [
@@ -134,4 +134,8 @@ const chefAbi = (tokenPerBlock) => {
     type: 'function',
   });
   return cakeAbi;
+};
+
+module.exports = {
+  getMasterChefApys,
 };

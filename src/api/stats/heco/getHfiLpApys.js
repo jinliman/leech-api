@@ -54,4 +54,6 @@ const getYearlyRewardsInUsd = async (hecoPool, pool) => {
   return yearlyRewardsInUsd;
 };
 
-module.exports = getHfiLpApys;
+module.exports = {
+  getHfiLpApys
+};

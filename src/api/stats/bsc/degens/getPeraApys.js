@@ -31,4 +31,6 @@ const getPeraApys = async () => {
   return { [pool.name]: apy };
 };
 
-module.exports = getPeraApys;
+module.exports = {
+  getPeraApys
+};

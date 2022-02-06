@@ -2,7 +2,7 @@ const axios = require('axios');
 const BigNumber = require('bignumber.js');
 const { bscWeb3: web3 } = require('../../../../utils/web3');
 
-import getApyBreakdown from '../../common/getApyBreakdown';
+const getApyBreakdown = require('../../common/getApyBreakdown');
 
 const fetchPrice = require('../../../../utils/fetchPrice');
 const { getTotalStakedInUsd } = require('../../../../utils/getTotalStakedInUsd');
@@ -131,4 +131,6 @@ const getRewards = async pool => {
   return totalRewards;
 };
 
-module.exports = getEllipsisLpApys;
+module.exports = {
+  getEllipsisLpApys
+};

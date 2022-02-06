@@ -1,8 +1,8 @@
 const BigNumber = require('bignumber.js');
 const { MultiCall } = require('eth-multicall');
 const { web3Factory, multicallAddress } = require('../../utils/web3');
-const getVaults = require('../../utils/getVaults.js');
-const fetchPrice = require('../../utils/fetchPrice');
+const { getVaults } = require('../../utils/getVaults.js');
+const { fetchPrice } = require('../../utils/fetchPrice');
 const { EXCLUDED_IDS_FROM_TVL } = require('../../constants');
 
 const LeechVaultV6ABI = require('../../abis/LeechVaultV6.json');
@@ -104,4 +104,6 @@ const getGovernanceTvl = async (chainId, governancePool) => {
   return response;
 };
 
-module.exports = getChainTvl;
+module.exports = {
+  getChainTvl
+};

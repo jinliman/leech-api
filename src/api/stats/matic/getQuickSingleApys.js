@@ -9,7 +9,7 @@ const fetchPrice = require('../../../utils/fetchPrice');
 const pools = require('../../../data/matic/quickPools.json');
 const { POLYGON_CHAIN_ID, BASE_HPY } = require('../../../constants');
 const { compound } = require('../../../utils/compound');
-import { getFarmWithTradingFeesApy } from '../../../utils/getFarmWithTradingFeesApy';
+const getFarmWithTradingFeesApy = require('../../../utils/getFarmWithTradingFeesApy');
 const { getYearlyPlatformTradingFees } = require('../../../utils/getTradingFeeApr');
 const { quickClient } = require('../../../apollo/client');
 
@@ -107,4 +107,6 @@ const getPoolsData = async pools => {
   return { balances, rewardRates };
 };
 
-module.exports = getQuickSingleApys;
+module.exports = {
+  getQuickSingleApys
+};

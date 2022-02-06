@@ -43,4 +43,6 @@ const getFortubeApys = async () => {
   return fortubeApys;
 };
 
-module.exports = getFortubeApys;
+module.exports = {
+  getFortubeApys
+};

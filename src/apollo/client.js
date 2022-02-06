@@ -1,7 +1,7 @@
 const fetch = require('node-fetch');
 const createHttpLink = require('apollo-link-http').createHttpLink;
-import { ApolloClient, InMemoryCache } from '@apollo/client/core';
-import ApolloLinkTimeout from 'apollo-link-timeout';
+const { ApolloClient, InMemoryCache } = require('@apollo/client/core');
+const ApolloLinkTimeout = require('apollo-link-timeout');
 
 const APOLLO_TIMEOUT = process.env.APOLLO_TIMEOUT || 30_000;
 const timeoutLink = new ApolloLinkTimeout(APOLLO_TIMEOUT);

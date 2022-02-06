@@ -1,21 +1,22 @@
-import BigNumber from 'bignumber.js';
-import { MultiCall } from 'eth-multicall';
-import { polygonWeb3 as web3, multicallAddress } from '../../../utils/web3';
+const BigNumber = require('bignumber.js');
+const { MultiCall } = require('eth-multicall');
+const { polygonWeb3: web3, multicallAddress } = require('../../../utils/web3');
 
 // abis
-import { StakingRewards_ABI } from '../../../abis/matic/Telxchange/StakingRewards';
-import { ERC20_ABI } from '../../../abis/common/ERC20';
+const { StakingRewards_ABI } = require('../../../abis/matic/Telxchange/StakingRewards');
+const { ERC20_ABI } = require('../../../abis/common/ERC20');
 // json data
-import _pools from '../../../data/matic/telxchangePools.json';
+const _pools = require('../../../data/matic/telxchangePools.json');
 const pools = _pools;
 
-import fetchPrice from '../../../utils/fetchPrice';
-import { POLYGON_CHAIN_ID, QUICK_LPF } from '../../../constants';
-import { getTradingFeeApr } from '../../../utils/getTradingFeeApr';
-import { quickClient } from '../../../apollo/client';
-import getApyBreakdown from '../common/getApyBreakdown';
-import { addressBook } from '../../../../packages/address-book/address-book';
-import { getEDecimals } from '../../../utils/getEDecimals';
+const fetchPrice = require('../../../utils/fetchPrice');
+const { POLYGON_CHAIN_ID, QUICK_LPF } = require('../../../constants');
+const { getTradingFeeApr } = require('../../../utils/getTradingFeeApr');
+const { quickClient } = require('../../../apollo/client');
+const getApyBreakdown = require('../common/getApyBreakdown');
+const { addressBook } = require('../../../../packages/blockchain-addressbook/build/address-book');
+const { getEDecimals } = require('../../../utils/getEDecimals');
+
 const {
   polygon: {
     tokens: { TEL },
@@ -25,7 +26,7 @@ const {
 const oracle = 'tokens';
 const BLOCKS_PER_DAY = 28800;
 
-export const getTelxchangeApys = async () => {
+const getTelxchangeApys = async () => {
   const singleFarms = pools.filter(pool => pool.farmType === 'single');
   const pairAddresses = singleFarms.map(pool => pool.address);
   const tradingAprs = await getTradingFeeApr(quickClient, pairAddresses, QUICK_LPF);
@@ -76,4 +77,8 @@ const getPoolsData = async (pools) => {
   const balances = res[0].map(v => new BigNumber(v.balance));
   const rewardRates = res[1].map(v => new BigNumber(v.rewardRate));
   return { balances, rewardRates };
+};
+
+module.exports = {
+  getTelxchangeApys,
 };

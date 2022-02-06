@@ -1,7 +1,7 @@
-import { getMasterChefApys } from '../../common/getMasterChefApys';
-import { bscWeb3 as web3 } from '../../../../utils/web3';
-import { BSC_CHAIN_ID as chainId } from '../../../../constants';
-import pools from '../../../../data/biswapLpPools.json';
+const { getMasterChefApys } = require('../../common/getMasterChefApys');
+const { bscWeb3: web3 } = require('../../../../utils/web3');
+const { BSC_CHAIN_ID: chainId } = require('../../../../constants');
+const pools = require('../../../../data/biswapLpPools.json');
 
 const getBiswapApys = async () =>
   await getMasterChefApys({
@@ -26,4 +26,6 @@ const getBiswapApys = async () =>
     decimals: '1e18',
   });
 
-module.exports = getBiswapApys;
+module.exports = {
+  getBiswapApys
+};

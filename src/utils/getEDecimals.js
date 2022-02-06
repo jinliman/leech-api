@@ -1,1 +1,5 @@
-export const getEDecimals = decimals => '1e' + decimals.toString();
+const getEDecimals = decimals => '1e' + decimals.toString();
+
+module.exports = {
+  getEDecimals,
+};

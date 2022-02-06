@@ -1,10 +1,10 @@
-import BigNumber from 'bignumber.js';
-import {
+const BigNumber = require('bignumber.js');
+const {
   MultiFeeDistribution_ABI,
-} from '../../../abis/common/MultiFeeDistribution';
-import fetchPrice from '../../../utils/fetchPrice';
-import { compound } from '../../../utils/compound';
-import { BASE_HPY, LEECH_PERFORMANCE_FEE, SHARE_AFTER_PERFORMANCE_FEE } from '../../../constants';
+} = require('../../../abis/common/MultiFeeDistribution');
+const fetchPrice = require('../../../utils/fetchPrice');
+const { compound } = require('../../../utils/compound');
+const { BASE_HPY, LEECH_PERFORMANCE_FEE, SHARE_AFTER_PERFORMANCE_FEE } = require('../../../constants');
 
 const oracle = 'tokens';
 
@@ -73,4 +73,6 @@ const getBreakdown = (poolName, apr) => {
   return result;
 };
 
-export default getMultiFeeDistributionSingleAssetApy;
+module.exports = {
+  getMultiFeeDistributionSingleAssetApy
+};

@@ -68,4 +68,6 @@ const getYearlyRewardsInUsd = async pool => {
   return yearlyRewardsInUsd;
 };
 
-module.exports = getMoonpotApys;
+module.exports = {
+  getMoonpotApys
+};

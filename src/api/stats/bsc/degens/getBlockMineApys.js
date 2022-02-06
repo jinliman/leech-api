@@ -21,4 +21,6 @@ const getBlockMineLpApys = async () =>
     burn: 0.1,
   });
 
-module.exports = getBlockMineLpApys;
+module.exports = {
+  getBlockMineLpApys
+};

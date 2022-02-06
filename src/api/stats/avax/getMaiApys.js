@@ -1,15 +1,14 @@
-import { getMasterChefApys } from '../common/getMasterChefApys';
-import MasterChefAbi from '../../../abis/matic/MaiFarmChef.json';
+const { getMasterChefApys } = require('../common/getMasterChefApys');
+const MasterChefAbi = require('../../../abis/matic/MaiFarmChef.json');
 const { avaxWeb3: web3 } = require('../../../utils/web3');
 const { AVAX_CHAIN_ID: chainId } = require('../../../constants');
-import pools from '../../../data/avax/maiLpPools.json';
-import { joeClient } from '../../../apollo/client';
-import { addressBook } from '../../../../packages/address-book/address-book';
-import { AbiItem } from 'web3-utils';
+const pools = require('../../../data/avax/maiLpPools.json');
+const { joeClient } = require('../../../apollo/client');
+const { addressBook } = require('../../../../packages/blockchain-addressbook/build/address-book');
 
 const mai = addressBook.avax.platforms.mai;
 
-export const getMaiApys = () => {
+const getMaiApys = () => {
   return getMasterChefApys({
     web3: web3,
     chainId: chainId,
@@ -26,3 +25,7 @@ export const getMaiApys = () => {
     liquidityProviderFee: 0.0025,
   });
 }
+
+module.exports = {
+  getMaiApys
+};

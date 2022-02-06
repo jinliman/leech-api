@@ -8,9 +8,6 @@ const fetchPrice = require('../../../utils/fetchPrice');
 const pools = require('../../../data/heco/lendhubLpPools.json');
 const { BASE_HPY, HECO_CHAIN_ID } = require('../../../constants');
 const { compound } = require('../../../utils/compound');
-//const { getTradingFeeApr } = require('../../../utils/getTradingFeeApr');
-//import { getFarmWithTradingFeesApy  } from '../../../utils/getFarmWithTradingFeesApy';
-//const { mdexClient } = require('../../../apollo/client');
 
 const masterchef = '0x00A5BF6ab1166bce027D9d4b0E829f92781ab1A7';
 const oracleId = 'LHB';
@@ -19,21 +16,12 @@ const DECIMALS = '1e18';
 const secondsPerBlock = 3;
 const secondsPerYear = 31536000;
 
-//const mdexLiquidityProviderFee = 0.002;
-
 const getLendhubLpApys = async () => {
   let apys = {};
 
   const tokenPrice = await fetchPrice({ oracle, id: oracleId });
   const { rewardPerSecond, totalAllocPoint } = await getMasterChefData();
   const { balances, allocPoints } = await getPoolsData(pools);
-
-  // const pairAddresses = pools.map(pool => pool.address);
-  //const tradingAprs = await getTradingFeeApr(
-  //  spookyClient,
-  //  pairAddresses,
-  //  spookyLiquidityProviderFee
-  // );
 
   for (let i = 0; i < pools.length; i++) {
     const pool = pools[i];
@@ -46,8 +34,6 @@ const getLendhubLpApys = async () => {
     const yearlyRewardsInUsd = yearlyRewards.times(tokenPrice).dividedBy(DECIMALS);
 
     const simpleApy = yearlyRewardsInUsd.dividedBy(totalStakedInUsd);
-    // const tradingApr = tradingAprs[pool.address.toLowerCase()] ?? new BigNumber(0);
-    // const apy = getFarmWithTradingFeesApy(simpleApy, tradingApr, BASE_HPY, 1, 0.955);
     const apy = compound(simpleApy, BASE_HPY, 1, 0.955);
     const item = { [pool.name]: apy };
 
@@ -86,4 +72,6 @@ const getPoolsData = async pools => {
   return { balances, allocPoints };
 };
 
-module.exports = getLendhubLpApys;
+module.exports = {
+  getLendhubLpApys
+};

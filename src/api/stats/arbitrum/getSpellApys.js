@@ -1,10 +1,9 @@
 const { arbitrumWeb3: web3 } = require('../../../utils/web3');
-import { ARBITRUM_CHAIN_ID as chainId } from '../../../constants';
-import { getMasterChefApys } from '../common/getMasterChefApys';
-
-import axios from 'axios';
-import BigNumber from 'bignumber.js';
-import SpellMasterChef from '../../../abis/arbitrum/SpellMasterChef.json';
+const { ARBITRUM_CHAIN_ID: chainId } = require('../../../constants');
+const { getMasterChefApys } = require('../common/getMasterChefApys');
+const axios = require('axios');
+const BigNumber = require('bignumber.js');
+const SpellMasterChef = require('../../../abis/arbitrum/SpellMasterChef.json');
 
 const getSpellApys = async () => {
   const pool = '0x30df229cefa463e991e29d42db0bae2e122b2ac7';

@@ -1,9 +1,9 @@
 const BigNumber = require('bignumber.js');
 const { bscWeb3: web3 } = require('../../../../utils/web3');
 
-import getApyBreakdown from '../../common/getApyBreakdown';
-import { getTradingFeeApr } from '../../../../utils/getTradingFeeApr';
-import { PCS_LPF } from '../../../../constants';
+const getApyBreakdown = require('../../common/getApyBreakdown');
+const { getTradingFeeApr } = require('../../../../utils/getTradingFeeApr');
+const { PCS_LPF } = require('../../../../constants');
 
 const MasterChef = require('../../../../abis/degens/KingDefiMaster.json');
 const fetchPrice = require('../../../../utils/fetchPrice');
@@ -57,4 +57,6 @@ const getPoolApy = async (masterchef, pool) => {
   return simpleApy;
 };
 
-module.exports = getKingdefiApys;
+module.exports = {
+  getKingdefiApys
+};

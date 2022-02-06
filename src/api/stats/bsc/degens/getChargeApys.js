@@ -33,4 +33,6 @@ const abi = [
   },
 ];
 
-module.exports = getChargeApys;
+module.exports = {
+  getChargeApys
+};

@@ -1,5 +1,5 @@
 const { bscWeb3: web3 } = require('../../../../utils/web3');
-import { BSC_CHAIN_ID as chainId } from '../../../../constants';
+const { BSC_CHAIN_ID: chainId } = require('../../../../constants');
 
 const { getMasterChefApys } = require('../../common/getMasterChefApys');
 const { cakeClient } = require('../../../../apollo/client');
@@ -21,4 +21,6 @@ const getDibsApys = async () =>
     liquidityProviderFee: 0.003,
   });
 
-module.exports = getDibsApys;
+module.exports = {
+  getDibsApys
+};

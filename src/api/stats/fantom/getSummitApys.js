@@ -6,8 +6,8 @@ const lpPools = require('../../../data/fantom/summitLpPools.json');
 const fetchPrice = require('../../../utils/fetchPrice');
 const { getTradingFeeApr } = require('../../../utils/getTradingFeeApr');
 const { spookyClient } = require('../../../apollo/client');
-import { SPOOKY_LPF } from '../../../constants';
-import getApyBreakdown from '../common/getApyBreakdown';
+const { SPOOKY_LPF } = require('../../../constants');
+const getApyBreakdown = require('../common/getApyBreakdown');
 
 const cartographer = '0x46d303b6829aDc7AC3217D92f71B1DbbE77eBBA2';
 const oracleId = 'SUMMIT';
@@ -82,4 +82,6 @@ const getYearlyRewardsInUsd = async (rewardPool, pool) => {
   return yearlyRewardsInUsd;
 };
 
-module.exports = getSummitApys;
+module.exports = {
+  getSummitApys
+};

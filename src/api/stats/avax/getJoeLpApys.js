@@ -8,7 +8,8 @@ const fetchPrice = require('../../../utils/fetchPrice');
 const pools = require('../../../data/avax/joeLpPools.json');
 const { BASE_HPY, AVAX_CHAIN_ID } = require('../../../constants');
 const { getTradingFeeAprSushi } = require('../../../utils/getTradingFeeApr');
-import { getFarmWithTradingFeesApy } from '../../../utils/getFarmWithTradingFeesApy';
+const getFarmWithTradingFeesApy = require('../../../utils/getFarmWithTradingFeesApy');
+
 const { joeClient } = require('../../../apollo/client');
 const { compound } = require('../../../utils/compound');
 
@@ -114,4 +115,6 @@ const getPoolsData = async pools => {
   return { balances, allocPoints };
 };
 
-module.exports = getJoeApys;
+module.exports = {
+  getJoeApys
+};

@@ -62,4 +62,6 @@ const getPoolApy = async (masterchef, pool) => {
   return { [pool.name]: apy };
 };
 
-module.exports = getAnnexApys;
+module.exports = {
+  getAnnexApys
+};

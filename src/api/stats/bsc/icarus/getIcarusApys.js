@@ -66,4 +66,6 @@ const getYearlyRewardsInUsd = async pool => {
   return yearlyRewardsInUsd;
 };
 
-module.exports = getIcarusApys;
+module.exports = {
+  getIcarusApys
+};

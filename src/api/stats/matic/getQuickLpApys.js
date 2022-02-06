@@ -1,10 +1,9 @@
-import { QUICK_LPF } from '../../../constants';
-
-import { getRewardPoolApys } from '../common/getRewardPoolApys';
-import pools from '../../../data/matic/quickLpPools.json';
-import { quickClient } from '../../../apollo/client';
-import { addressBook } from '../../../../packages/address-book/address-book';
-import { getEDecimals } from '../../../utils/getEDecimals';
+const { QUICK_LPF } = require('../../../constants');
+const { getRewardPoolApys } = require('../common/getRewardPoolApys');
+const pools = require('../../../data/matic/quickLpPools.json');
+const { quickClient } = require('../../../apollo/client');
+const { addressBook } = require('../../../../packages/blockchain-addressbook/build/address-book');
+const { getEDecimals } = require('../../../utils/getEDecimals');
 const { polygonWeb3 } = require('../../../utils/web3');
 const {
   polygon: {
@@ -12,7 +11,7 @@ const {
   },
 } = addressBook;
 
-export const getQuickLpApys = async () =>
+const getQuickLpApys = async () =>
   await getRewardPoolApys({
     pools,
     oracleId: 'QUICK',
@@ -26,3 +25,7 @@ export const getQuickLpApys = async () =>
     isRewardInXToken: true,
     xTokenAddress: '0xf28164A485B0B2C90639E47b0f377b4a438a16B1',
   });
+
+module.exports = {
+  getQuickLpApys,
+};
