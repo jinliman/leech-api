@@ -3,7 +3,7 @@ const { fantomWeb3: web3 } = require('../../../utils/web3');
 
 const MasterChef = require('../../../abis/fantom/EsterChef.json');
 const pools = require('../../../data/fantom/esterPools.json');
-const fetchPrice = require('../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../utils/fetchPrice');
 const { getTotalStakedInUsd } = require('../../../utils/getTotalStakedInUsd');
 const { compound } = require('../../../utils/compound');
 

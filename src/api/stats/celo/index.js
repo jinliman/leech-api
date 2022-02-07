@@ -23,7 +23,6 @@ const getCeloApys = async () => {
     let mappedApyBreakdownValues = {};
 
     // Loop through key values and move default breakdown format
-    // To require totalApy key
     for (const [key, value] of Object.entries(result.value)) {
       mappedApyBreakdownValues[key] = {
         totalApy: value,

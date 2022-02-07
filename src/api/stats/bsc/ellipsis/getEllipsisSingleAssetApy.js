@@ -1,5 +1,5 @@
 const { bscWeb3: web3 } = require('../../../../utils/web3');
-const getMultiFeeDistributionSingleAssetApy = require('../../common/getMultiFeeDistributionSingleAssetApy');
+const { getMultiFeeDistributionSingleAssetApy } = require('../../common/getMultiFeeDistributionSingleAssetApy');
 const { addressBook } = require('../../../../../packages/blockchain-addressbook/build/address-book');
 
 const {

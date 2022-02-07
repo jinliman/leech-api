@@ -2,7 +2,7 @@ const BigNumber = require('bignumber.js');
 const { bscWeb3: web3 } = require('../../../../utils/web3');
 
 const NftyStaking = require('../../../../abis/degens/NftyStaking.json');
-const fetchPrice = require('../../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../../utils/fetchPrice');
 const { compound } = require('../../../../utils/compound');
 
 const stakingPool = '0x490147C65365c58F3404415b1194fbB4697A4B44';

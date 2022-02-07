@@ -1,7 +1,7 @@
 const BigNumber = require('bignumber.js');
 const { hecoWeb3: web3 } = require('../../../utils/web3');
 
-const fetchPrice = require('../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../utils/fetchPrice');
 const { compound } = require('../../../utils/compound');
 const Comptroller = require('../../../abis/heco/Comptroller.json');
 const IToken = require('../../../abis/VToken.json');
@@ -21,8 +21,6 @@ const getLendhubApys = async () => {
   for (let item of values) {
     apys = { ...apys, ...item };
   }
-
-  // apys['lendhub-wht'] = apys['lendhub-ht'];
 
   return apys;
 };

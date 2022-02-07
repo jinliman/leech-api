@@ -2,7 +2,7 @@ const { multicallAddress, web3Factory } = require('./web3');
 const { MultiCall } = require('eth-multicall');
 const BigNumber = require('bignumber.js');
 
-const DMMPool = require('../abis/DMMPool');
+const DMMPool = require('../abis/DMMPool.json');
 const ERC20 = require('../abis/common/ERC20/ERC20.json');
 
 const sortByKeys = o => {
@@ -14,8 +14,7 @@ const sortByKeys = o => {
 const calcTokenPrice = (knownPrice, knownToken, unknownToken) => {
   const valuation = knownToken.virtualBal.dividedBy(knownToken.decimals).multipliedBy(knownPrice);
   const price = valuation.multipliedBy(unknownToken.decimals).dividedBy(unknownToken.virtualBal);
-  const weight = knownToken.virtualBal.plus(unknownToken.virtualBal).toNumber();
-
+  
   return {
     price: price.toNumber(),
     weight: unknownToken.virtualBal.dividedBy(unknownToken.decimals).toNumber(),

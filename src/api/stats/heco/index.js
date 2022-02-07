@@ -1,11 +1,11 @@
-const getHfiApys = require('./getHfiApys');
-const getHfiLpApys = require('./getHfiLpApys');
-const getLavaLpApys = require('./getLavaLpApys');
-const getLavaApy = require('./getLavaApy');
-const getMdexLpApys = require('./getMdexLpApys');
-const getHecoMdexMdxApy = require('./getHecoMdexMdxApy');
-const getLendhubApys = require('./getLendhubApys');
-const getLendhubLpApys = require('./getLendhubLpApys');
+const { getHfiApys } = require('./getHfiApys');
+const { getHfiLpApys } = require('./getHfiLpApys');
+const { getLavaLpApys } = require('./getLavaLpApys');
+const { getLavaApy } = require('./getLavaApy');
+const { getMdexLpApys } = require('./getMdexLpApys');
+const { getHecoMdexMdxApy } = require('./getHecoMdexMdxApy');
+const { getLendhubApys } = require('./getLendhubApys');
+const { getLendhubLpApys } = require('./getLendhubLpApys');
 
 const getApys = [
   getHfiApys,

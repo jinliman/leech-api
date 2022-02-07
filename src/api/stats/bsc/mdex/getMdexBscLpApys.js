@@ -3,13 +3,11 @@ const { bscWeb3: web3 } = require('../../../../utils/web3');
 const { BSC_CHAIN_ID } = require('../../../../constants');
 
 const MasterChef = require('../../../../abis/HecoPool.json');
-const fetchPrice = require('../../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../../utils/fetchPrice');
 const pools = require('../../../../data/mdexBscLpPools.json');
-const getBlockNumber = require('../../../../utils/getBlockNumber');
+const { getBlockNumber } = require('../../../../utils/getBlockNumber');
 const { getTotalStakedInUsd } = require('../../../../utils/getTotalStakedInUsd');
-const { getTradingFeeApr } = require('../../../../utils/getTradingFeeApr');
 const { getFarmWithTradingFeesApy } = require('../../../../utils/getFarmWithTradingFeesApy');
-const { mdexBscClient } = require('../../../../apollo/client');
 const { compound } = require('../../../../utils/compound');
 const { BASE_HPY } = require('../../../../constants');
 
@@ -27,8 +25,6 @@ const getMdexBscLpApys = async () => {
 
   const mdxPool = '0xc48FE252Aa631017dF253578B1405ea399728A50';
   const allPools = [...pools];
-
-  const pairAddresses = pools.map(pool => pool.address);
   const tradingAprs = {};
   
   let promises = [];

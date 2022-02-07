@@ -4,8 +4,8 @@ const { bscWeb3: web3, multicallAddress } = require('../../../../utils/web3');
 
 const MasterChef = require('../../../../abis/MasterChef.json');
 const ERC20 = require('../../../../abis/ERC20.json');
-const fetchPrice = require('../../../../utils/fetchPrice');
-const getBlockNumber = require('../../../../utils/getBlockNumber');
+const { fetchPrice } = require('../../../../utils/fetchPrice');
+const { getBlockNumber } = require('../../../../utils/getBlockNumber');
 const pools = require('../../../../data/cakeLpPools.json');
 const { compound } = require('../../../../utils/compound');
 const { BASE_HPY, BSC_CHAIN_ID } = require('../../../../constants');

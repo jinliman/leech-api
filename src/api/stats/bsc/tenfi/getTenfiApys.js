@@ -2,11 +2,11 @@ const BigNumber = require('bignumber.js');
 const { bscWeb3: web3 } = require('../../../../utils/web3');
 
 const MasterChef = require('../../../../abis/TenfiMasterChef.json');
-const fetchPrice = require('../../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../../utils/fetchPrice');
 const pools = require('../../../../data/tenfiLpPools.json');
 const { compound } = require('../../../../utils/compound');
 const { BSC_CHAIN_ID, BASE_HPY } = require('../../../../constants');
-const getBlockNumber = require('../../../../utils/getBlockNumber');
+const { getBlockNumber } = require('../../../../utils/getBlockNumber');
 const {
   getTotalLpStakedInUsd,
   getTotalStakedInUsd,

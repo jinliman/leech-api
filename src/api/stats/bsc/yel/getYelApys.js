@@ -33,7 +33,7 @@ const { bscWeb3: web3, multicallAddress } = require('../../../../utils/web3');
 
 const abi = require('../../../../abis/MasterYel.json');
 const { BASE_HPY, BSC_CHAIN_ID } = require('../../../../constants');
-const fetchPrice = require('../../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../../utils/fetchPrice');
 const { getFarmWithTradingFeesApy } = require('../../../../utils/getFarmWithTradingFeesApy');
 const { getTradingFeeApr } = require('../../../../utils/getTradingFeeApr');
 const { compound } = require('../../../../utils/compound');

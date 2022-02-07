@@ -4,7 +4,7 @@ const { hecoWeb3: web3, multicallAddress } = require('../../../utils/web3');
 
 const MasterChef = require('../../../abis/heco/LendhubChef.json');
 const ERC20 = require('../../../abis/ERC20.json');
-const fetchPrice = require('../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../utils/fetchPrice');
 const pools = require('../../../data/heco/lendhubLpPools.json');
 const { BASE_HPY, HECO_CHAIN_ID } = require('../../../constants');
 const { compound } = require('../../../utils/compound');

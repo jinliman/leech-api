@@ -1,7 +1,7 @@
 const { moonriverWeb3: web3 } = require('../../../utils/web3');
 const { MOONRIVER_CHAIN_ID: chainId } = require('../../../constants');
 const { getMasterChefApys } = require('../common/getMasterChefApys');
-const getBlockTime = require('../../../utils/getBlockTime');
+const { getBlockTime } = require('../../../utils/getBlockTime');
 
 const pools = require('../../../data/moonriver/solarbeamLpPools.json');
 const { SOLAR_LPF } = require('../../../constants');

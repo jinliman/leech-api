@@ -1,8 +1,8 @@
 const BigNumber = require('bignumber.js');
 const { avaxWeb3: web3 } = require('../../../utils/web3');
 
-const fetchPrice = require('../../../utils/fetchPrice');
-const getApyBreakdown = require('../common/getApyBreakdown');
+const { fetchPrice } = require('../../../utils/fetchPrice');
+const { getApyBreakdown } = require('../common/getApyBreakdown');
 const {
   getCurveBaseApys,
   getTotalStakedInUsd,

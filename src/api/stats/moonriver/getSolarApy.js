@@ -5,9 +5,9 @@ const { moonriverWeb3: web3 } = require('../../../utils/web3');
 const { MOONRIVER_CHAIN_ID: chainId } = require('../../../constants');
 
 const ISolarVault = require('../../../abis/moonriver/ISolarVault.json');
-const fetchPrice = require('../../../utils/fetchPrice');
-const getApyBreakdown = require('../common/getApyBreakdown');
-const getBlockTime = require('../../../utils/getBlockTime');
+const { fetchPrice } = require('../../../utils/fetchPrice');
+const { getApyBreakdown } = require('../common/getApyBreakdown');
+const { getBlockTime } = require('../../../utils/getBlockTime');
 const pool = require('../../../data/moonriver/solarPool.json');
 
 const getSolarApy = async () => {

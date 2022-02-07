@@ -1,7 +1,7 @@
 const BigNumber = require('bignumber.js');
 const { fantomWeb3: web3 } = require('../../../utils/web3');
 
-const fetchPrice = require('../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../utils/fetchPrice');
 const { compound } = require('../../../utils/compound');
 const IncentivesController = require('../../../abis/fantom/GeistIncentivesController.json');
 const IAaveProtocolDataProvider = require('../../../abis/matic/AaveProtocolDataProvider.json');
@@ -20,14 +20,6 @@ const getGeistLendingApys = async () => {
   const allPools = [];
   pools.forEach(pool => {
     allPools.push(pool);
-    // const newPool = { ...pool };
-    // const newPool8 = { ...pool };
-    // newPool.name = pool.name + '-delev';
-    // newPool.borrowDepth = 0;
-    // newPool8.name = pool.name + '-8';
-    // newPool8.borrowDepth = 8;
-    // allPools.push(newPool8);
-    // allPools.push(newPool);
   });
 
   const { rewardsPerSecond, totalAllocPoint } = await getIncentiveControllerData();

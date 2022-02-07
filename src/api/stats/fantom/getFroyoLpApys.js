@@ -3,7 +3,7 @@ const { fantomWeb3: web3 } = require('../../../utils/web3');
 
 const LpStaker = require('../../../abis/EllipsisLpStaker.json');
 const Oracle = require('../../../abis/EllipsisOracle.json');
-const fetchPrice = require('../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../utils/fetchPrice');
 const pools = require('../../../data/fantom/froyoPools.json');
 const { compound } = require('../../../utils/compound');
 const { getTotalStakedInUsd } = require('../../../utils/getTotalStakedInUsd');

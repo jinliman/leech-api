@@ -1,20 +1,20 @@
-const getLydLpApys = require('./getLydLpApys');
-const getOliveApys = require('./getOliveApys');
-const getJoeApys = require('./getJoeLpApys');
-const getJoeDualApys = require('./getJoeDualLpApys');
-const getJoeApy = require('./getJoeApy');
-const getPangolinPNGApy = require('./getPangolinPNGApy');
-const getCurveApys = require('./getCurveApys');
+const { getLydLpApys } = require('./getLydLpApys');
+const { getOliveApys } = require('./getOliveApys');
+const { getJoeApys } = require('./getJoeLpApys');
+const { getJoeDualApys } = require('./getJoeDualLpApys');
+const { getJoeApy } = require('./getJoeApy');
+const { getPangolinPNGApy } = require('./getPangolinPNGApy');
+const { getCurveApys } = require('./getCurveApys');
 const { getAaveApys } = require('./getAaveApys');
-const getSingularApys = require('./getSingularApys');
-const getBlizzLpApys = require('./getBlizzLpApys');
-const getBlizzLendingApys = require('./getBlizzLendingApys');
-const getBankerJoeApys = require('./getBankerJoeApys');
-const getSynapseApys = require('./getSynapseApys');
-const getSpellApys = require('./getSpellApys');
-const getMaiApys = require('./getMaiApys');
-const getMaiCurveApys = require('./getMaiCurveApys');
-const getPangolinV2Apys = require('./getPangolinV2Apys');
+const { getSingularApys } = require('./getSingularApys');
+const { getBlizzLpApys } = require('./getBlizzLpApys');
+const { getBlizzLendingApys } = require('./getBlizzLendingApys');
+const { getBankerJoeApys } = require('./getBankerJoeApys');
+const { getSynapseApys } = require('./getSynapseApys');
+const { getSpellApys } = require('./getSpellApys');
+const { getMaiApys } = require('./getMaiApys');
+const { getMaiCurveApys } = require('./getMaiCurveApys');
+const { getPangolinV2Apys } = require('./getPangolinV2Apys');
 
 const getApys = [
   getPangolinV2Apys,

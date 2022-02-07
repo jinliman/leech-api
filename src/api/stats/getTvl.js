@@ -1,4 +1,4 @@
-const getChainTvl = require('./getChainTvl.js');
+const { getChainTvl } = require('./getChainTvl.js');
 
 const {
   BSC_CHAIN_ID,

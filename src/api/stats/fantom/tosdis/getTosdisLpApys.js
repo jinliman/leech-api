@@ -2,7 +2,7 @@ const BigNumber = require('bignumber.js');
 const { fantomWeb3: web3 } = require('../../../../utils/web3');
 
 const StakingPoolABI = require('../../../../abis/TosdisStakingPool.json');
-const fetchPrice = require('../../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../../utils/fetchPrice');
 const { compound } = require('../../../../utils/compound');
 const { FANTOM_CHAIN_ID, BASE_HPY } = require('../../../../constants');
 const { getTotalLpStakedInUsd } = require('../../../../utils/getTotalStakedInUsd');

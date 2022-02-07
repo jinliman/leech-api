@@ -1,4 +1,4 @@
-const getVaults = require('../../utils/getVaults.js');
+const { getVaults } = require('../../utils/getVaults.js');
 const { getStrategies } = require('../../utils/getStrategies.js');
 const { getLastHarvests } = require('../../utils/getLastHarvests.js');
 

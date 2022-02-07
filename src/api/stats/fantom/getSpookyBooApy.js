@@ -3,11 +3,11 @@ const { fantomWeb3: web3 } = require('../../../utils/web3');
 
 const xBOOChefAbi = require('../../../abis/fantom/xBOOChef.json');
 const ERC20 = require('../../../abis/ERC20.json');
-const fetchPrice = require('../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../utils/fetchPrice');
 const pool = require('../../../data/fantom/spookySinglePool.json');
 const { BASE_HPY } = require('../../../constants');
 const { compound } = require('../../../utils/compound');
-const getFarmWithTradingFeesApy = require('../../../utils/getFarmWithTradingFeesApy');
+const { getFarmWithTradingFeesApy } = require('../../../utils/getFarmWithTradingFeesApy');
 const { getYearlyPlatformTradingFees } = require('../../../utils/getTradingFeeApr');
 const { spookyClient } = require('../../../apollo/client');
 

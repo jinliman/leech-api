@@ -2,7 +2,7 @@ const BigNumber = require('bignumber.js');
 const { bscWeb3: web3 } = require('../../../../utils/web3');
 
 const BoardRoom = require('../../../../abis/mdexBoardRoom.json');
-const fetchPrice = require('../../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../../utils/fetchPrice');
 const { compound } = require('../../../../utils/compound');
 const { getTotalStakedInUsd } = require('../../../../utils/getTotalStakedInUsd');
 

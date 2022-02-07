@@ -2,12 +2,12 @@ const BigNumber = require('bignumber.js');
 const { bscWeb3: web3 } = require('../../../../utils/web3');
 
 const OriginalGangster = require('../../../../abis/OriginalGangster.json');
-const fetchPrice = require('../../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../../utils/fetchPrice');
 const pools = require('../../../../data/thugsLpPools.json');
 const { compound } = require('../../../../utils/compound');
 const { getTotalLpStakedInUsd } = require('../../../../utils/getTotalStakedInUsd');
 const { BASE_HPY, BSC_CHAIN_ID } = require('../../../../constants');
-const getBlockNumber = require('../../../../utils/getBlockNumber');
+const { getBlockNumber } = require('../../../../utils/getBlockNumber');
 
 const getThugsLpApys = async () => {
   let apys = {};

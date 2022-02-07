@@ -3,10 +3,10 @@ const { cronosWeb3: web3 } = require('../../../utils/web3');
 const { CRONOS_CHAIN_ID: chainId } = require('../../../constants');
 
 const BetuStaking = require('../../../abis/degens/BetuStaking.json');
-const fetchPrice = require('../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../utils/fetchPrice');
 const { compound } = require('../../../utils/compound');
 const { getTotalStakedInUsd } = require('../../../utils/getTotalStakedInUsd');
-const getBlockTime = require('../../../utils/getBlockTime');
+const { getBlockTime } = require('../../../utils/getBlockTime');
 
 const stakingPool = '0x1c7fDE0a9619bC81b23cAEF6992288BA5547a34F';
 const lpToken = '0x3295007761C290741B6b363b86dF9ba3467F0754';

@@ -3,8 +3,8 @@ const { MultiCall } = require('eth-multicall');
 const { multicallAddress } = require('../../../utils/web3');
 const IStakingDualRewards = require('../../../abis/StakingDualRewards.json');
 const { ERC20_ABI } = require('../../../abis/common/ERC20');
-const fetchPrice = require('../../../utils/fetchPrice');
-const getApyBreakdown = require('./getApyBreakdown');
+const { fetchPrice } = require('../../../utils/fetchPrice');
+const { getApyBreakdown } = require('./getApyBreakdown');
 const { isSushiClient } = require('../../../apollo/client');
 const { getTradingFeeApr, getTradingFeeAprSushi } = require('../../../utils/getTradingFeeApr');
 

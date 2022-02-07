@@ -1,4 +1,4 @@
-const getFarmWithTradingFeesApy = require('../../../utils/getFarmWithTradingFeesApy');
+const { getFarmWithTradingFeesApy } = require('../../../utils/getFarmWithTradingFeesApy');
 const { compound } = require('../../../utils/compound');
 const { BASE_HPY, LEECH_PERFORMANCE_FEE, SHARE_AFTER_PERFORMANCE_FEE } = require('../../../constants');
 

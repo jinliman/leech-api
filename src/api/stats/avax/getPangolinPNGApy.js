@@ -2,7 +2,7 @@ const BigNumber = require('bignumber.js');
 const { avaxWeb3: web3, web3Factory } = require('../../../utils/web3');
 
 const IRewardPool = require('../../../abis/IRewardPool.json');
-const fetchPrice = require('../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../utils/fetchPrice');
 const { compound } = require('../../../utils/compound');
 const { DAILY_HPY } = require('../../../constants');
 const ERC20 = require('../../../abis/ERC20.json');

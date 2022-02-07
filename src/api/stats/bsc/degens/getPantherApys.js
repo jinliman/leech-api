@@ -1,4 +1,4 @@
-const getMasterChefApys = require('./getBscMasterChefApys');
+const { getMasterChefApys } = require('./getBscMasterChefApys');
 
 const MasterChefAbi = require('../../../../abis/degens/PantherMasterChef.json');
 const pools = require('../../../../data/degens/pantherLpPools.json');

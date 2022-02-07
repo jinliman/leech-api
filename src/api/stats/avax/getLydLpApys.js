@@ -2,13 +2,13 @@ const BigNumber = require('bignumber.js');
 const { avaxWeb3: web3, web3Factory } = require('../../../utils/web3');
 
 const MasterChef = require('../../../abis/avax/LydChef.json');
-const fetchPrice = require('../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../utils/fetchPrice');
 const pools = require('../../../data/avax/lydLpPools.json');
 const { compound } = require('../../../utils/compound');
 const { AVAX_CHAIN_ID, BASE_HPY } = require('../../../constants');
-const getBlockNumber = require('../../../utils/getBlockNumber');
+const { getBlockNumber } = require('../../../utils/getBlockNumber');
 const { getTradingFeeApr } = require('../../../utils/getTradingFeeApr');
-const getFarmWithTradingFeesApy = require('../../../utils/getFarmWithTradingFeesApy');
+const { getFarmWithTradingFeesApy } = require('../../../utils/getFarmWithTradingFeesApy');
 const { lydiaClient } = require('../../../apollo/client');
 
 const ERC20 = require('../../../abis/ERC20.json');

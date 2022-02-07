@@ -2,13 +2,13 @@ const BigNumber = require('bignumber.js');
 const { bscWeb3: web3 } = require('../../../../utils/web3');
 
 const SmartGangster = require('../../../../abis/SmartGangster.json');
-const getBaseDrugsApy = require('./getBaseDrugsApy');
-const fetchPrice = require('../../../../utils/fetchPrice');
+const { getBaseDrugsApy } = require('./getBaseDrugsApy');
+const { fetchPrice } = require('../../../../utils/fetchPrice');
 const { getTotalStakedInUsd } = require('../../../../utils/getTotalStakedInUsd');
 const pools = require('../../../../data/drugsPools.json');
 const { compound } = require('../../../../utils/compound');
 const { BASE_HPY, BSC_CHAIN_ID } = require('../../../../constants');
-const getBlockNumber = require('../../../../utils/getBlockNumber');
+const { getBlockNumber } = require('../../../../utils/getBlockNumber');
 
 const getDrugsApys = async () => {
   const apys = {};

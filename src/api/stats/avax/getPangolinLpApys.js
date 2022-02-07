@@ -4,12 +4,12 @@ const { avaxWeb3: web3, multicallAddress } = require('../../../utils/web3');
 
 const IRewardPool = require('../../../abis/IRewardPool.json');
 const ERC20 = require('../../../abis/ERC20.json');
-const fetchPrice = require('../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../utils/fetchPrice');
 const pools = require('../../../data/avax/pangolinLpPools.json');
 const { compound } = require('../../../utils/compound');
 const { BASE_HPY, AVAX_CHAIN_ID } = require('../../../constants');
 const { getTradingFeeApr } = require('../../../utils/getTradingFeeApr');
-const getFarmWithTradingFeesApy = require('../../../utils/getFarmWithTradingFeesApy');
+const { getFarmWithTradingFeesApy } = require('../../../utils/getFarmWithTradingFeesApy');
 const { pangolinClient } = require('../../../apollo/client');
 
 const oracle = 'tokens';

@@ -1,5 +1,5 @@
-const getEarnings = require('./getEarnings');
-const getHolderCount = require('./getHolderCount');
+const { getEarnings } = require('./getEarnings');
+const { getHolderCount } = require('./getHolderCount');
 
 async function earnings(ctx) {
   try {

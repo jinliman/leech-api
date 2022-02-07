@@ -4,11 +4,11 @@ const { polygonWeb3: web3, multicallAddress } = require('../../../utils/web3');
 
 const IRewardPool = require('../../../abis/IRewardPool.json');
 const ERC20 = require('../../../abis/ERC20.json');
-const fetchPrice = require('../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../utils/fetchPrice');
 const pools = require('../../../data/matic/comethLpPools.json');
 const { BASE_HPY, POLYGON_CHAIN_ID, COMETH_LPF } = require('../../../constants');
 const { getTradingFeeApr } = require('../../../utils/getTradingFeeApr');
-const getFarmWithTradingFeesApy = require('../../../utils/getFarmWithTradingFeesApy');
+const { getFarmWithTradingFeesApy } = require('../../../utils/getFarmWithTradingFeesApy');
 
 const { comethClient } = require('../../../apollo/client');
 const { compound } = require('../../../utils/compound');

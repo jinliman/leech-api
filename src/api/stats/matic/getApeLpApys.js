@@ -6,12 +6,12 @@ const MiniChefV2 = require('../../../abis/matic/ApeMiniApe.json');
 const SushiComplexRewarderTime = require('../../../abis/matic/SushiComplexRewarderTime.json');
 const RewarderAllocPoints = require('../../../abis/matic/RewarderAllocPoints.json');
 const ERC20 = require('../../../abis/ERC20.json');
-const fetchPrice = require('../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../utils/fetchPrice');
 const pools = require('../../../data/matic/apePolyLpPools.json');
 const { POLYGON_CHAIN_ID, APEPOLY_LPF } = require('../../../constants');
 const { getTradingFeeApr } = require('../../../utils/getTradingFeeApr');
 const { apePolyClient } = require('../../../apollo/client');
-const getApyBreakdown = require('../common/getApyBreakdown');
+const { getApyBreakdown } = require('../common/getApyBreakdown');
 
 const minichef = '0x54aff400858Dcac39797a81894D9920f16972D1D';
 const oracleId = 'BANANApoly';

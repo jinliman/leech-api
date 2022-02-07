@@ -1,4 +1,4 @@
-const getCurvePricesCommon = require('../common/curve/getCurvePricesCommon');
+const { getCurvePricesCommon } = require('../common/curve/getCurvePricesCommon');
 const { polygonWeb3: web3 } = require('../../../utils/web3');
 const pools = require('../../../data/matic/jarvisPools.json');
 const rewardPool = require('../../../data/matic/jarvisRewardPool.json');

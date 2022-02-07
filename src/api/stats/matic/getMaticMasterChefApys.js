@@ -4,11 +4,11 @@ const { polygonWeb3: web3, multicallAddress } = require('../../../utils/web3');
 const MasterChefAbi = require('../../../abis/MasterChef.json');
 const { ERC20_ABI } = require('../../../abis/common/ERC20');
 const { POLYGON_CHAIN_ID, QUICK_LPF } = require('../../../constants');
-const fetchPrice = require('../../../utils/fetchPrice');
-const getBlockNumber = require('../../../utils/getBlockNumber');
+const { fetchPrice } = require('../../../utils/fetchPrice');
+const { getBlockNumber } = require('../../../utils/getBlockNumber');
 const { getTradingFeeAprSushi, getTradingFeeApr } = require('../../../utils/getTradingFeeApr');
 const { sushiClient } = require('../../../apollo/client');
-const getApyBreakdown = require('../common/getApyBreakdown');
+const { getApyBreakdown } = require('../common/getApyBreakdown');
 
 const getMasterChefApys = async (
   masterchefParams

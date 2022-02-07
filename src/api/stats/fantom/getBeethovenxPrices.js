@@ -1,4 +1,4 @@
-const getBalancerPrices = require('../common/getBalancerPrices');
+const { getBalancerPrices } = require('../common/getBalancerPrices');
 const { fantomWeb3: web3 } = require('../../../utils/web3');
 const { FANTOM_CHAIN_ID } = require('../../../constants');
 const beetsPools = require('../../../data/fantom/beethovenxPools.json');

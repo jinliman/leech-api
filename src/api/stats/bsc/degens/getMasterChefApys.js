@@ -1,11 +1,11 @@
 const BigNumber = require('bignumber.js');
 const { bscWeb3: web3 } = require('../../../../utils/web3');
 
-const fetchPrice = require('../../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../../utils/fetchPrice');
 const { compound } = require('../../../../utils/compound');
 const { getTotalStakedInUsd } = require('../../../../utils/getTotalStakedInUsd');
 const { BSC_CHAIN_ID } = require('../../../../constants');
-const getBlockNumber = require('../../../../utils/getBlockNumber');
+const { getBlockNumber } = require('../../../../utils/getBlockNumber');
 
 const getMasterChefApys = async masterchefParams => {
   let apys = {};

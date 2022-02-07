@@ -1,4 +1,4 @@
-const getMasterChefApys = require('./getBscMasterChefApys');
+const { getMasterChefApys } = require('./getBscMasterChefApys');
 
 const pools = require('../../../../data/degens/CZFLpPools.json');
 const { cakeClient } = require('../../../../apollo/client');

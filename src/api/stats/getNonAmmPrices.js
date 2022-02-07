@@ -1,19 +1,19 @@
-const getBeltPrices = require('./bsc/belt/getBeltPrices');
-const getEllipsisPrices = require('./bsc/ellipsis/getEllipsisPrices');
-const getSnob3PoolPrice = require('./avax/getSnob3PoolPrice');
-const getFroyoPrices = require('./fantom/getFroyoPrices');
-const getGondolaPrices = require('./avax/getGondolaPrices');
-const getCurvePolygonPrices = require('./matic/getCurvePrices');
-const getCurveFantomPrices = require('./fantom/getCurvePrices');
-const getDopplePrices = require('./bsc/dopple/getDopplePrices');
+const { getBeltPrices } = require('./bsc/belt/getBeltPrices');
+const { getEllipsisPrices } = require('./bsc/ellipsis/getEllipsisPrices');
+const { getSnob3PoolPrice } = require('./avax/getSnob3PoolPrice');
+const { getFroyoPrices } = require('./fantom/getFroyoPrices');
+const { getGondolaPrices } = require('./avax/getGondolaPrices');
+const { getCurvePolygonPrices } = require('./matic/getCurvePrices');
+const { getCurveFantomPrices } = require('./fantom/getCurvePrices');
+const { getDopplePrices } = require('./bsc/dopple/getDopplePrices');
 const { getIronSwapPrices } = require('./matic/getIronSwapPrices');
-const getAlpacaIbPrices = require('./bsc/alpaca/getAlpacaIbPrices');
-const getCurveArbitrumPrices = require('./arbitrum/getCurvePrices');
-const getCurveAvaxPrices = require('./avax/getCurvePrices');
-const getCurveHarmonyPrices = require('./one/getCurvePrices');
-const getBeethovenxPrices = require('./fantom/getBeethovenxPrices');
+const { getAlpacaIbPrices } = require('./bsc/alpaca/getAlpacaIbPrices');
+const { getCurveArbitrumPrices } = require('./arbitrum/getCurvePrices');
+const { getCurveAvaxPrices } = require('./avax/getCurvePrices');
+const { getCurveHarmonyPrices } = require('./one/getCurvePrices');
+const { getBeethovenxPrices } = require('./fantom/getBeethovenxPrices');
 const { getSynapsePrices } = require('./avax/getSynapsePrices');
-const getJarvisPrices = require('./matic/getJarvisPrices');
+const { getJarvisPrices } = require('./matic/getJarvisPrices');
 
 const getNonAmmPrices = async tokenPrices => {
   let prices = {};

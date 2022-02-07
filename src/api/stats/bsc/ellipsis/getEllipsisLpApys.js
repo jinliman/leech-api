@@ -2,9 +2,9 @@ const axios = require('axios');
 const BigNumber = require('bignumber.js');
 const { bscWeb3: web3 } = require('../../../../utils/web3');
 
-const getApyBreakdown = require('../../common/getApyBreakdown');
+const { getApyBreakdown } = require('../../common/getApyBreakdown');
 
-const fetchPrice = require('../../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../../utils/fetchPrice');
 const { getTotalStakedInUsd } = require('../../../../utils/getTotalStakedInUsd');
 const EllipsisLpStaker = require('../../../../abis/EllipsisLpStaker.json');
 const EllipsisOracle = require('../../../../abis/EllipsisOracle.json');

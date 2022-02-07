@@ -3,12 +3,12 @@ const BigNumber = require('bignumber.js');
 
 const RewardPool = require('../../../abis/fantom/TombRewardPool.json');
 const pools = require('../../../data/fantom/tombLpPools.json');
-const fetchPrice = require('../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../utils/fetchPrice');
 const { getTotalLpStakedInUsd } = require('../../../utils/getTotalStakedInUsd');
 const { getTradingFeeApr } = require('../../../utils/getTradingFeeApr');
 const { spookyClient } = require('../../../apollo/client');
 const { SPOOKY_LPF } = require('../../../constants');
-const getApyBreakdown = require('../common/getApyBreakdown');
+const { getApyBreakdown } = require('../common/getApyBreakdown');
 
 const rewardPool = '0xcc0a87F7e7c693042a9Cc703661F5060c80ACb43';
 const oracleId = 'TSHARE';

@@ -4,10 +4,10 @@ const { multicallAddress } = require('../../../utils/web3');
 const MasterChefAbi = require('../../../abis/MasterChef.json');
 const { ERC20_ABI } = require('../../../abis/common/ERC20');
 const { isSushiClient, isBeetClient } = require('../../../apollo/client');
-const getApyBreakdown = require('../common/getApyBreakdown');
-const fetchPrice = require('../../../utils/fetchPrice');
-const getBlockNumber = require('../../../utils/getBlockNumber');
-const getBlockTime = require('../../../utils/getBlockTime');
+const { getApyBreakdown } = require('../common/getApyBreakdown');
+const { fetchPrice } = require('../../../utils/fetchPrice');
+const { getBlockNumber } = require('../../../utils/getBlockNumber');
+const { getBlockTime } = require('../../../utils/getBlockTime');
 const {
   getTradingFeeAprSushi,
   getTradingFeeAprBalancer,

@@ -2,12 +2,12 @@ const BigNumber = require('bignumber.js');
 const { bscWeb3: web3 } = require('../../../../utils/web3');
 
 const MasterChef = require('../../../../abis/MasterChef.json');
-const fetchPrice = require('../../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../../utils/fetchPrice');
 const pools = require('../../../../data/ramenLpPools.json');
 const { compound } = require('../../../../utils/compound');
 const { getTotalLpStakedInUsd } = require('../../../../utils/getTotalStakedInUsd');
 const { BSC_CHAIN_ID } = require('../../../../constants');
-const getBlockNumber = require('../../../../utils/getBlockNumber');
+const { getBlockNumber } = require('../../../../utils/getBlockNumber');
 
 const getRamenLpApys = async () => {
   let apys = {};

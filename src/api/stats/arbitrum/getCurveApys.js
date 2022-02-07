@@ -5,7 +5,7 @@ const {
   getTotalStakedInUsd,
   getYearlyRewardsInUsd,
 } = require('../common/curve/getCurveApyData');
-const getApyBreakdown = require('../common/getApyBreakdown');
+const { getApyBreakdown } = require('../common/getApyBreakdown');
 
 const pools = require('../../../data/arbitrum/curvePools.json');
 const baseApyUrl = 'https://stats.curve.fi/raw-stats-arbitrum/apys.json';

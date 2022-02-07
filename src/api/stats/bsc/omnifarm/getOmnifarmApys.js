@@ -2,14 +2,14 @@ const BigNumber = require('bignumber.js');
 const { bscWeb3: web3 } = require('../../../../utils/web3');
 
 const StakingPoolABI = require('../../../../abis/IOmnifarmFarm.json');
-const fetchPrice = require('../../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../../utils/fetchPrice');
 const { compound } = require('../../../../utils/compound');
 const { BSC_CHAIN_ID, BASE_HPY } = require('../../../../constants');
 const { getTotalLpStakedInUsd } = require('../../../../utils/getTotalStakedInUsd');
 const { getTradingFeeApr } = require('../../../../utils/getTradingFeeApr');
 const { getFarmWithTradingFeesApy } = require('../../../../utils/getFarmWithTradingFeesApy');
 const { cakeClient } = require('../../../../apollo/client');
-const getBlockNumber = require('../../../../utils/getBlockNumber');
+const { getBlockNumber } = require('../../../../utils/getBlockNumber');
 const pools = require('../../../../data/degens/omnifarmLpPools.json');
 const { ERC20_ABI } = require('../../../../abis/common/ERC20');
 

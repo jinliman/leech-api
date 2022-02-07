@@ -3,10 +3,10 @@ const BigNumber = require('bignumber.js');
 
 const MasterChef = require('../../../abis/matic/ElysianFields.json');
 const pools = require('../../../data/matic/jarvisPools.json');
-const fetchPrice = require('../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../utils/fetchPrice');
 const { getTotalLpStakedInUsd } = require('../../../utils/getTotalStakedInUsd');
-const getBlockTime = require('../../../utils/getBlockTime');
-const getApyBreakdown = require('../common/getApyBreakdown');
+const { getBlockTime } = require('../../../utils/getBlockTime');
+const { getApyBreakdown } = require('../common/getApyBreakdown');
 const { getCurveFactoryApy } = require('../common/curve/getCurveApyData');
 
 const DECIMALS = '1e18';

@@ -1,6 +1,6 @@
-const getApyBreakdown = require('../common/getApyBreakdown');
+const { getApyBreakdown } = require('../common/getApyBreakdown');
 const { getTradingFeeApr } = require('../../../utils/getTradingFeeApr');
-const fetchPrice = require('../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../utils/fetchPrice');
 const { MultiCall } = require('eth-multicall');
 const { multicallAddress } = require('../../../utils/web3');
 const IRewardPool = require('../../../abis/IRewardPool.json');

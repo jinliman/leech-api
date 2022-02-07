@@ -2,7 +2,7 @@ const BigNumber = require('bignumber.js');
 const { MultiCall } = require('eth-multicall');
 const { multicallAddress } = require('../../../utils/web3');
 
-const fetchPrice = require('../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../utils/fetchPrice');
 const { getApyBreakdown } = require('./getApyBreakdown');
 
 // trading apr

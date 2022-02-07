@@ -4,11 +4,11 @@ const BigNumber = require('bignumber.js');
 const BisonRewardPool = require('../../../../abis/degens/BisonRewardPool.json');
 const ERC20 = require('../../../../abis/common/ERC20/ERC20.json');
 const lpPools = require('../../../../data/degens/bisonLpPools.json');
-const fetchPrice = require('../../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../../utils/fetchPrice');
 const { getTradingFeeApr } = require('../../../../utils/getTradingFeeApr');
 const { apeClient } = require('../../../../apollo/client');
 const { APE_LPF } = require('../../../../constants');
-const getApyBreakdown = require('../../common/getApyBreakdown');
+const { getApyBreakdown } = require('../../common/getApyBreakdown');
 
 const oracleId = 'BISON';
 const oracle = 'tokens';

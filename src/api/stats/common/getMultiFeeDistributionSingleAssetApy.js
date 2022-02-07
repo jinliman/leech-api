@@ -2,7 +2,7 @@ const BigNumber = require('bignumber.js');
 const {
   MultiFeeDistribution_ABI,
 } = require('../../../abis/common/MultiFeeDistribution');
-const fetchPrice = require('../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../utils/fetchPrice');
 const { compound } = require('../../../utils/compound');
 const { BASE_HPY, LEECH_PERFORMANCE_FEE, SHARE_AFTER_PERFORMANCE_FEE } = require('../../../constants');
 

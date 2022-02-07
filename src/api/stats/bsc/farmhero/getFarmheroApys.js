@@ -11,11 +11,11 @@ const {
 const _pools = require('../../../../data/farmheroPools.json');
 const pools = _pools;
 
-const fetchPrice = require('../../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../../utils/fetchPrice');
 const { BSC_CHAIN_ID, PCS_LPF } = require('../../../../constants');
 const { getTradingFeeApr } = require('../../../../utils/getTradingFeeApr');
 const { cakeClient } = require('../../../../apollo/client');
-const getApyBreakdown = require('../../common/getApyBreakdown');
+const { getApyBreakdown } = require('../../common/getApyBreakdown');
 const { addressBook } = require('../../../../../packages/blockchain-addressbook/build/address-book');
 const { getEDecimals } = require('../../../../utils/getEDecimals');
 

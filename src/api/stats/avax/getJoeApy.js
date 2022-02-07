@@ -3,11 +3,11 @@ const { avaxWeb3: web3 } = require('../../../utils/web3');
 
 const MasterChef = require('../../../abis/avax/JoeChef.json');
 const ERC20 = require('../../../abis/ERC20.json');
-const fetchPrice = require('../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../utils/fetchPrice');
 const pool = require('../../../data/avax/joePool.json');
 const { BASE_HPY } = require('../../../constants');
 const { compound } = require('../../../utils/compound');
-const getFarmWithTradingFeesApy = require('../../../utils/getFarmWithTradingFeesApy');
+const { getFarmWithTradingFeesApy } = require('../../../utils/getFarmWithTradingFeesApy');
 const { getYearlyJoePlatformTradingFees } = require('../../../utils/getTradingFeeApr');
 const { joeClient } = require('../../../apollo/client');
 

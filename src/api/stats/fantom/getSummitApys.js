@@ -3,11 +3,11 @@ const BigNumber = require('bignumber.js');
 
 const SummitCartographer = require('../../../abis/fantom/SummitCartographer.json');
 const lpPools = require('../../../data/fantom/summitLpPools.json');
-const fetchPrice = require('../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../utils/fetchPrice');
 const { getTradingFeeApr } = require('../../../utils/getTradingFeeApr');
 const { spookyClient } = require('../../../apollo/client');
 const { SPOOKY_LPF } = require('../../../constants');
-const getApyBreakdown = require('../common/getApyBreakdown');
+const { getApyBreakdown } = require('../common/getApyBreakdown');
 
 const cartographer = '0x46d303b6829aDc7AC3217D92f71B1DbbE77eBBA2';
 const oracleId = 'SUMMIT';

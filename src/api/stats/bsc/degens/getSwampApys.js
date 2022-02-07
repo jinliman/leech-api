@@ -2,12 +2,12 @@ const BigNumber = require('bignumber.js');
 const { bscWeb3: web3 } = require('../../../../utils/web3');
 
 const MasterChef = require('../../../../abis/degens/SwampChef.json');
-const fetchPrice = require('../../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../../utils/fetchPrice');
 const pools = require('../../../../data/degens/swampyLpPools.json');
 const { compound } = require('../../../../utils/compound');
 const { getTotalLpStakedInUsd } = require('../../../../utils/getTotalStakedInUsd');
 const { BSC_CHAIN_ID, BASE_HPY } = require('../../../../constants');
-const getBlockNumber = require('../../../../utils/getBlockNumber');
+const { getBlockNumber } = require('../../../../utils/getBlockNumber');
 const { getTradingFeeApr } = require('../../../../utils/getTradingFeeApr');
 const { getFarmWithTradingFeesApy } = require('../../../../utils/getFarmWithTradingFeesApy');
 const { cakeClient } = require('../../../../apollo/client');

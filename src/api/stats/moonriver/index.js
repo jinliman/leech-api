@@ -4,7 +4,7 @@ const { getSolarbeamDualLpV2Apys } = require('./getSolarbeamDualLpV2Apys');
 const { getSolarApy } = require('./getSolarApy');
 const { getSushiLpApys } = require('./getSushiLpApys');
 const { getFinnLpApys } = require('./getFinnLpApys');
-const getFinnApy = require('./getFinnApy');
+const { getFinnApy } = require('./getFinnApy');
 
 const getApys = [
   getSolarbeamLpApys,

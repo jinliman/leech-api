@@ -4,11 +4,11 @@ const { polygonWeb3: web3, multicallAddress } = require('../../../utils/web3');
 
 const FairLaunch = require('../../../abis/matic/KyberFairLaunch.json');
 const DMMPool = require('../../../abis/matic/DMMPool.json');
-const fetchPrice = require('../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../utils/fetchPrice');
 const pools = require('../../../data/matic/kyberLpPools.json');
 const { BASE_HPY, POLYGON_CHAIN_ID } = require('../../../constants');
 const { getVariableTradingFeeApr } = require('../../../utils/getTradingFeeApr');
-const getFarmWithTradingFeesApy = require('../../../utils/getFarmWithTradingFeesApy');
+const { getFarmWithTradingFeesApy } = require('../../../utils/getFarmWithTradingFeesApy');
 const { kyberClient } = require('../../../apollo/client');
 const { compound } = require('../../../utils/compound');
 

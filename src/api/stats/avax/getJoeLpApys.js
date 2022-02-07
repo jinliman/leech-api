@@ -4,11 +4,11 @@ const { avaxWeb3: web3, multicallAddress } = require('../../../utils/web3');
 
 const MasterChef = require('../../../abis/avax/JoeChef.json');
 const ERC20 = require('../../../abis/ERC20.json');
-const fetchPrice = require('../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../utils/fetchPrice');
 const pools = require('../../../data/avax/joeLpPools.json');
 const { BASE_HPY, AVAX_CHAIN_ID } = require('../../../constants');
 const { getTradingFeeAprSushi } = require('../../../utils/getTradingFeeApr');
-const getFarmWithTradingFeesApy = require('../../../utils/getFarmWithTradingFeesApy');
+const { getFarmWithTradingFeesApy } = require('../../../utils/getFarmWithTradingFeesApy');
 
 const { joeClient } = require('../../../apollo/client');
 const { compound } = require('../../../utils/compound');

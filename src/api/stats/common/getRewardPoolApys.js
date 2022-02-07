@@ -4,8 +4,8 @@ const { multicallAddress } = require('../../../utils/web3');
 
 const IRewardPool = require('../../../abis/IRewardPool.json');
 const ERC20 = require('../../../abis/ERC20.json');
-const fetchPrice = require('../../../utils/fetchPrice');
-const getApyBreakdown = require('../common/getApyBreakdown');
+const { fetchPrice } = require('../../../utils/fetchPrice');
+const { getApyBreakdown } = require('../common/getApyBreakdown');
 const { isSushiClient } = require('../../../apollo/client');
 const { getTradingFeeApr, getTradingFeeAprSushi } = require('../../../utils/getTradingFeeApr');
 

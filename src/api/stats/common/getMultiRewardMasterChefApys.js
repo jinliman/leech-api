@@ -3,9 +3,9 @@ const { MultiCall } = require('eth-multicall');
 const { multicallAddress } = require('../../../utils/web3');
 const MasterChefAbi = require('../../../abis/IMultiRewardMasterChef.json');
 const { isSushiClient, isBeetClient } = require('../../../apollo/client');
-const getApyBreakdown = require('../common/getApyBreakdown');
-const fetchPrice = require('../../../utils/fetchPrice');
-const getBlockTime = require('../../../utils/getBlockTime');
+const { getApyBreakdown } = require('../common/getApyBreakdown');
+const { fetchPrice } = require('../../../utils/fetchPrice');
+const { getBlockTime } = require('../../../utils/getBlockTime');
 const { getEDecimals } = require('../../../utils/getEDecimals');
 const {
   getTradingFeeAprSushi,

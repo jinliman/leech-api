@@ -4,11 +4,11 @@ const { fantomWeb3: web3, multicallAddress } = require('../../../utils/web3');
 
 const MasterChef = require('../../../abis/fantom/SpookyChef.json');
 const ERC20 = require('../../../abis/ERC20.json');
-const fetchPrice = require('../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../utils/fetchPrice');
 const pools = require('../../../data/fantom/spookyLpPools.json');
 const { BASE_HPY, FANTOM_CHAIN_ID } = require('../../../constants');
 const { getTradingFeeApr } = require('../../../utils/getTradingFeeApr');
-const getFarmWithTradingFeesApy = require('../../../utils/getFarmWithTradingFeesApy');
+const { getFarmWithTradingFeesApy } = require('../../../utils/getFarmWithTradingFeesApy');
 const { spookyClient } = require('../../../apollo/client');
 const { compound } = require('../../../utils/compound');
 

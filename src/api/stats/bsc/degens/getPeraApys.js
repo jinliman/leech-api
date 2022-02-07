@@ -2,7 +2,7 @@ const BigNumber = require('bignumber.js');
 const { bscWeb3: web3 } = require('../../../../utils/web3');
 
 const PeraToken = require('../../../../abis/degens/PeraToken.json');
-const fetchPrice = require('../../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../../utils/fetchPrice');
 const pools = require('../../../../data/degens/peraLpPools.json');
 const { compound } = require('../../../../utils/compound');
 

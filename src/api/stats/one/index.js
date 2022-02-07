@@ -1,5 +1,5 @@
 const { getSushiLpApys } = require('./getSushiApys');
-const getCurveApys = require('./getCurveApys');
+const { getCurveApys } = require('./getCurveApys');
 
 const getApys = [
   getSushiLpApys,
@@ -25,7 +25,6 @@ const getOneApys = async () => {
     let mappedApyBreakdownValues = {};
 
     // Loop through key values and move default breakdown format
-    // To require totalApy key
     for (const [key, value] of Object.entries(result.value)) {
       mappedApyBreakdownValues[key] = {
         totalApy: value,

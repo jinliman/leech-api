@@ -1,5 +1,5 @@
 const { APE_LPF } = require('../../../../constants');
-const getMasterChefApys = require('./getBscMasterChefApys');
+const { getMasterChefApys } = require('./getBscMasterChefApys');
 const pools = require('../../../../data/degens/singularLpPools.json');
 const { apeClient } = require('../../../../apollo/client');
 

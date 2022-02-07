@@ -1,7 +1,7 @@
 const axios = require('axios');
 const BigNumber = require('bignumber.js');
 
-const fetchPrice = require('../../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../../utils/fetchPrice');
 
 const IRewardGauge = require('../../../../abis/IRewardPool.json');
 const IRewardStream = require('../../../../abis/ICurveRewardStream.json');

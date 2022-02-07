@@ -1,5 +1,5 @@
-const getFusefiLpApys = require('./getFusefiLpApys');
-const getFuseLeechSingleApy = require('./getFuseLeechSingleApy');
+const { getFusefiLpApys } = require('./getFusefiLpApys');
+const { getFuseLeechSingleApy } = require('./getFuseLeechSingleApy');
 
 const getApys = [getFusefiLpApys, getFuseLeechSingleApy];
 

@@ -4,12 +4,12 @@ const { polygonWeb3: web3, multicallAddress } = require('../../../utils/web3');
 
 const IRewardPool = require('../../../abis/IRewardPool.json');
 const ERC20 = require('../../../abis/ERC20.json');
-const fetchPrice = require('../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../utils/fetchPrice');
 const pools = require('../../../data/matic/polyQuityLpPools.json');
 const { POLYGON_CHAIN_ID, SUSHI_LPF } = require('../../../constants');
 const { getTradingFeeAprSushi } = require('../../../utils/getTradingFeeApr');
 const { sushiClient } = require('../../../apollo/client');
-const getApyBreakdown = require('../common/getApyBreakdown');
+const { getApyBreakdown } = require('../common/getApyBreakdown');
 
 const oracle = 'tokens';
 const oracleId = 'PYQ';

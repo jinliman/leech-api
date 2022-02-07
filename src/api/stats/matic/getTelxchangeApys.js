@@ -9,11 +9,11 @@ const { ERC20_ABI } = require('../../../abis/common/ERC20');
 const _pools = require('../../../data/matic/telxchangePools.json');
 const pools = _pools;
 
-const fetchPrice = require('../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../utils/fetchPrice');
 const { POLYGON_CHAIN_ID, QUICK_LPF } = require('../../../constants');
 const { getTradingFeeApr } = require('../../../utils/getTradingFeeApr');
 const { quickClient } = require('../../../apollo/client');
-const getApyBreakdown = require('../common/getApyBreakdown');
+const { getApyBreakdown } = require('../common/getApyBreakdown');
 const { addressBook } = require('../../../../packages/blockchain-addressbook/build/address-book');
 const { getEDecimals } = require('../../../utils/getEDecimals');
 

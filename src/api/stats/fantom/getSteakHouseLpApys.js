@@ -4,11 +4,11 @@ const { fantomWeb3: web3, multicallAddress } = require('../../../utils/web3');
 
 const MasterChef = require('../../../abis/fantom/SteakHouse.json');
 const ERC20 = require('../../../abis/ERC20.json');
-const fetchPrice = require('../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../utils/fetchPrice');
 const pools = require('../../../data/fantom/steakhouseLpPools.json');
 const { BASE_HPY, FANTOM_CHAIN_ID } = require('../../../constants');
 const { getTradingFeeApr } = require('../../../utils/getTradingFeeApr');
-const getFarmWithTradingFeesApy = require('../../../utils/getFarmWithTradingFeesApy');
+const { getFarmWithTradingFeesApy } = require('../../../utils/getFarmWithTradingFeesApy');
 const { spookyClient } = require('../../../apollo/client');
 const { compound } = require('../../../utils/compound');
 
@@ -104,7 +104,6 @@ const getMasterChefData = async () => {
 };
 
 const getPoolsData = async pools => {
-  const masterchefContract = new web3.eth.Contract(MasterChef, masterchef);
   const multicall = new MultiCall(web3, multicallAddress(FANTOM_CHAIN_ID));
   const balanceCalls = [];
   pools.forEach(pool => {

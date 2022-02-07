@@ -1,5 +1,5 @@
-const getNetswapApys = require('./getNetswapApys');
-const getApys = [getNetswapApys];
+const { getNetswapApys } = require('./getNetswapApys');
+const { getApys } = [getNetswapApys];
 
 const getMetisApys = async () => {
   let apys = {};

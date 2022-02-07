@@ -2,15 +2,13 @@ const BigNumber = require('bignumber.js');
 const { hecoWeb3: web3 } = require('../../../utils/web3');
 
 const HecoPool = require('../../../abis/HecoPool.json');
-const fetchPrice = require('../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../utils/fetchPrice');
 const pools = require('../../../data/heco/mdexLpPools.json');
 const { compound } = require('../../../utils/compound');
 const { getTotalLpStakedInUsd } = require('../../../utils/getTotalStakedInUsd');
 const { BASE_HPY, HECO_CHAIN_ID } = require('../../../constants');
-const { getTradingFeeApr } = require('../../../utils/getTradingFeeApr');
-const getFarmWithTradingFeesApy = require('../../../utils/getFarmWithTradingFeesApy');
-const { mdexHecoClient } = require('../../../apollo/client');
-const getBlockNumber = require('../../../utils/getBlockNumber');
+const { getFarmWithTradingFeesApy } = require('../../../utils/getFarmWithTradingFeesApy');
+const { getBlockNumber } = require('../../../utils/getBlockNumber');
 
 const hecoPool = '0xFB03e11D93632D97a8981158A632Dd5986F5E909';
 
@@ -22,9 +20,7 @@ const getMdexLpApys = async () => {
   let apys = {};
   let apyBreakdowns = {};
 
-  const pairAddresses = pools.map(pool => pool.address);
-  const tradingAprs = {}; //await getTradingFeeApr(mdexHecoClient, pairAddresses, liquidityProviderFee);
-
+  const tradingAprs = {};
   const allPools = [...pools];
 
   let promises = [];

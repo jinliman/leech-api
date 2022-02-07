@@ -4,7 +4,7 @@ const { bscWeb3: web3 } = require('../../../../utils/web3');
 
 const MasterBelt = require('../../../../abis/MasterBelt.json');
 const VaultPool = require('../../../../abis/BeltVaultPool.json');
-const fetchPrice = require('../../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../../utils/fetchPrice');
 const pools = require('../../../../data/beltPools.json');
 const { compound } = require('../../../../utils/compound');
 const {
@@ -13,7 +13,7 @@ const {
   LEECH_PERFORMANCE_FEE,
   SHARE_AFTER_PERFORMANCE_FEE,
 } = require('../../../../constants');
-const getBlockNumber = require('../../../../utils/getBlockNumber');
+const { getBlockNumber } = require('../../../../utils/getBlockNumber');
 
 const masterbelt = '0xD4BbC80b9B102b77B21A06cb77E954049605E6c1';
 const oracleId = 'BELT';

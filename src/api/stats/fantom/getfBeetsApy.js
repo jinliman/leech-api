@@ -3,15 +3,15 @@ const { fantomWeb3: web3 } = require('../../../utils/web3');
 
 const MasterChef = require('../../../abis/fantom/BeethovenxChef.json');
 const ERC20 = require('../../../abis/ERC20.json');
-const fetchPrice = require('../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../utils/fetchPrice');
 const pool = require('../../../data/fantom/fBeetsPool.json');
 const { BASE_HPY } = require('../../../constants');
 const { compound } = require('../../../utils/compound');
-const getFarmWithTradingFeesApy = require('../../../utils/getFarmWithTradingFeesApy');
+const { getFarmWithTradingFeesApy } = require('../../../utils/getFarmWithTradingFeesApy');
 
 const { getYearlyBalancerPlatformTradingFees } = require('../../../utils/getTradingFeeApr');
 const { beetClient } = require('../../../apollo/client');
-const getBlockTime = require('../../../utils/getBlockTime');
+const { getBlockTime } = require('../../../utils/getBlockTime');
 
 const oracle = 'tokens';
 const oracleId = 'BEETS';

@@ -1,7 +1,7 @@
-const getLiquidusApys = require('./getLiquidusApys');
+const { getLiquidusApys } = require('./getLiquidusApys');
 
-const getVvsApys = require('./getVvsApys');
-const getCronaApys = require('./getCronaApys');
+const { getVvsApys } = require('./getVvsApys');
+const { getCronaApys } = require('./getCronaApys');
 
 const getApys = [
   getVvsApys,

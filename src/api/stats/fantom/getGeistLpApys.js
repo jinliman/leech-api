@@ -1,12 +1,12 @@
 const BigNumber = require('bignumber.js');
 const { fantomWeb3: web3 } = require('../../../utils/web3');
 
-const getApyBreakdown = require('../common/getApyBreakdown');
+const { getApyBreakdown } = require('../common/getApyBreakdown');
 const { getTradingFeeApr } = require('../../../utils/getTradingFeeApr');
 const { spookyClient } = require('../../../apollo/client');
 const { SPOOKY_LPF } = require('../../../constants');
 
-const fetchPrice = require('../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../utils/fetchPrice');
 const { getTotalLpStakedInUsd } = require('../../../utils/getTotalStakedInUsd');
 const MasterChef = require('../../../abis/fantom/GeistChef.json');
 const pools = require('../../../data/fantom/geistLpPools.json');

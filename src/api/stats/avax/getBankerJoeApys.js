@@ -1,7 +1,7 @@
 const BigNumber = require('bignumber.js');
 const { avaxWeb3: web3 } = require('../../../utils/web3');
 
-const fetchPrice = require('../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../utils/fetchPrice');
 const { compound } = require('../../../utils/compound');
 const RewardDistributor = require('../../../abis/avax/RewardDistributor.json');
 const IToken = require('../../../abis/avax/BankerJoeIToken.json');

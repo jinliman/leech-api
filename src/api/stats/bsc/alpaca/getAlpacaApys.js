@@ -5,12 +5,12 @@ const ERC20 = require('../../../../abis/ERC20.json');
 const AlpacaIbVault = require('../../../../abis/AlpacaIbVault.json');
 const AlpacaIbVaultConfig = require('../../../../abis/AlpacaIbVaultConfig.json');
 
-const getCakeV2PoolApy = require('../pancake/getCakeV2PoolApy');
-const fetchPrice = require('../../../../utils/fetchPrice');
-const getApyBreakdown = require('../../common/getApyBreakdown');
+const { getCakeV2PoolApy } = require('../pancake/getCakeV2PoolApy');
+const { fetchPrice } = require('../../../../utils/fetchPrice');
+const { getApyBreakdown } = require('../../common/getApyBreakdown');
 
 const { getTotalStakedInUsd } = require('../../../../utils/getTotalStakedInUsd');
-const getYearlyRewardsInUsd = require('./getYearlyRewardsInUsd');
+const { getYearlyRewardsInUsd } = require('./getYearlyRewardsInUsd');
 const pools = require('../../../../data/alpacaPools.json');
 
 const getAlpacaApys = async () => {

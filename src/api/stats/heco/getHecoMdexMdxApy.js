@@ -2,7 +2,7 @@ const BigNumber = require('bignumber.js');
 const { hecoWeb3: web3, web3Factory } = require('../../../utils/web3');
 
 const BoardRoom = require('../../../abis/heco/mdexWhtBoardRoom.json');
-const fetchPrice = require('../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../utils/fetchPrice');
 const { compound } = require('../../../utils/compound');
 const ERC20 = require('../../../abis/ERC20.json');
 

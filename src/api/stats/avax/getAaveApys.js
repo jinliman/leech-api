@@ -1,7 +1,7 @@
 const BigNumber = require('bignumber.js');
 const { avaxWeb3: web3 } = require('../../../utils/web3');
 
-const fetchPrice = require('../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../utils/fetchPrice');
 const { compound } = require('../../../utils/compound');
 const IAaveDistributionManager = require('../../../abis/matic/AaveDistributionManager.json');
 const IAaveProtocolDataProvider = require('../../../abis/matic/AaveProtocolDataProvider.json');

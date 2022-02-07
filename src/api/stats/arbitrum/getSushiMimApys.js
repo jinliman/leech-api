@@ -5,12 +5,12 @@ const { arbitrumWeb3: web3, multicallAddress } = require('../../../utils/web3');
 const SushiMiniChefV2 = require('../../../abis/matic/SushiMiniChefV2.json');
 const SushiComplexRewarderTime = require('../../../abis/matic/SushiComplexRewarderTime.json');
 const ERC20 = require('../../../abis/ERC20.json');
-const fetchPrice = require('../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../utils/fetchPrice');
 const pools = require('../../../data/arbitrum/sushiLpMimPools.json');
 const { ARBITRUM_CHAIN_ID, SUSHI_LPF } = require('../../../constants');
 const { getTradingFeeAprSushi: getTradingFeeApr } = require('../../../utils/getTradingFeeApr');
 const { sushiArbitrumClient } = require('../../../apollo/client');
-const getApyBreakdown = require('../common/getApyBreakdown');
+const { getApyBreakdown } = require('../common/getApyBreakdown');
 
 const minichef = '0xF4d73326C13a4Fc5FD7A064217e12780e9Bd62c3';
 const oracleId = 'SUSHI';
@@ -32,12 +32,6 @@ const getFarmApys = async pools => {
   const minichefContract = new web3.eth.Contract(SushiMiniChefV2, minichef);
   const sushiPerSecond = new BigNumber(await minichefContract.methods.sushiPerSecond().call());
   const totalAllocPoint = new BigNumber(await minichefContract.methods.totalAllocPoint().call());
-
-  // totalAllocPoint is non public
-  // https://github.com/sushiswap/sushiswap/blob/37026f3749f9dcdae89891f168d63667845576a7/contracts/mocks/ComplexRewarderTime.sol#L44
-  // hardcoding to the same value SushiSwap hardcoded to
-  // https://github.com/sushiswap/sushiswap-interface/blob/6300093e17756038a5b5089282d7bbe6dce87759/src/hooks/minichefv2/useFarms.ts#L77
-  const hardcodedTotalAllocPoint = 8400;
 
   const tokenPrice = await fetchPrice({ oracle, id: oracleId });
   const { balances, allocPoints } = await getPoolsData(pools);

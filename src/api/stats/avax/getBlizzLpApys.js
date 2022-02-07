@@ -1,12 +1,12 @@
 const BigNumber = require('bignumber.js');
 const { avaxWeb3: web3 } = require('../../../utils/web3');
 
-const getApyBreakdown = require('../common/getApyBreakdown');
+const { getApyBreakdown } = require('../common/getApyBreakdown');
 const { getTradingFeeAprSushi } = require('../../../utils/getTradingFeeApr');
 const { joeClient } = require('../../../apollo/client');
 const { JOE_LPF } = require('../../../constants');
 
-const fetchPrice = require('../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../utils/fetchPrice');
 const { getTotalLpStakedInUsd } = require('../../../utils/getTotalStakedInUsd');
 const MasterChef = require('../../../abis/fantom/GeistChef.json');
 const pools = require('../../../data/avax/blizzLpPools.json');

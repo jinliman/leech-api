@@ -1,15 +1,15 @@
 const { getTradingFeeApr } = require('../../../../utils/getTradingFeeApr');
-const getApyBreakdown = require('../../common/getApyBreakdown');
+const { getApyBreakdown } = require('../../common/getApyBreakdown');
 
 const BigNumber = require('bignumber.js');
 const { bscWeb3: web3 } = require('../../../../utils/web3');
 const PacocaFarm = require('../../../../abis/PacocaFarm.json');
 const AutoStrat = require('../../../../abis/AutoStratX.json');
 const MasterChef = require('../../../../abis/MasterChef.json');
-const fetchPrice = require('../../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../../utils/fetchPrice');
 const lpPools = require('../../../../data/degens/pacocaLpPools.json');
 const { BSC_CHAIN_ID, APE_LPF } = require('../../../../constants');
-const getBlockNumber = require('../../../../utils/getBlockNumber');
+const { getBlockNumber } = require('../../../../utils/getBlockNumber');
 const ERC20 = require('../../../../abis/ERC20.json');
 const { apeClient } = require('../../../../apollo/client');
 

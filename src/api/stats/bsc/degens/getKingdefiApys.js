@@ -1,12 +1,12 @@
 const BigNumber = require('bignumber.js');
 const { bscWeb3: web3 } = require('../../../../utils/web3');
 
-const getApyBreakdown = require('../../common/getApyBreakdown');
+const { getApyBreakdown } = require('../../common/getApyBreakdown');
 const { getTradingFeeApr } = require('../../../../utils/getTradingFeeApr');
 const { PCS_LPF } = require('../../../../constants');
 
 const MasterChef = require('../../../../abis/degens/KingDefiMaster.json');
-const fetchPrice = require('../../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../../utils/fetchPrice');
 const pools = require('../../../../data/degens/kingdefiLpPools.json');
 const { cakeClient } = require('../../../../apollo/client');
 

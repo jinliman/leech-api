@@ -2,12 +2,12 @@ const BigNumber = require('bignumber.js');
 const { bscWeb3: web3 } = require('../../../../utils/web3');
 
 const SmartChef = require('../../../../abis/SmartChef.json');
-const fetchPrice = require('../../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../../utils/fetchPrice');
 const { getTotalStakedInUsd } = require('../../../../utils/getTotalStakedInUsd');
 const pools = require('../../../../data/cakePools.json');
 const { compound } = require('../../../../utils/compound');
 const { HOURLY_HPY, BSC_CHAIN_ID } = require('../../../../constants');
-const getBlockNumber = require('../../../../utils/getBlockNumber');
+const { getBlockNumber } = require('../../../../utils/getBlockNumber');
 
 const getCakeApys = async () => {
   let apys = {};

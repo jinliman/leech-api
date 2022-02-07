@@ -2,7 +2,7 @@ const BigNumber = require('bignumber.js');
 const { avaxWeb3: web3 } = require('../../../utils/web3');
 const { BASE_HPY } = require('../../../constants');
 
-const fetchPrice = require('../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../utils/fetchPrice');
 const { compound } = require('../../../utils/compound');
 const IncentivesController = require('../../../abis/fantom/GeistIncentivesController.json');
 const IAaveProtocolDataProvider = require('../../../abis/matic/AaveProtocolDataProvider.json');

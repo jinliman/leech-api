@@ -4,11 +4,11 @@ const { fuseWeb3: web3, multicallAddress } = require('../../../utils/web3');
 
 const IRewardPool = require('../../../abis/fuse/MultiReward.json');
 const ERC20 = require('../../../abis/ERC20.json');
-const fetchPrice = require('../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../utils/fetchPrice');
 const pools = require('../../../data/fuse/fusefiLpPools.json');
 const { BASE_HPY, FUSE_CHAIN_ID, FUSEFI_LPF } = require('../../../constants');
 const { getTradingFeeApr } = require('../../../utils/getTradingFeeApr');
-const getFarmWithTradingFeesApy = require('../../../utils/getFarmWithTradingFeesApy');
+const { getFarmWithTradingFeesApy } = require('../../../utils/getFarmWithTradingFeesApy');
 const { fusefiClient } = require('../../../apollo/client');
 const { compound } = require('../../../utils/compound');
 const { addressBook } = require('../../../../packages/blockchain-addressbook/build/address-book');

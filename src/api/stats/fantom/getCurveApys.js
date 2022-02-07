@@ -5,9 +5,9 @@ const {
   getTotalStakedInUsd,
   getYearlyRewardsInUsd,
 } = require('../common/curve/getCurveApyData');
-const getApyBreakdown = require('../common/getApyBreakdown');
+const { getApyBreakdown } = require('../common/getApyBreakdown');
 const ICurvePool = require('../../../abis/ICurvePool.json');
-const fetchPrice = require('../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../utils/fetchPrice');
 const axios = require('axios');
 const BigNumber = require('bignumber.js');
 

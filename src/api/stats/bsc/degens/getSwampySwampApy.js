@@ -3,10 +3,10 @@ const { bscWeb3: web3 } = require('../../../../utils/web3');
 
 const SwampChef = require('../../../../abis/degens/SwampChef.json');
 const SwampStrat = require('../../../../abis/StrategyCakeSwamp.json');
-const fetchPrice = require('../../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../../utils/fetchPrice');
 const { compound } = require('../../../../utils/compound');
 const { BSC_CHAIN_ID } = require('../../../../constants');
-const getBlockNumber = require('../../../../utils/getBlockNumber');
+const { getBlockNumber } = require('../../../../utils/getBlockNumber');
 
 const swampchef = '0x33AdBf5f1ec364a4ea3a5CA8f310B597B8aFDee3';
 const swampStrat = '0xc65D6E612C27b7C9B00dE40715015EEa81368252';

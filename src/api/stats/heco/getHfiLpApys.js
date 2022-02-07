@@ -2,7 +2,7 @@ const BigNumber = require('bignumber.js');
 const { hecoWeb3: web3 } = require('../../../utils/web3');
 
 const HecoPool = require('../../../abis/HFIChef.json');
-const fetchPrice = require('../../../utils/fetchPrice');
+const { fetchPrice } = require('../../../utils/fetchPrice');
 const pools = require('../../../data/heco/hfiLpPools.json');
 const { compound } = require('../../../utils/compound');
 const { getTotalLpStakedInUsd } = require('../../../utils/getTotalStakedInUsd');
