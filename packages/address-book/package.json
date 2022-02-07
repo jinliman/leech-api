@@ -1,0 +1,19 @@
+{
+  "name": "blockchain-addressbook",
+  "version": "0.12.3",
+  "description": "A collection of useful addresses on various chains for defi development",
+  "main": "build/address-book/index.js",
+  "files": [
+    "build/address-book/",
+    "build/util/",
+    "build/types/"
+  ],
+  "repository": "beefyfinance/beefy-api",
+  "license": "MIT",
+  "devDependencies": {
+    "assert": "^2.0.0",
+    "ethereumjs-util": "^7.0.10",
+    "node-fetch": "^2.6.1"
+  },
+  "dependencies": {}
+}
