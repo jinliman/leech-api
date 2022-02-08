@@ -12,7 +12,7 @@ const ONE = {
     'Harmony is an open and fast blockchain. Our mainnet runs Ethereum applications with 2-second transaction finality and 100 times lower fees.',
   logoURI:
     'https://res.cloudinary.com/dnz2bkszg/image/fetch/f_auto/https://raw.githubusercontent.com/sushiswap/icons/master/token/one.jpg',
-} as const;
+};
 
 const SUSHI = {
   name: 'Sushi',
@@ -30,18 +30,6 @@ const _tokens = {
   ONE,
   WONE: ONE,
   WNATIVE: ONE,
-  BIFI: {
-    chainId: 1666600000,
-    address: '0x6aB6d61428fde76768D7b45D8BFeec19c6eF91A8',
-    decimals: 18,
-    name: 'Beefy.Finance',
-    symbol: 'BIFI',
-    website: 'https://www.beefy.finance/',
-    description:
-      'Beefy Finance is a Decentralized, Multi-Chain Yield Optimizer platform that allows its users to earn compound interest on their crypto holdings.',
-    logoURI:
-      'https://raw.githubusercontent.com/beefyfinance/beefy-app/prod/src/images/single-assets/BIFI.png',
-  },
   CRV: {
     chainId: 1666600000,
     address: '0x352cd428EFd6F31B5cae636928b7B84149cF369F',
@@ -210,6 +198,6 @@ const _tokens = {
     description:
       'Wrapped Bitcoin (WBTC) is the first ERC20 token backed 1:1 with Bitcoin. Completely transparent. 100% verifiable. Community led.',
   },
-} as const;
+};
 
-export const tokens: ConstRecord<typeof _tokens, Token> = _tokens;
+export const tokens = _tokens;

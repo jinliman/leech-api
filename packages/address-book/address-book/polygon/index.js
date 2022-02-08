@@ -1,4 +1,4 @@
-import { beefyfinance } from './platforms/beefyfinance';
+import { leechfinance } from './platforms/leechfinance';
 import { chainlink } from './platforms/chainlink';
 import { cometh } from './platforms/cometh';
 import { dfyn } from './platforms/dfyn';
@@ -22,7 +22,7 @@ import { convertSymbolTokenMapToAddressTokenMap } from '../../util/convertSymbol
 
 const _polygon = {
   platforms: {
-    beefyfinance,
+    leechfinance,
     chainlink,
     cometh,
     dfyn,

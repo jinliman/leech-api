@@ -12,7 +12,7 @@ const CELO = {
     'Celo is a mobile-first platform that makes financial dApps and crypto payments accessible to anyone with a mobile phone',
   logoURI:
     'https://res.cloudinary.com/dnz2bkszg/image/fetch/f_auto/https://raw.githubusercontent.com/sushiswap/icons/master/token/one.jpg',
-} as const;
+};
 
 const WCELO = {
   ...CELO,
@@ -35,18 +35,6 @@ const _tokens = {
   CELO,
   WCELO: WCELO,
   WNATIVE: WCELO,
-  BIFI: {
-    chainId: 42220,
-    address: '0x639A647fbe20b6c8ac19E48E2de44ea792c62c5C',
-    decimals: 18,
-    name: 'Beefy.Finance',
-    symbol: 'BIFI',
-    website: 'https://www.beefy.finance/',
-    description:
-      'Beefy Finance is a Decentralized, Multi-Chain Yield Optimizer platform that allows its users to earn compound interest on their crypto holdings.',
-    logoURI:
-      'https://raw.githubusercontent.com/beefyfinance/beefy-app/prod/src/images/single-assets/BIFI.png',
-  },
   cUSD: {
     name: 'Celo Dollar',
     symbol: 'cUSD',
@@ -168,6 +156,6 @@ const _tokens = {
     ...SUSHIV1,
     symbol: 'cSUSHI',
   },
-} as const;
+};
 
-export const tokens: ConstRecord<typeof _tokens, Token> = _tokens;
+export const tokens = _tokens;

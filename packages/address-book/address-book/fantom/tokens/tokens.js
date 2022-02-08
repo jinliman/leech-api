@@ -11,7 +11,7 @@ const ETH = {
   description:
     'The native currency that flows within the Ethereum economy is called Ether (ETH). Ether is typically used to pay for transaction fees called Gas, and it is the base currency of the network.',
   logoURI: 'https://ftmscan.com/token/images/wETH_32.png',
-} as const;
+};
 
 const BTC = {
   name: 'Wrapped Bitcoin',
@@ -23,7 +23,7 @@ const BTC = {
   description:
     'Wrapped Bitcoin (WBTC) is the first ERC20 token backed 1:1 with Bitcoin. Completely transparent. 100% verifiable. Community led.',
   logoURI: 'https://ftmscan.com/token/images/wBTC_32.png',
-} as const;
+};
 
 const FTM = {
   name: 'Wrapped Fantom',
@@ -35,7 +35,7 @@ const FTM = {
   description:
     'Fantom is a fast, high-throughput open-source smart contract platform for digital assets and dApps.',
   logoURI: 'https://ftmscan.com/token/images/wFtm_32.png',
-} as const;
+};
 
 const _tokens = {
   PILLS: {
@@ -56,9 +56,9 @@ const _tokens = {
     address: '0x44e314190D9E4cE6d4C0903459204F8E21ff940A',
     chainId: 250,
     decimals: 18,
-    website: 'https://www.beefy.finance/',
+    website: 'https://www.leech.finance/',
     description:
-      'binSPIRIT is the Beefy wrapped version of inSPIRIT which boosts Spirit vaults on Beefy. binSPIRIT can be traded or minted 1:1 with SPIRIT.',
+      'binSPIRIT is the Leech wrapped version of inSPIRIT which boosts Spirit vaults on Leech. binSPIRIT can be traded or minted 1:1 with SPIRIT.',
     logoURI: '',
   },
   gOHM: {
@@ -148,7 +148,7 @@ const _tokens = {
     website: 'https://2omb.finance/',
     description: 'A fork of tomb.finance, pegged to the price of 1 FTM via seigniorage.',
     logoURI:
-      'https://raw.githubusercontent.com/beefyfinance/beefy-app/prod/src/images/single-assets/2SHARES.png',
+      'https://raw.githubusercontent.com/leechfinance/leech-app/prod/src/images/single-assets/2SHARES.png',
   },
   '2OMB': {
     name: '2OMB',
@@ -159,7 +159,7 @@ const _tokens = {
     website: 'https://2omb.finance/',
     description: 'A fork of tomb.finance, pegged to the price of 1 FTM via seigniorage.',
     logoURI:
-      'https://raw.githubusercontent.com/beefyfinance/beefy-app/prod/src/images/single-assets/2OMB.png',
+      'https://raw.githubusercontent.com/leechfinance/leech-app/prod/src/images/single-assets/2OMB.png',
   },
   BRUSH: {
     name: 'PaintSwap',
@@ -802,18 +802,6 @@ const _tokens = {
     logoURI:
       'https://raw.githubusercontent.com/sushiswap/assets/master/blockchains/ethereum/assets/0x3472A5A71965499acd81997a54BBA8D852C6E53d/logo.png',
   },
-  BIFI: {
-    name: 'Beefy.Finance',
-    symbol: 'BIFI',
-    address: '0xd6070ae98b8069de6B494332d1A1a81B6179D960',
-    chainId: 250,
-    decimals: 18,
-    website: 'https://www.beefy.finance/',
-    description:
-      'Beefy Finance is a Decentralized, Multi-Chain Yield Optimizer platform that allows its users to earn compound interest on their crypto holdings.',
-    logoURI:
-      'https://raw.githubusercontent.com/beefyfinance/beefy-app/prod/src/images/single-assets/BIFI.png',
-  },
   ANY: {
     name: 'AnySwap',
     symbol: 'ANY',
@@ -1093,6 +1081,6 @@ const _tokens = {
     website: 'https://www.liquiddriver.finance/',
     description: 'Incentivizing deep liquidity for SushiSwap on Fantom Opera.',
   },
-} as const;
+};
 
-export const tokens: ConstRecord<typeof _tokens, Token> = _tokens;
+export const tokens = _tokens;

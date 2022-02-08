@@ -11,24 +11,12 @@ const METIS = {
   description:
     'METIS IS SOLVING ETHEREUMS SIX BIGGEST CHALLENGES. SIMPLICITY. SPEED. STORAGE. SCALABILITY. SECURITY. SAVINGS.',
   logoURI: '',
-} as const;
+};
 
 const _tokens = {
   METIS,
   WMETIS: METIS,
   WNATIVE: METIS,
-  BIFI: {
-    name: 'Beefy.Finance',
-    symbol: 'BIFI',
-    address: '0xe6801928061CDbE32AC5AD0634427E140EFd05F9',
-    chainId: 1088,
-    decimals: 18,
-    website: 'https://www.beefy.finance/',
-    description:
-      'Beefy Finance is a Decentralized, Multi-Chain Yield Optimizer platform that allows its users to earn compound interest on their crypto holdings.',
-    logoURI:
-      'https://raw.githubusercontent.com/beefyfinance/beefy-app/prod/src/images/single-assets/BIFI.png',
-  },
   NETT: {
     name: 'Netswap Token',
     symbol: 'NETT',
@@ -102,6 +90,6 @@ const _tokens = {
     description:
       'We believe that in the future, L2 solutions will help Ethereum with scaling. Our mission is to empower the Metis Andromeda network with a fast, secure, reliable, and advanced native decentralized exchange app to handle all kinds of trading needs. Tethys was released on the 17th of December 2021 on Metis Andromeda network.',
   },
-} as const;
+};
 
-export const tokens: ConstRecord<typeof _tokens, Token> = _tokens;
+export const tokens = _tokens;

@@ -1,7 +1,7 @@
 import { ape } from './platforms/ape';
 import { chainlink } from './platforms/chainlink';
 import { bakery } from './platforms/bakery';
-import { beefyfinance } from './platforms/beefyfinance';
+import { leechfinance } from './platforms/leechfinance';
 import { pancake } from './platforms/pancake';
 import { ironfinance } from './platforms/ironfinance';
 import { farmhero } from './platforms/farmhero';
@@ -14,15 +14,13 @@ import { mdex } from './platforms/mdex';
 import { biswap } from './platforms/biswap';
 import { tokens } from './tokens/tokens';
 import { convertSymbolTokenMapToAddressTokenMap } from '../../util/convertSymbolTokenMapToAddressTokenMap';
-import Chain from '../../types/chain';
-import { ConstInterface } from '../../types/const';
 
 const _bsc = {
   platforms: {
     ape,
     chainlink,
     bakery,
-    beefyfinance,
+    leechfinance,
     pancake,
     ironfinance,
     farmhero,
@@ -38,4 +36,4 @@ const _bsc = {
   tokenAddressMap: convertSymbolTokenMapToAddressTokenMap(tokens),
 };
 
-export const bsc: ConstInterface<typeof _bsc, Chain> = _bsc;
+export const bsc = _bsc;

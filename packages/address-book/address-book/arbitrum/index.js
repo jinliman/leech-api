@@ -1,11 +1,11 @@
-import { beefyfinance } from './platforms/beefyfinance';
+import { leechfinance } from './platforms/leechfinance';
 import { sushi } from './platforms/sushi';
 import { tokens } from './tokens/tokens';
 import { convertSymbolTokenMapToAddressTokenMap } from '../../util/convertSymbolTokenMapToAddressTokenMap';
 
 const _arbitrum = {
   platforms: {
-    beefyfinance,
+    leechfinance,
     sushi,
   },
   tokens,

@@ -12,7 +12,7 @@ const AVAX = {
     'Avalanche is the fastest smart contracts platform in the blockchain industry, as measured by time-to-finality, and has the most validators securing its activity of any proof-of-stake protocol.',
   logoURI:
     'https://raw.githubusercontent.com/ava-labs/bridge-tokens/main/avalanche-tokens/0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7/logo.png',
-} as const;
+};
 
 const _tokens = {
   LOOT: {
@@ -285,18 +285,6 @@ const _tokens = {
     description: 'BenQI is lending protocol on the Avalanche blockchain',
     logoURI:
       'https://raw.githubusercontent.com/pangolindex/tokens/main/assets/0x8729438EB15e2C8B576fCc6AeCdA6A148776C0F5/logo.png',
-  },
-  BIFI: {
-    chainId: 43114,
-    address: '0xd6070ae98b8069de6B494332d1A1a81B6179D960',
-    decimals: 18,
-    name: 'Binance Smart Chain',
-    symbol: 'BIFI',
-    website: 'https://www.beefy.finance/',
-    description:
-      'Beefy Finance is a Decentralized, Multi-Chain Yield Optimizer platform that allows its users to earn compound interest on their crypto holdings.',
-    logoURI:
-      'https://raw.githubusercontent.com/beefyfinance/beefy-app/prod/src/images/single-assets/BIFI.png',
   },
   BNB: {
     chainId: 43114,
@@ -4169,6 +4157,6 @@ const _tokens = {
       'ROCO is a decentralized GAMEFI platform which provide blockchain services to game developers, content creators and player communities through the blockchain network.',
     logoURI: 'https://assets.coingecko.com/coins/images/19234/large/86109466.png?1634769540',
   },
-} as const;
+};
 
-export const tokens: ConstRecord<typeof _tokens, Token> = _tokens;
+export const tokens = _tokens;

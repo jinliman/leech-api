@@ -1,6 +1,3 @@
-import { ConstRecord } from '../../../types/const';
-import Token from '../../../types/token';
-
 const MATIC = {
   name: 'Wrapped Matic',
   address: '0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270',
@@ -321,18 +318,6 @@ const _tokens = {
     logoURI:
       'https://raw.githubusercontent.com/ApeSwapFinance/apeswap-token-lists/main/assets/BANANA.svg',
   },
-  BIFI: {
-    name: 'beefy.finance',
-    address: '0xFbdd194376de19a88118e84E279b977f165d01b8',
-    symbol: 'BIFI',
-    decimals: 18,
-    chainId: 137,
-    website: 'https://www.beefy.finance/',
-    description:
-      'Beefy Finance is a Decentralized, Multi-Chain Yield Optimizer platform that allows its users to earn compound interest on their crypto holdings.',
-    logoURI:
-      'https://raw.githubusercontent.com/beefyfinance/beefy-app/prod/src/images/single-assets/BIFI.png',
-  },
   DAI: {
     name: 'Dai Stablecoin',
     address: '0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063',
@@ -422,7 +407,7 @@ const _tokens = {
     website: 'https://gainsnetwork.io/',
     description: 'Decentralized leverage trading platform on Polygon.',
     logoURI:
-      'https://raw.githubusercontent.com/beefyfinance/beefy-app/prod/src/images/single-assets/GNS.png',
+      'https://raw.githubusercontent.com/leechfinance/leech-app/prod/src/images/single-assets/GNS.png',
   },
   LINK: {
     name: 'ChainLink Token',

@@ -1,17 +1,15 @@
-import { beefyfinance } from './platforms/beefyfinance';
+import { leechfinance } from './platforms/leechfinance';
 import { sushiCelo } from './platforms/sushiCelo';
 import { tokens } from './tokens/tokens';
 import { convertSymbolTokenMapToAddressTokenMap } from '../../util/convertSymbolTokenMapToAddressTokenMap';
-import Chain from '../../types/chain';
-import { ConstInterface } from '../../types/const';
 
 const _celo = {
   platforms: {
-    beefyfinance,
+    leechfinance,
     sushiCelo,
   },
   tokens,
   tokenAddressMap: convertSymbolTokenMapToAddressTokenMap(tokens),
-} as const;
+};
 
-export const celo: ConstInterface<typeof _celo, Chain> = _celo;
+export const celo = _celo;

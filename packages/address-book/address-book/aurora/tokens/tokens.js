@@ -10,24 +10,12 @@ const ETH = {
   website: 'https://weth.io/',
   description: 'Ether or ETH is the native currency built on the Ethereum blockchain.',
   logoURI: 'https://arbiscan.io/token/images/weth_28.png',
-} as const;
+};
 
 const _tokens = {
   ETH,
   WETH: ETH,
   WNATIVE: ETH,
-  BIFI: {
-    name: 'Beefy.Finance',
-    symbol: 'BIFI',
-    address: '0x218c3c3D49d0E7B37aff0D8bB079de36Ae61A4c0',
-    chainId: 1313161554,
-    decimals: 18,
-    website: 'https://www.beefy.finance/',
-    description:
-      'Beefy Finance is a Decentralized, Multi-Chain Yield Optimizer platform that allows its users to earn compound interest on their crypto holdings.',
-    logoURI:
-      'https://raw.githubusercontent.com/beefyfinance/beefy-app/prod/src/images/single-assets/BIFI.png',
-  },
   NEAR: {
     name: 'NEAR',
     symbol: 'NEAR',
@@ -184,6 +172,6 @@ const _tokens = {
     description:
       'Our mission is making Aurora easier, thus making it bigger. Track your assets and DeFi portfolio with #MechaDashboards, easily swap tokens on a tap, visualize your NFTs and unleash the platform full power through the MECHA token.',
   },
-} as const;
+};
 
-export const tokens: ConstRecord<typeof _tokens, Token> = _tokens;
+export const tokens = _tokens;

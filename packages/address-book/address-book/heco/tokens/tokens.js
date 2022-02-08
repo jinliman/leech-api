@@ -11,7 +11,7 @@ const HT = {
     description:
       'HT (Huobi Token) is a blockchain-powered loyalty point system. It is the only token that Huobi officially launched. HT supports Huobi Global business and all products, such as VIP discount, HT exclusive events, trading against popular coins and "let your voice be heard".',
   logoURI: 'https://s2.coinmarketcap.com/static/img/coins/64x64/8524.png',
-} as const;
+};
 
 const _tokens = {
   HT,
@@ -49,18 +49,6 @@ const _tokens = {
       'LendHub is a decentralized lending platform based on the Huobi Ecological Chain. It supports pledged lending of multiple currencies on the Heco chain. Users can obtain incentive token LHB rewards by borrowing on LendHub.',
     decimals: 18,
     logoURI: 'https://hecoinfo.com/token/images/lendhub_32.png',
-  },
-  BIFI: {
-    name: 'Beefy.Finance',
-    symbol: 'BIFI',
-    address: '0x765277EebeCA2e31912C9946eAe1021199B39C61',
-    chainId: 128,
-    decimals: 18,
-    website: 'https://www.beefy.finance/',
-    description:
-      'Beefy.Finance (BIFI), is a multi-chain yield optimization tool that helps maximize the return from yield farming.',
-    logoURI:
-      'https://raw.githubusercontent.com/beefyfinance/beefy-app/prod/src/images/single-assets/BIFI.png',
   },
   SNX: {
     name: 'Synthetix',
@@ -254,5 +242,5 @@ const _tokens = {
     logoURI:
       'https://hecoinfo.com/token/images/HFIL_32.png',
   },
-} as const;
-export const tokens: ConstRecord<typeof _tokens, Token> = _tokens;
+};
+export const tokens = _tokens;

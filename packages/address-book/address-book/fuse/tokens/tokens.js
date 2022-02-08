@@ -11,24 +11,12 @@ const FUSE = {
   description:
     'Launch community-centric payment systems and token economies on an Ethereum-compatible blockchain.',
   logoURI: 'https://explorer.fuse.io/images/fuse_logo-0346e93ebb763ba41076456a9f0bf943.svg?vsn=d',
-} as const;
+};
 
 const _tokens = {
   FUSE,
   WFUSE: FUSE,
   WNATIVE: FUSE,
-  BIFI: {
-    name: 'Beefy.Finance',
-    symbol: 'BIFI',
-    address: '0x2bF9b864cdc97b08B6D79ad4663e71B8aB65c45c',
-    chainId: 122,
-    decimals: 18,
-    website: 'https://www.beefy.finance/',
-    description:
-      'Beefy Finance is a Decentralized, Multi-Chain Yield Optimizer platform that allows its users to earn compound interest on their crypto holdings.',
-    logoURI:
-      'https://raw.githubusercontent.com/beefyfinance/beefy-app/prod/src/images/single-assets/BIFI.png',
-  },
   atUST: {
     name: 'UST Terra',
     symbol: 'atUST',
@@ -150,6 +138,6 @@ const _tokens = {
     description:
       'Tether is a stablecoin pegged to the US Dollar. A stablecoin is a type of cryptocurrency whose value is pegged to another fiat currency like the US Dollar or to a commodity like Gold.Tether is the first stablecoin to be created and it is the most popular stablecoin used in the ecosystem.',
   },
-} as const;
+};
 
-export const tokens: ConstRecord<typeof _tokens, Token> = _tokens;
+export const tokens = _tokens;

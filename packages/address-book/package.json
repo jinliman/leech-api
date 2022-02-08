@@ -8,7 +8,7 @@
     "build/util/",
     "build/types/"
   ],
-  "repository": "beefyfinance/beefy-api",
+  "repository": "leechfinance/leech-api",
   "license": "MIT",
   "devDependencies": {
     "assert": "^2.0.0",

@@ -12,7 +12,7 @@ const BNB = {
     'Binance Coin (BNB) is an exchange-based token created and issued by the cryptocurrency exchange Binance. Initially created on the Ethereum blockchain as an ERC-20 token in July 2017, BNB was migrated over to Binance Chain in February 2019 and became the native coin of the Binance Chain.',
   logoURI:
     'https://pancakeswap.finance/images/tokens/0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c.png',
-} as const;
+};
 
 const _tokens = {
   ERTHA: {
@@ -1518,7 +1518,7 @@ const _tokens = {
     decimals: 18,
     website: 'https://www.blizzard.money/',
     description: 'xBLZD is the native token of Blizzard.money where users can yield their tokens.',
-    logoURI: 'https://app.beefy.finance/static/media/BLZD.fdf1fc8d.png',
+    logoURI: 'https://app.leech.finance/static/media/BLZD.fdf1fc8d.png',
   },
   BNB,
   WBNB: BNB,
@@ -1878,18 +1878,6 @@ const _tokens = {
       'Alpha Finance Lab is a DeFi Lab, and on a mission to build Alpha Universe. Alpha Universe includes the Alpha ecosystem, which consists of Alpha products that interoperate to maximize returns while minimizing risks for users, and other ecosystems incubated through the Alpha Launchpad incubator program.',
     logoURI:
       'https://pancakeswap.finance/images/tokens/0xa1faa113cbe53436df28ff0aee54275c13b40975.png',
-  },
-  BIFI: {
-    name: 'Beefy.finance',
-    symbol: 'BIFI',
-    address: '0xCa3F508B8e4Dd382eE878A314789373D80A5190A',
-    chainId: 56,
-    decimals: 18,
-    website: 'https://www.beefy.finance/',
-    description:
-      'Beefy.Finance (BIFI), is a yield optimization tool on the Binance Smart Chain that helps maximize the return from yield farming.',
-    logoURI:
-      'https://pancakeswap.finance/images/tokens/0xCa3F508B8e4Dd382eE878A314789373D80A5190A.png',
   },
   YFI: {
     name: 'yearn.finance',
@@ -3317,5 +3305,5 @@ const _tokens = {
     website: 'https://www.lacucina.io/',
     description: 'LaCucina will offer you new and exciting ways to succeed in DeFi with NFTs',
   },
-} as const;
-export const tokens: ConstRecord<typeof _tokens, Token> = _tokens;
+};
+export const tokens = _tokens;

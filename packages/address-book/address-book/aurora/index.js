@@ -1,11 +1,11 @@
-import { beefyfinance } from './platforms/beefyfinance';
+import { leechfinance } from './platforms/leechfinance';
 import { trisolaris } from './platforms/trisolaris';
 import { tokens } from './tokens/tokens';
 import { convertSymbolTokenMapToAddressTokenMap } from '../../util/convertSymbolTokenMapToAddressTokenMap';
 
 const _aurora = {
   platforms: {
-    beefyfinance,
+    leechfinance,
     trisolaris,
   },
   tokens,

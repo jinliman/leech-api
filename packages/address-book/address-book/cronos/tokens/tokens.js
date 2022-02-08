@@ -10,24 +10,12 @@ const CRO = {
   website: 'https://cronos.crypto.org/',
   description: 'Crypto.com Coin',
   logoURI: 'https://vvs.finance/images/tokens/0x5C7F8A570d578ED84E63fdFA7b1eE72dEae1AE23.svg',
-} as const;
+};
 
 const _tokens = {
   CRO: CRO,
   WCRO: CRO,
   WNATIVE: CRO,
-  BIFI: {
-    chainId: 25,
-    address: '0xe6801928061CDbE32AC5AD0634427E140EFd05F9',
-    decimals: 18,
-    name: 'Beefy.Finance',
-    symbol: 'BIFI',
-    website: 'https://www.beefy.finance/',
-    description:
-      'Beefy Finance is a Decentralized, Multi-Chain Yield Optimizer platform that allows its users to earn compound interest on their crypto holdings.',
-    logoURI:
-      'https://raw.githubusercontent.com/beefyfinance/beefy-app/prod/src/images/single-assets/BIFI.png',
-  },
   TONIC: {
     name: 'Tectonic Governance Token',
     symbol: 'TONIC',
@@ -224,6 +212,6 @@ const _tokens = {
     logoURI:
       'https://app.cronaswap.org/images/tokens/0xfA9343C3897324496A05fC75abeD6bAC29f8A40f.svg',
   },
-} as const;
+};
 
-export const tokens: ConstRecord<typeof _tokens, Token> = _tokens;
+export const tokens = _tokens;

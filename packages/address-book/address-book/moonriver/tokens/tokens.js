@@ -1,6 +1,3 @@
-import { ConstRecord } from '../../../types/const';
-import Token from '../../../types/token';
-
 const MOVR = {
   name: 'Wrapped MOVR',
   address: '0x98878B06940aE243284CA214f92Bb71a2b032B8A',
@@ -12,7 +9,7 @@ const MOVR = {
     'Moonriver is a companion network to Moonbeam and provides a permanently incentivized canary network. New code ships to Moonriver first, where it can be tested and verified under real economic conditions. Once proven, the same code ships to Moonbeam on Polkadot.',
   logoURI:
     'https://app.solarbeam.io/_next/image?url=https%3A%2F%2Fapp.solarbeam.io%2Fimages%2Ftokens%2Fmovr.png&w=32&q=50',
-} as const;
+};
 
 const WMOVR_SUSHI = {
   name: 'Wrapped MOVR on Sushiswap',
@@ -25,7 +22,7 @@ const WMOVR_SUSHI = {
     'Moonriver is a companion network to Moonbeam and provides a permanently incentivized canary network. New code ships to Moonriver first, where it can be tested and verified under real economic conditions. Once proven, the same code ships to Moonbeam on Polkadot.',
   logoURI:
     'https://app.solarbeam.io/_next/image?url=https%3A%2F%2Fapp.solarbeam.io%2Fimages%2Ftokens%2Fmovr.png&w=32&q=50',
-} as const;
+};
 
 const SUSHI = {
   name: 'SUSHI',
@@ -37,7 +34,7 @@ const SUSHI = {
   description:
     'Sushi is the home of DeFi. Their community is building a comprehensive, decentralized trading platform for the future of finance. Swap, earn, stack yields, lend, borrow, leverage all on one decentralized, community driven platform.',
   logoURI: 'https://ftmscan.com/token/images/sushiswap_32.png',
-} as const;
+};
 
 const _tokens = {
   MOVR,
@@ -45,18 +42,6 @@ const _tokens = {
   WNATIVE: MOVR,
   WMOVR_SUSHI: WMOVR_SUSHI,
   WNATIVE_SUSHI: WMOVR_SUSHI,
-  BIFI: {
-    chainId: 1285,
-    address: '0x173fd7434B8B50dF08e3298f173487ebDB35FD14',
-    decimals: 18,
-    name: 'Beefy.Finance',
-    symbol: 'BIFI',
-    website: 'https://www.beefy.finance/',
-    description:
-      'Beefy Finance is a Decentralized, Multi-Chain Yield Optimizer platform that allows its users to earn compound interest on their crypto holdings.',
-    logoURI:
-      'https://raw.githubusercontent.com/beefyfinance/beefy-app/prod/src/images/single-assets/BIFI.png',
-  },
   MAI: {
     name: 'MAI',
     symbol: 'Mai Stablecoin',
@@ -416,6 +401,6 @@ const _tokens = {
     description:
       'ETERNALLY liquid. FORWARD compatible.Nested, conditional, & Multi-resourced NFTs.',
   },
-} as const;
+};
 
-export const tokens: ConstRecord<typeof _tokens, Token> = _tokens;
+export const tokens = _tokens;

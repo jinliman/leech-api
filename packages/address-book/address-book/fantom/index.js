@@ -1,15 +1,13 @@
-import { beefyfinance } from './platforms/beefyfinance';
+import { leechfinance } from './platforms/leechfinance';
 import { spookyswap } from './platforms/spookyswap';
 import { spiritswap } from './platforms/spiritswap';
 import { sushiFtm } from './platforms/sushiFtm';
 import { tokens } from './tokens/tokens';
 import { convertSymbolTokenMapToAddressTokenMap } from '../../util/convertSymbolTokenMapToAddressTokenMap';
-import Chain from '../../types/chain';
-import { ConstInterface } from '../../types/const';
 
 const _fantom = {
   platforms: {
-    beefyfinance,
+    leechfinance,
     spookyswap,
     spiritswap,
     sushiFtm,
@@ -17,4 +15,4 @@ const _fantom = {
   tokens,
   tokenAddressMap: convertSymbolTokenMapToAddressTokenMap(tokens),
 };
-export const fantom: ConstInterface<typeof _fantom, Chain> = _fantom;
+export const fantom = _fantom;
