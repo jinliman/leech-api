@@ -7,7 +7,7 @@ let cache = {};
 const getBlockTime = async chainId => {
   const cacheKey = Math.floor(Date.now() / updateDelay);
 
-  if (cache[chainId]?.hasOwnProperty(cacheKey)) {
+  if (cache[chainId] && cache[chainId].hasOwnProperty(cacheKey)) {
     return cache[chainId][cacheKey];
   }
 

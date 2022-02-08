@@ -1,9 +1,9 @@
-import { leechfinance } from './platforms/leechfinance';
-import { fusefi } from './platforms/fusefi';
-import { fuseNetwork } from './platforms/fuseNetwork';
-import { sushiFuse } from './platforms/sushiFuse';
-import { tokens } from './tokens/tokens';
-import { convertSymbolTokenMapToAddressTokenMap } from '../../util/convertSymbolTokenMapToAddressTokenMap';
+const { leechfinance } = require('./platforms/leechfinance');
+const { fusefi } = require('./platforms/fusefi');
+const { fuseNetwork } = require('./platforms/fuseNetwork');
+const { sushiFuse } = require('./platforms/sushiFuse');
+const { tokens } = require('./tokens/tokens');
+const { convertSymbolTokenMapToAddressTokenMap } = require('../../util/convertSymbolTokenMapToAddressTokenMap');
 
 const _fuse = {
   platforms: {
@@ -16,4 +16,6 @@ const _fuse = {
   tokenAddressMap: convertSymbolTokenMapToAddressTokenMap(tokens),
 };
 
-export const fuse = _fuse;
+module.exports = {
+  fuse: _fuse,
+};

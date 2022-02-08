@@ -5,7 +5,7 @@ const Staker = require('../../../abis/fuse/IStaker.json');
 const { compound } = require('../../../utils/compound');
 const { getEDecimals } = require('../../../utils/getEDecimals');
 const { FUSE_CHAIN_ID: chainId, BASE_HPY } = require('../../../constants');
-const { addressBook } = require('../../../../packages/blockchain-addressbook/build/address-book');
+const { addressBook } = require('../../../../packages/address-book/address-book');
 const {
   fuse: {
     platforms: {

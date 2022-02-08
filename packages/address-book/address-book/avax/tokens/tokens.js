@@ -1,6 +1,3 @@
-import { ConstRecord } from '../../../types/const';
-import Token from '../../../types/token';
-
 const AVAX = {
   chainId: 43114,
   address: '0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7',
@@ -4159,4 +4156,6 @@ const _tokens = {
   },
 };
 
-export const tokens = _tokens;
+module.exports = {
+  tokens: _tokens,
+};

@@ -1,6 +1,3 @@
-import { ConstRecord } from '../../../types/const';
-import Token from '../../../types/token';
-
 const ONE = {
   name: 'Wrapped ONE',
   address: '0xcF664087a5bB0237a0BAd6742852ec6c8d69A27a',
@@ -200,4 +197,6 @@ const _tokens = {
   },
 };
 
-export const tokens = _tokens;
+module.exports = {
+  tokens: _tokens,
+};

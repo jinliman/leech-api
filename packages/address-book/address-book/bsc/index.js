@@ -1,19 +1,19 @@
-import { ape } from './platforms/ape';
-import { chainlink } from './platforms/chainlink';
-import { bakery } from './platforms/bakery';
-import { leechfinance } from './platforms/leechfinance';
-import { pancake } from './platforms/pancake';
-import { ironfinance } from './platforms/ironfinance';
-import { farmhero } from './platforms/farmhero';
-import { ellipsis } from './platforms/ellipsis';
-import { elk } from './platforms/elk';
-import { wault } from './platforms/wault';
-import { kebab } from './platforms/kebab';
-import { jet } from './platforms/jet';
-import { mdex } from './platforms/mdex';
-import { biswap } from './platforms/biswap';
-import { tokens } from './tokens/tokens';
-import { convertSymbolTokenMapToAddressTokenMap } from '../../util/convertSymbolTokenMapToAddressTokenMap';
+const { ape } = require('./platforms/ape');
+const { chainlink } = require('./platforms/chainlink');
+const { bakery } = require('./platforms/bakery');
+const { leechfinance } = require('./platforms/leechfinance');
+const { pancake } = require('./platforms/pancake');
+const { ironfinance } = require('./platforms/ironfinance');
+const { farmhero } = require('./platforms/farmhero');
+const { ellipsis } = require('./platforms/ellipsis');
+const { elk } = require('./platforms/elk');
+const { wault } = require('./platforms/wault');
+const { kebab } = require('./platforms/kebab');
+const { jet } = require('./platforms/jet');
+const { mdex } = require('./platforms/mdex');
+const { biswap } = require('./platforms/biswap');
+const { tokens } = require('./tokens/tokens');
+const { convertSymbolTokenMapToAddressTokenMap } = require('../../util/convertSymbolTokenMapToAddressTokenMap');
 
 const _bsc = {
   platforms: {
@@ -36,4 +36,6 @@ const _bsc = {
   tokenAddressMap: convertSymbolTokenMapToAddressTokenMap(tokens),
 };
 
-export const bsc = _bsc;
+module.exports = {
+  bsc: _bsc,
+};

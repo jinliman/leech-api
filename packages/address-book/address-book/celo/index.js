@@ -1,7 +1,7 @@
-import { leechfinance } from './platforms/leechfinance';
-import { sushiCelo } from './platforms/sushiCelo';
-import { tokens } from './tokens/tokens';
-import { convertSymbolTokenMapToAddressTokenMap } from '../../util/convertSymbolTokenMapToAddressTokenMap';
+const { leechfinance } = require('./platforms/leechfinance');
+const { sushiCelo } = require('./platforms/sushiCelo');
+const { tokens } = require('./tokens/tokens');
+const { convertSymbolTokenMapToAddressTokenMap } = require('../../util/convertSymbolTokenMapToAddressTokenMap');
 
 const _celo = {
   platforms: {
@@ -12,4 +12,6 @@ const _celo = {
   tokenAddressMap: convertSymbolTokenMapToAddressTokenMap(tokens),
 };
 
-export const celo = _celo;
+module.exports = {
+  celo: _celo,  
+};

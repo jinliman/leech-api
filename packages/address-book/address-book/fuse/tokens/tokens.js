@@ -1,6 +1,3 @@
-import { ConstRecord } from '../../../types/const';
-import Token from '../../../types/token';
-
 const FUSE = {
   name: 'FUSE',
   address: '0x0BE9e53fd7EDaC9F859882AfdDa116645287C629',
@@ -140,4 +137,6 @@ const _tokens = {
   },
 };
 
-export const tokens = _tokens;
+module.exports = {
+  tokens: _tokens,
+};

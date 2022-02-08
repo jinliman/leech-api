@@ -34,7 +34,7 @@ const getComethLpApys = async () => {
     const simpleApy = farmApys[i];
     const vaultApr = simpleApy.times(shareAfterLeechPerformanceFee);
     const vaultApy = compound(simpleApy, BASE_HPY, 1, shareAfterLeechPerformanceFee);
-    const tradingApr = tradingAprs[pool.address.toLowerCase()] ?? new BigNumber(0);
+    const tradingApr = tradingAprs[pool.address.toLowerCase()] || new BigNumber(0);
     const totalApy = getFarmWithTradingFeesApy(simpleApy, tradingApr, BASE_HPY, 1, 0.955);
     const legacyApyValue = { [pool.name]: totalApy };
     // Add token to APYs object

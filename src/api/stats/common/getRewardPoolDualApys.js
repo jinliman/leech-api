@@ -12,13 +12,13 @@ const getRewardPoolDualApys = async (params) => {
   const tradingAprs = await getTradingAprs(params);
   const farmApys = await getFarmApys(params);
 
-  const liquidityProviderFee = params.liquidityProviderFee ?? 0.003;
+  const liquidityProviderFee = params.liquidityProviderFee || 0.003;
 
   return getApyBreakdown(params.pools, tradingAprs, farmApys, liquidityProviderFee);
 };
 
 const getTradingAprs = async (params) => {
-  let tradingAprs = params.tradingAprs ?? {};
+  let tradingAprs = params.tradingAprs || {};
   const client = params.tradingFeeInfoClient;
   const fee = params.liquidityProviderFee;
   if (client && fee) {
@@ -56,10 +56,10 @@ const getFarmApys = async (params) => {
       rewardBTokenPrice = await fetchPrice({ oracle: rewardB.oracle, id: rewardB.oracleId });
     }
 
-    const oracle = pool.oracle ?? 'lps';
-    const id = pool.oracleId ?? pool.name;
+    const oracle = pool.oracle || 'lps';
+    const id = pool.oracleId || pool.name;
     const stakedPrice = await fetchPrice({ oracle, id });
-    const totalStakedInUsd = balances[i].times(stakedPrice).dividedBy(pool.decimals ?? '1e18');
+    const totalStakedInUsd = balances[i].times(stakedPrice).dividedBy(pool.decimals || '1e18');
 
     const secondsPerYear = 31536000;
     const yearlyRewardsA = rewardRatesA[i].times(secondsPerYear);

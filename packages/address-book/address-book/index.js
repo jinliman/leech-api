@@ -1,34 +1,32 @@
-import { polygon } from './polygon';
-import { bsc } from './bsc';
-import { avax } from './avax';
-import { fantom } from './fantom';
-import { heco } from './heco';
-import { one } from './one';
-import { arbitrum } from './arbitrum';
-import { celo } from './celo';
-import { moonriver } from './moonriver';
-import { cronos } from './cronos';
-import { aurora } from './aurora';
-import { fuse } from './fuse';
-import { metis } from './metis';
-import { ChainId } from '../types/chainid';
-
-export * from '../types/chainid';
+const { polygon } = require('./polygon');
+const { bsc } = require('./bsc');
+const { avax } = require('./avax');
+const { fantom } = require('./fantom');
+const { heco } = require('./heco');
+const { one } = require('./one');
+const { arbitrum } = require('./arbitrum');
+const { celo } = require('./celo');
+const { moonriver } = require('./moonriver');
+const { cronos } = require('./cronos');
+const { aurora } = require('./aurora');
+const { fuse } = require('./fuse');
+const { metis } = require('./metis');
+const { ChainId } = require('../types/chainid');
 
 const _addressBook = {
-  polygon,
-  bsc,
-  avax,
-  fantom,
-  heco,
-  one,
-  arbitrum,
-  celo,
-  moonriver,
-  cronos,
-  aurora,
-  fuse,
-  metis,
+  polygon: ChainId.polygon,
+  bsc: ChainId.bsc,
+  avax: ChainId.avax,
+  fantom: ChainId.fantom,
+  heco: ChainId.heco,
+  one: ChainId.one,
+  arbitrum: ChainId.arbitrum,
+  celo: ChainId.celo,
+  moonriver: ChainId.moonriver,
+  cronos: ChainId.cronos,
+  aurora: ChainId.aurora,
+  fuse: ChainId.fuse,
+  metis: ChainId.metis,
 };
 
 const _addressBookByChainId = {
@@ -47,6 +45,8 @@ const _addressBookByChainId = {
   [ChainId.metis]: metis,
 };
 
-export const addressBook = _addressBook;
-
-export const addressBookByChainId = _addressBookByChainId;
+module.exports = {
+  addressBook: _addressBook,
+  addressBookByChainId: _addressBookByChainId,
+  ChainId,
+};

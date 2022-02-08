@@ -1,6 +1,3 @@
-import { ConstRecord } from '../../../types/const';
-import Token from '../../../types/token';
-
 const ETH = {
   name: 'Wrapped Ether',
   address: '0x82aF49447D8a07e3bd95BD0d56f35241523fBab1',
@@ -131,4 +128,6 @@ const _tokens = {
   },
 };
 
-export const tokens = _tokens;
+module.exports = {
+  tokens: _tokens,
+};

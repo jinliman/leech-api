@@ -41,8 +41,8 @@ const getPoolApy = async (masterchef, pool) => {
   allocPoint = new BigNumber(allocPoint);
 
   const stakedPrice = await fetchPrice({
-    oracle: pool.oracle ?? 'lps',
-    id: pool.oracleId ?? pool.name,
+    oracle: pool.oracle || 'lps',
+    id: pool.oracleId || pool.name,
   });
   const totalStakedInUsd = lpSupply.times(stakedPrice).dividedBy(pool.decimals);
 

@@ -34,10 +34,10 @@ const getPoolApy = async (masterchef, pool) => {
     getYearlyRewardsInUsd(masterchef, pool),
     getTotalStakedInUsd(
       masterchef,
-      pool.token ?? pool.address,
-      pool.oracle ?? 'lps',
-      pool.oracleId ?? pool.name,
-      pool.decimals ?? '1e18',
+      pool.token || pool.address,
+      pool.oracle || 'lps',
+      pool.oracleId || pool.name,
+      pool.decimals || '1e18',
       CHAIN_ID
     ),
   ]);

@@ -1,6 +1,3 @@
-import { ConstRecord } from '../../../types/const';
-import Token from '../../../types/token';
-
 const CRO = {
   name: 'Wrapped CRO',
   address: '0x5C7F8A570d578ED84E63fdFA7b1eE72dEae1AE23',
@@ -214,4 +211,6 @@ const _tokens = {
   },
 };
 
-export const tokens = _tokens;
+module.exports = {
+  tokens: _tokens,
+};

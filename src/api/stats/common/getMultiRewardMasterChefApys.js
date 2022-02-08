@@ -17,20 +17,20 @@ const getMultiRewardMasterChefApys = async (
   masterchefParams
 ) => {
   masterchefParams.pools = [
-    ...(masterchefParams.pools ?? []),
-    ...(masterchefParams.singlePools ?? []),
+    ...(masterchefParams.pools || []),
+    ...(masterchefParams.singlePools || []),
   ];
 
   const tradingAprs = await getTradingAprs(masterchefParams);
   const farmApys = await getFarmApys(masterchefParams);
 
-  const liquidityProviderFee = masterchefParams.liquidityProviderFee ?? 0.003;
+  const liquidityProviderFee = masterchefParams.liquidityProviderFee || 0.003;
 
   return getApyBreakdown(masterchefParams.pools, tradingAprs, farmApys, liquidityProviderFee);
 };
 
 const getTradingAprs = async (params) => {
-  let tradingAprs = params.tradingAprs ?? {};
+  let tradingAprs = params.tradingAprs || {};
   const client = params.tradingFeeInfoClient;
   const fee = params.liquidityProviderFee;
   if (client && fee) {
@@ -50,15 +50,15 @@ const getFarmApys = async (params) => {
   const apys = [];
 
   const { balances, rewardTokens, rewardDecimals, rewardsPerSec } = await getPoolsData(params);
-  const secondsPerBlock = params.secondsPerBlock ?? (await getBlockTime(params.chainId));
+  const secondsPerBlock = params.secondsPerBlock || (await getBlockTime(params.chainId));
 
   for (let i = 0; i < params.pools.length; i++) {
     const pool = params.pools[i];
 
-    const oracle = pool.oracle ?? 'lps';
-    const id = pool.oracleId ?? pool.name;
+    const oracle = pool.oracle || 'lps';
+    const id = pool.oracleId || pool.name;
     const stakedPrice = await fetchPrice({ oracle, id });
-    const totalStakedInUsd = balances[i].times(stakedPrice).dividedBy(pool.decimals ?? '1e18');
+    const totalStakedInUsd = balances[i].times(stakedPrice).dividedBy(pool.decimals || '1e18');
 
     let poolRewardsInUsd = new BigNumber(0);
     for (let j = 0; j < rewardTokens[i].length; j++) {
@@ -66,7 +66,7 @@ const getFarmApys = async (params) => {
       const rewardInUsd = new BigNumber(rewardsPerSec[i][j])
         .dividedBy(getEDecimals(rewardDecimals[i][j]))
         .times(rewardPrice)
-        .times(1 - (pool.depositFee ?? 0));
+        .times(1 - (pool.depositFee || 0));
       poolRewardsInUsd = poolRewardsInUsd.plus(rewardInUsd);
     }
 

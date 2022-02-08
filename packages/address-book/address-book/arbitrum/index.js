@@ -1,7 +1,7 @@
-import { leechfinance } from './platforms/leechfinance';
-import { sushi } from './platforms/sushi';
-import { tokens } from './tokens/tokens';
-import { convertSymbolTokenMapToAddressTokenMap } from '../../util/convertSymbolTokenMapToAddressTokenMap';
+const { leechfinance } = require('./platforms/leechfinance');
+const { sushi } = require('./platforms/sushi');
+const { tokens } = require('./tokens/tokens');
+const { convertSymbolTokenMapToAddressTokenMap } = require('../../util/convertSymbolTokenMapToAddressTokenMap');
 
 const _arbitrum = {
   platforms: {
@@ -12,4 +12,6 @@ const _arbitrum = {
   tokenAddressMap: convertSymbolTokenMapToAddressTokenMap(tokens),
 };
 
-export const arbitrum = _arbitrum;
+module.exports = {
+  arbitrum: _arbitrum,
+};

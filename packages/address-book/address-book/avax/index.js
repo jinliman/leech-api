@@ -1,11 +1,11 @@
-import { leechfinance } from './platforms/leechfinance';
-import { lydia } from './platforms/lydia';
-import { pangolin } from './platforms/pangolin';
-import { joe } from './platforms/joe';
-import { synapse } from './platforms/synapse';
-import { mai } from './platforms/mai';
-import { tokens } from './tokens/tokens';
-import { convertSymbolTokenMapToAddressTokenMap } from '../../util/convertSymbolTokenMapToAddressTokenMap';
+const { leechfinance } = require('./platforms/leechfinance');
+const { lydia } = require('./platforms/lydia');
+const { pangolin } = require('./platforms/pangolin');
+const { joe } = require('./platforms/joe');
+const { synapse } = require('./platforms/synapse');
+const { mai } = require('./platforms/mai');
+const { tokens } = require('./tokens/tokens');
+const { convertSymbolTokenMapToAddressTokenMap } = require('../../util/convertSymbolTokenMapToAddressTokenMap');
 
 const _avax = {
   platforms: {
@@ -19,4 +19,7 @@ const _avax = {
   tokens,
   tokenAddressMap: convertSymbolTokenMapToAddressTokenMap(tokens),
 };
-export const avax = _avax;
+
+module.exports = {
+  avax: _avax,
+};

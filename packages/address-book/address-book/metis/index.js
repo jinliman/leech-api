@@ -1,8 +1,8 @@
-import { leechfinance } from './platforms/leechfinance';
-import { netswap } from './platforms/netswap';
-import { tethys } from './platforms/tethys';
-import { tokens } from './tokens/tokens';
-import { convertSymbolTokenMapToAddressTokenMap } from '../../util/convertSymbolTokenMapToAddressTokenMap';
+const { leechfinance } = require('./platforms/leechfinance');
+const { netswap } = require('./platforms/netswap');
+const { tethys } = require('./platforms/tethys');
+const { tokens } = require('./tokens/tokens');
+const { convertSymbolTokenMapToAddressTokenMap } = require('../../util/convertSymbolTokenMapToAddressTokenMap');
 
 const _metis = {
   platforms: {
@@ -14,4 +14,6 @@ const _metis = {
   tokenAddressMap: convertSymbolTokenMapToAddressTokenMap(tokens),
 };
 
-export const metis = _metis;
+module.exports = {
+  metis: _metis,
+};

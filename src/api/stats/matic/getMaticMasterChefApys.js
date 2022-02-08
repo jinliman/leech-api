@@ -14,20 +14,20 @@ const getMasterChefApys = async (
   masterchefParams
 ) => {
   masterchefParams.pools = [
-    ...(masterchefParams.pools ?? []),
-    ...(masterchefParams.singlePools ?? []),
+    ...(masterchefParams.pools || []),
+    ...(masterchefParams.singlePools || []),
   ];
 
   const tradingAprs = await getTradingAprs(masterchefParams);
   const farmApys = await getFarmApys(masterchefParams);
 
-  const liquidityProviderFee = masterchefParams.liquidityProviderFee ?? QUICK_LPF; // use quick if lpf is missing
+  const liquidityProviderFee = masterchefParams.liquidityProviderFee || QUICK_LPF; // use quick if lpf is missing
 
   return getApyBreakdown(masterchefParams.pools, tradingAprs, farmApys, liquidityProviderFee);
 };
 
 const getTradingAprs = async (params) => {
-  let tradingAprs = params.tradingAprs ?? {};
+  let tradingAprs = params.tradingAprs || {};
   const client = params.tradingFeeInfoClient;
   const fee = params.liquidityProviderFee;
   if (client && fee) {
@@ -49,18 +49,18 @@ const getFarmApys = async (params) => {
   for (let i = 0; i < params.pools.length; i++) {
     const pool = params.pools[i];
 
-    const oracle = pool.oracle ?? 'lps';
-    const id = pool.oracleId ?? pool.name;
+    const oracle = pool.oracle || 'lps';
+    const id = pool.oracleId || pool.name;
     const stakedPrice = await fetchPrice({ oracle, id });
-    const totalStakedInUsd = balances[i].times(stakedPrice).dividedBy(pool.decimals ?? '1e18');
+    const totalStakedInUsd = balances[i].times(stakedPrice).dividedBy(pool.decimals || '1e18');
 
     const poolBlockRewards = blockRewards
       .times(multiplier)
       .times(allocPoints[i])
       .dividedBy(totalAllocPoint)
-      .times(1 - (pool.depositFee ?? 0));
+      .times(1 - (pool.depositFee || 0));
 
-    const secondsPerBlock = params.secondsPerBlock ?? 2;
+    const secondsPerBlock = params.secondsPerBlock || 2;
     const secondsPerYear = 31536000;
     const yearlyRewards = poolBlockRewards.dividedBy(secondsPerBlock).times(secondsPerYear);
     const yearlyRewardsInUsd = yearlyRewards.times(tokenPrice).dividedBy(params.decimals);
@@ -73,7 +73,7 @@ const getFarmApys = async (params) => {
 };
 
 const getMasterChefData = async (params) => {
-  const abi = params.masterchefAbi ?? chefAbi(params.tokenPerBlock);
+  const abi = params.masterchefAbi || chefAbi(params.tokenPerBlock);
   const masterchefContract = new web3.eth.Contract(abi, params.masterchef);
   let multiplier = new BigNumber(1);
   if (params.hasMultiplier) {
@@ -90,7 +90,7 @@ const getMasterChefData = async (params) => {
 };
 
 const getPoolsData = async (params) => {
-  const abi = params.masterchefAbi ?? chefAbi(params.tokenPerBlock);
+  const abi = params.masterchefAbi || chefAbi(params.tokenPerBlock);
   const masterchefContract = new web3.eth.Contract(abi, params.masterchef);
   const multicall = new MultiCall(web3, multicallAddress(POLYGON_CHAIN_ID));
   const balanceCalls = [];
@@ -98,7 +98,7 @@ const getPoolsData = async (params) => {
   params.pools.forEach(pool => {
     const tokenContract = new web3.eth.Contract(ERC20_ABI, pool.address);
     balanceCalls.push({
-      balance: tokenContract.methods.balanceOf(pool.strat ?? params.masterchef),
+      balance: tokenContract.methods.balanceOf(pool.strat || params.masterchef),
     });
     allocPointCalls.push({
       allocPoint: masterchefContract.methods.poolInfo(pool.poolId),
@@ -108,7 +108,7 @@ const getPoolsData = async (params) => {
   const res = await multicall.all([balanceCalls, allocPointCalls]);
 
   const balances = res[0].map(v => new BigNumber(v.balance));
-  const allocPoints = res[1].map(v => v.allocPoint[params.allocPointIndex ?? '1']);
+  const allocPoints = res[1].map(v => v.allocPoint[params.allocPointIndex || '1']);
   return { balances, allocPoints };
 };
 

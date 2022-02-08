@@ -20,4 +20,4 @@ const transformTokenListToObject = (
   return map;
 };
 
-export default transformTokenListToObject;
+module.exports = transformTokenListToObject;

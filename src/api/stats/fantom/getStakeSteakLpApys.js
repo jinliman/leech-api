@@ -18,7 +18,7 @@ const {
       tokens: { STEAK },
     },
   },
-} = require('../../../../packages/blockchain-addressbook/build/address-book');
+} = require('../../../../packages/address-book/address-book');
 
 const masterchef = '0x5bC37CAAA3b490b65F5A50E2553f4312126A8b7e';
 const rewardToken = STEAK;
@@ -63,7 +63,7 @@ const getStakeSteakLpApys = async () => {
     const vaultApr = simpleApy.times(shareAfterLeechPerformanceFee);
     const vaultApy = compound(simpleApy, BASE_HPY, 1, shareAfterLeechPerformanceFee);
 
-    const tradingApr = tradingAprs[pool.address.toLowerCase()] ?? new BigNumber(0);
+    const tradingApr = tradingAprs[pool.address.toLowerCase()] || new BigNumber(0);
     const totalApy = getFarmWithTradingFeesApy(
       simpleApy,
       tradingApr,

@@ -1,8 +1,8 @@
-import { leechfinance } from './platforms/leechfinance';
-import { vvs } from './platforms/vvs';
-import { crona } from './platforms/crona';
-import { tokens } from './tokens/tokens';
-import { convertSymbolTokenMapToAddressTokenMap } from '../../util/convertSymbolTokenMapToAddressTokenMap';
+const { leechfinance } = require('./platforms/leechfinance');
+const { vvs } = require('./platforms/vvs');
+const { crona } = require('./platforms/crona');
+const { tokens } = require('./tokens/tokens');
+const { convertSymbolTokenMapToAddressTokenMap } = require('../../util/convertSymbolTokenMapToAddressTokenMap');
 
 const _cronos = {
   platforms: {
@@ -14,4 +14,6 @@ const _cronos = {
   tokenAddressMap: convertSymbolTokenMapToAddressTokenMap(tokens),
 };
 
-export const cronos = _cronos;
+module.exports = {
+  cronos: _cronos,
+};

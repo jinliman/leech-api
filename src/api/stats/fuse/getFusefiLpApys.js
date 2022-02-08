@@ -11,7 +11,7 @@ const { getTradingFeeApr } = require('../../../utils/getTradingFeeApr');
 const { getFarmWithTradingFeesApy } = require('../../../utils/getFarmWithTradingFeesApy');
 const { fusefiClient } = require('../../../apollo/client');
 const { compound } = require('../../../utils/compound');
-const { addressBook } = require('../../../../packages/blockchain-addressbook/build/address-book');
+const { addressBook } = require('../../../../packages/address-book/address-book');
 
 const {
   fuse: {
@@ -38,7 +38,7 @@ const getFusefiLpApys = async () => {
     const simpleApy = farmApys[i];
     const vaultApr = simpleApy.times(shareAfterLeechPerformanceFee);
     const vaultApy = compound(simpleApy, BASE_HPY, 1, shareAfterLeechPerformanceFee);
-    const tradingApr = tradingAprs[pool.address.toLowerCase()] ?? new BigNumber(0);
+    const tradingApr = tradingAprs[pool.address.toLowerCase()] || new BigNumber(0);
     const totalApy = getFarmWithTradingFeesApy(simpleApy, tradingApr, BASE_HPY, 1, 0.955);
     const legacyApyValue = { [pool.name]: totalApy };
     // Add token to APYs object

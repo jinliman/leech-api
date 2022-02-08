@@ -1,6 +1,3 @@
-import { ConstRecord } from '../../../types/const';
-import Token from '../../../types/token';
-
 const BNB = {
   name: 'WBNB Token',
   symbol: 'WBNB',
@@ -3306,4 +3303,7 @@ const _tokens = {
     description: 'LaCucina will offer you new and exciting ways to succeed in DeFi with NFTs',
   },
 };
-export const tokens = _tokens;
+
+module.exports = {
+  tokens: _tokens,
+};

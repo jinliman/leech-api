@@ -1,8 +1,8 @@
-import { addressBook, ChainId } from '../address-book';
-import { isValidChecksumAddress, toChecksumAddress } from 'ethereumjs-util';
-import { exit } from 'process';
+const { addressBook } = require('../address-book');
+const { isValidChecksumAddress, toChecksumAddress } = require('ethereumjs-util');
+const { exit } = require('process');
 
-export const validateAllAddressesChecksum = () => {
+const validateAllAddressesChecksum = () => {
   const invalidPlatformAddressList = [];
   const invalidTokenAddressList = [];
 

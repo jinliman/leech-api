@@ -56,7 +56,7 @@ const getFarmApys = async pools => {
     const rewardPerSecond = rewardPerSeconds[i];
     const allocPoint = rewardAllocPoints[i];
     const rewardTotalAllocPoint = rewardTotalAllocPoints[i];
-    const rewardPrice = await fetchPrice({ oracle, id: pool.rewarderOracleId ?? oracleIdMatic });
+    const rewardPrice = await fetchPrice({ oracle, id: pool.rewarderOracleId || oracleIdMatic });
     const rewards = rewardPerSecond.times(allocPoint).dividedBy(rewardTotalAllocPoint);
     const yearlyMaticRewards = rewards.dividedBy(secondsPerBlock).times(secondsPerYear);
     const maticRewardsInUsd = yearlyMaticRewards.times(rewardPrice).dividedBy(DECIMALS);
@@ -79,7 +79,7 @@ const getPoolsData = async pools => {
   pools.forEach(pool => {
     const rewardContract = new web3.eth.Contract(
       SushiComplexRewarderTime,
-      pool.rewarder ?? complexRewarderTime
+      pool.rewarder || complexRewarderTime
     );
     const tokenContract = new web3.eth.Contract(ERC20, pool.address);
     balanceCalls.push({
@@ -96,7 +96,7 @@ const getPoolsData = async pools => {
     });
     rewardTotalPointCalls.push({
       totalAllocPoint: totalPointContract.methods.totalAllocPoint(
-        pool.rewarder ?? complexRewarderTime
+        pool.rewarder || complexRewarderTime
       ),
     });
   });

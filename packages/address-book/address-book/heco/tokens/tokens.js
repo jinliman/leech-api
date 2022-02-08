@@ -1,6 +1,3 @@
-import { ConstRecord } from '../../../types/const';
-import Token from '../../../types/token';
-
 const HT = {
   name: 'Wrapped HT',
   symbol: 'WHT',
@@ -243,4 +240,7 @@ const _tokens = {
       'https://hecoinfo.com/token/images/HFIL_32.png',
   },
 };
-export const tokens = _tokens;
+
+module.exports = {
+  tokens: _tokens,
+};

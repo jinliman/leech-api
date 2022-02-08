@@ -4,7 +4,7 @@ const { getMiniChefApys } = require('../common/getMiniChefApys');
 const { sushiMoonriverClient } = require('../../../apollo/client');
 const pools = require('../../../data/moonriver/sushiLpPools.json');
 const SushiMiniChefV2 = require('../../../abis/matic/SushiMiniChefV2.json');
-const { addressBook } = require('../../../../packages/blockchain-addressbook/build/address-book');
+const { addressBook } = require('../../../../packages/address-book/address-book');
 
 const {
   moonriver: {

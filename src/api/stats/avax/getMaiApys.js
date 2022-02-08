@@ -4,7 +4,7 @@ const { avaxWeb3: web3 } = require('../../../utils/web3');
 const { AVAX_CHAIN_ID: chainId } = require('../../../constants');
 const pools = require('../../../data/avax/maiLpPools.json');
 const { joeClient } = require('../../../apollo/client');
-const { addressBook } = require('../../../../packages/blockchain-addressbook/build/address-book');
+const { addressBook } = require('../../../../packages/address-book/address-book');
 
 const mai = addressBook.avax.platforms.mai;
 

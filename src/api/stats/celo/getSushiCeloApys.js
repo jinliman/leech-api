@@ -4,7 +4,7 @@ const { getMiniChefApys } = require('../common/getMiniChefApys');
 const { sushiCeloClient } = require('../../../apollo/client');
 const pools = require('../../../data/celo/sushiv2LpPools.json');
 const SushiMiniChefV2 = require('../../../abis/matic/SushiMiniChefV2.json');
-const { addressBook } = require('../../../../packages/blockchain-addressbook/build/address-book');
+const { addressBook } = require('../../../../packages/address-book/address-book');
 const {
   celo: {
     platforms: {

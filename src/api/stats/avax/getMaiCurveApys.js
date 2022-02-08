@@ -1,7 +1,7 @@
 const { avaxWeb3: web3 } = require('../../../utils/web3');
 const { AVAX_CHAIN_ID: chainId } = require('../../../constants');
 const { getMasterChefApys } = require('../common/getMasterChefApys');
-const { addressBook } = require('../../../../packages/blockchain-addressbook/build/address-book');
+const { addressBook } = require('../../../../packages/address-book/address-book');
 const axios = require('axios');
 const BigNumber = require('bignumber.js');
 const MasterChefAbi = require('../../../abis/matic/MaiFarmChef.json');

@@ -16,7 +16,7 @@ const { BSC_CHAIN_ID, PCS_LPF } = require('../../../../constants');
 const { getTradingFeeApr } = require('../../../../utils/getTradingFeeApr');
 const { cakeClient } = require('../../../../apollo/client');
 const { getApyBreakdown } = require('../../common/getApyBreakdown');
-const { addressBook } = require('../../../../../packages/blockchain-addressbook/build/address-book');
+const { addressBook } = require('../../../../../packages/address-book/address-book');
 const { getEDecimals } = require('../../../../utils/getEDecimals');
 
 const {

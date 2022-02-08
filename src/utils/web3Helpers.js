@@ -1,5 +1,5 @@
 const Web3 = require('web3');
-const { addressBookByChainId, ChainId } = require('../../packages/blockchain-addressbook/build/address-book');
+const { addressBookByChainId, ChainId } = require('../../packages/address-book/address-book');
 
 const {
   BSC_RPC_ENDPOINTS,

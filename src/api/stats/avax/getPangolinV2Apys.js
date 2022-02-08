@@ -7,7 +7,7 @@ const pools = require('../../../data/avax/pangolinv2LpPools.json');
 const PangolinChef = require('../../../abis/avax/PangolinChef.json');
 const { PANGOLIN_LPF } = require('../../../constants');
 
-const { addressBook } = require('../../../../packages/blockchain-addressbook/build/address-book');
+const { addressBook } = require('../../../../packages/address-book/address-book');
 const {
   avax: {
     platforms: {

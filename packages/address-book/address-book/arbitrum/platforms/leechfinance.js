@@ -1,6 +1,6 @@
 const cowllector = '0xd529b1894491a0a26B18939274ae8ede93E81dbA';
 
-export const leechfinance = {
+const leechfinance = {
   devMultisig: '0xf7EC8986c660Fa8269f6440A631B22337f398Ccd',
   strategyOwner: '0x6d28afD25a1FBC5409B1BeFFf6AEfEEe2902D89F',
   vaultOwner: '0x9A94784264AaAE397441c1e47fA132BE4e61BdaD',
@@ -12,4 +12,8 @@ export const leechfinance = {
   treasury: '0xc3a4fdcba79DB04b4C3e352b1C467B3Ba909D84A',
   leechFeeRecipient: '0xabCF33106937Ba7f53986F2c339Dd7F1953CE136',
   multicall: '0x13aD51a6664973EbD0749a7c84939d973F247921',
+};
+
+module.exports = {
+  leechfinance,
 };

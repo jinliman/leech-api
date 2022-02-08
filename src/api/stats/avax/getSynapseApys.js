@@ -5,7 +5,7 @@ const SynapseMiniChefV2 = require('../../../abis/avax/SynapseMiniChefV2.json');
 const _pools = require('../../../data/avax/synapsePools.json');
 const pools = _pools;
 
-const { addressBook } = require('../../../../packages/blockchain-addressbook/build/address-book');
+const { addressBook } = require('../../../../packages/address-book/address-book');
 
 const {
   avax: {

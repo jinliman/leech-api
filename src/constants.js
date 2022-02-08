@@ -1,4 +1,4 @@
-const { ChainId } = require('../packages/blockchain-addressbook/build/address-book');
+const { ChainId } = require('../packages/address-book/address-book');
 const API_BASE_URL = process.env.API_BASE_URL || 'http://localhost:4000';
 
 const BASE_HPY = 2190;

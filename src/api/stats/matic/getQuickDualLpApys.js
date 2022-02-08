@@ -2,7 +2,7 @@ const { QUICK_LPF } = require('../../../constants');
 const { getRewardPoolDualApys } = require('../common/getRewardPoolDualApys');
 const pools = require('../../../data/matic/quickDualLpPools.json');
 const { quickClient } = require('../../../apollo/client');
-const { addressBook } = require('../../../../packages/blockchain-addressbook/build/address-book');
+const { addressBook } = require('../../../../packages/address-book/address-book');
 const { getEDecimals } = require('../../../utils/getEDecimals');
 const { polygonWeb3 } = require('../../../utils/web3');
 const {

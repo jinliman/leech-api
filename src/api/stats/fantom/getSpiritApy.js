@@ -84,10 +84,10 @@ const getFarmApys = async params => {
   for (let i = 0; i < params.pools.length; i++) {
     const pool = params.pools[i];
 
-    const oracle = pool.oracle ?? 'lps';
-    const id = pool.oracleId ?? pool.name;
+    const oracle = pool.oracle || 'lps';
+    const id = pool.oracleId || pool.name;
     const stakedPrice = await fetchPrice({ oracle, id });
-    const totalStakedInUsd = balances[i].times(stakedPrice).dividedBy(pool.decimals ?? '1e18');
+    const totalStakedInUsd = balances[i].times(stakedPrice).dividedBy(pool.decimals || '1e18');
 
     const secondsPerYear = 31536000;
     const yearlyRewards = rewardRates[i].dividedBy(2.5).times(secondsPerYear);

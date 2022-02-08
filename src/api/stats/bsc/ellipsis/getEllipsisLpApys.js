@@ -40,11 +40,11 @@ const getBaseApys = async () => {
   let apys = {};
   try {
     const response = await axios.get('https://api.ellipsis.finance/api/getPools');
-    const basePools = response.data.data.basePools ?? [];
-    const metaPools = response.data.data.metaPools ?? [];
+    const basePools = response.data.data.basePools || [];
+    const metaPools = response.data.data.metaPools || [];
     const pools = [...basePools, ...metaPools];
     pools.forEach(pool => {
-      const apy = new BigNumber((pool.apy ?? 0) / 100);
+      const apy = new BigNumber((pool.apy || 0) / 100);
       apys = { ...apys, ...{ [pool.address.toLowerCase()]: apy } };
     });
   } catch (err) {
@@ -124,8 +124,8 @@ const getRewards = async pool => {
     }
     rewardRate = new BigNumber(rewardRate);
     const yearlyRewards = rewardRate.times(secondsPerYear);
-    const tokenPrice = await fetchPrice({ oracle: reward.oracle ?? 'tokens', id: reward.oracleId });
-    const yearlyRewardsInUsd = yearlyRewards.times(tokenPrice).dividedBy(reward.decimals ?? '1e18');
+    const tokenPrice = await fetchPrice({ oracle: reward.oracle || 'tokens', id: reward.oracleId });
+    const yearlyRewardsInUsd = yearlyRewards.times(tokenPrice).dividedBy(reward.decimals || '1e18');
     totalRewards = totalRewards.plus(yearlyRewardsInUsd);
   }
   return totalRewards;

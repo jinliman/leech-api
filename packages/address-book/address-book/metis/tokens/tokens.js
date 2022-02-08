@@ -1,6 +1,3 @@
-import { ConstRecord } from '../../../types/const';
-import Token from '../../../types/token';
-
 const METIS = {
   name: 'METIS',
   address: '0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000',
@@ -92,4 +89,6 @@ const _tokens = {
   },
 };
 
-export const tokens = _tokens;
+module.exports = {
+  tokens: _tokens,
+};

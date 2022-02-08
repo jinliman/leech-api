@@ -45,21 +45,21 @@ const getMasterChefApys = async masterchefParams => {
   let apyBreakdowns = {};
 
   masterchefParams.pools = [
-    ...(masterchefParams.pools ?? []),
-    ...(masterchefParams.singlePools ?? []),
+    ...(masterchefParams.pools || []),
+    ...(masterchefParams.singlePools || []),
   ];
 
   const tradingAprs = await getTradingAprs(masterchefParams);
   const farmApys = await getFarmApys(masterchefParams);
 
   masterchefParams.pools.forEach((pool, i, params) => {
-    const hpy = pool.hpy ?? BASE_HPY;
-    const perfFee = pool.perfFee ?? performanceFee;
+    const hpy = pool.hpy || BASE_HPY;
+    const perfFee = pool.perfFee || performanceFee;
     const shareAfterPerfFee = 1 - perfFee;
 
     const simpleApr = farmApys[i];
     const vaultApr = simpleApr.times(shareAfterPerfFee);
-    const tradingApr = tradingAprs[pool.address.toLowerCase()] ?? new BigNumber(0);
+    const tradingApr = tradingAprs[pool.address.toLowerCase()] || new BigNumber(0);
     const vaultApy = compound(simpleApr, hpy, 1, shareAfterPerfFee);
     const totalApy = getFarmWithTradingFeesApy(simpleApr, tradingApr, hpy, 1, shareAfterPerfFee);
 
@@ -110,10 +110,10 @@ const getFarmApys = async params => {
   for (let i = 0; i < params.pools.length; i++) {
     const pool = params.pools[i];
 
-    const oracle = pool.oracle ?? 'lps';
-    const id = pool.oracleId ?? pool.name;
+    const oracle = pool.oracle || 'lps';
+    const id = pool.oracleId || pool.name;
     const stakedPrice = await fetchPrice({ oracle, id });
-    const totalStakedInUsd = balances[i].times(stakedPrice).dividedBy(pool.decimals ?? '1e18');
+    const totalStakedInUsd = balances[i].times(stakedPrice).dividedBy(pool.decimals || '1e18');
 
     const poolSecondsRewards = rewardsPerSecond.times(allocPoints[i]).dividedBy(totalAllocPoint);
 

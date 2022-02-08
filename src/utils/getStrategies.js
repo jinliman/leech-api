@@ -1,7 +1,7 @@
 const { MultiCall } = require('eth-multicall');
 const { multicallAddress } = require('./web3');
 const { _web3Factory } = require('./web3Helpers');
-const { ChainId } = require('../../packages/blockchain-addressbook/build/address-book');
+const { ChainId } = require('../../packages/address-book/address-book');
 
 const BATCH_SIZE = 128;
 const vaultAbi = require('../abis/LeechVaultV6.json');

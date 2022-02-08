@@ -1,4 +1,4 @@
-export const leechfinance = {
+const leechfinance = {
   oldTimelock: '0x8f0fFc8C7FC3157697Bdbf94B328F7141d6B41de',
   strategyOwner: '0x65CF7E8C0d431f59787D07Fa1A9f8725bbC33F7E',
   vaultOwner: '0xA2E6391486670D2f1519461bcc915E4818aD1c9a',
@@ -12,4 +12,8 @@ export const leechfinance = {
   leechFeeRecipient: '0xEB41298BA4Ea3865c33bDE8f60eC414421050d53',
   gasPrice: '0x16cD932c494Ac1B3452d6C8453fB7665aB49EC6b',
   multicall: '0xB94858b0bB5437498F5453A16039337e5Fdc269C',
+};
+
+module.exports = {
+  leechfinance,
 };

@@ -1,7 +1,7 @@
-import { leechfinance } from './platforms/leechfinance';
-import { mdex } from './platforms/mdex';
-import { tokens } from './tokens/tokens';
-import { convertSymbolTokenMapToAddressTokenMap } from '../../util/convertSymbolTokenMapToAddressTokenMap';
+const { leechfinance } = require('./platforms/leechfinance');
+const { mdex } = require('./platforms/mdex');
+const { tokens } = require('./tokens/tokens');
+const { convertSymbolTokenMapToAddressTokenMap } = require('../../util/convertSymbolTokenMapToAddressTokenMap');
 
 const _heco = {
   platforms: {
@@ -11,4 +11,7 @@ const _heco = {
   tokens,
   tokenAddressMap: convertSymbolTokenMapToAddressTokenMap(tokens),
 };
-export const heco = _heco;
+
+module.exports = {
+  heco: _heco,
+};

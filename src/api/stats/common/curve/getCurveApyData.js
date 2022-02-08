@@ -83,11 +83,11 @@ const getYearlyRewardsInUsd = async (web3, pool) => {
       continue;
     }
 
-    const price = await fetchPrice({ oracle: rewards.oracle ?? 'tokens', id: rewards.oracleId });
+    const price = await fetchPrice({ oracle: rewards.oracle || 'tokens', id: rewards.oracleId });
     const rewardsInUsd = rewardRate
       .times(secondsPerYear)
       .times(price)
-      .dividedBy(rewards.decimals ?? '1e18');
+      .dividedBy(rewards.decimals || '1e18');
     yearlyRewardsInUsd = yearlyRewardsInUsd.plus(rewardsInUsd);
   }
 

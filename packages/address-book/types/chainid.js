@@ -1,9 +1,9 @@
-const chainIdMap = {
+const ChainId = {
   bsc: 56,
   heco: 128,
-  avax: 43114,
-  fantom: 250,
   polygon: 137,
+  fantom: 250,
+  avax: 43114,
   one: 1666600000,
   arbitrum: 42161,
   celo: 42220,
@@ -14,4 +14,6 @@ const chainIdMap = {
   metis: 1088,
 };
 
-module.exports = chainIdMap;
+module.exports = {
+  ChainId,
+};

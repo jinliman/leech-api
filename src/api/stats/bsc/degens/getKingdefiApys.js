@@ -41,10 +41,10 @@ const getPoolApy = async (masterchef, pool) => {
   krwPerBlock = new BigNumber(krwPerBlock);
 
   const lpPrice = await fetchPrice({
-    oracle: pool.oracle ?? 'lps',
-    id: pool.oracleId ?? pool.name,
+    oracle: pool.oracle || 'lps',
+    id: pool.oracleId || pool.name,
   });
-  const totalStakedInUsd = totalSupply.times(lpPrice).dividedBy(pool.decimals ?? '1e18');
+  const totalStakedInUsd = totalSupply.times(lpPrice).dividedBy(pool.decimals || '1e18');
 
   const secondsPerBlock = 3;
   const secondsPerYear = 31536000;

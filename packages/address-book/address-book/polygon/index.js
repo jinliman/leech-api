@@ -1,24 +1,24 @@
-import { leechfinance } from './platforms/leechfinance';
-import { chainlink } from './platforms/chainlink';
-import { cometh } from './platforms/cometh';
-import { dfyn } from './platforms/dfyn';
-import { polyzap } from './platforms/polyzap';
-import { quickswap } from './platforms/quickswap';
-import { sushi } from './platforms/sushi';
-import { wault } from './platforms/wault';
-import { polycat } from './platforms/polycat';
-import { iron } from './platforms/iron';
-import * as polyyeld from './platforms/polyyeld';
-import * as polypup from './platforms/polypup';
-import { apeswap } from './platforms/apeswap';
-import { brainswap } from './platforms/brainswap';
-import mai from './platforms/mai';
-import jetswap from './platforms/jetswap';
-import { farmhero } from './platforms/farmhero';
-import { polywise } from './platforms/polywise';
-import { polysage } from './platforms/polysage';
-import { tokens } from './tokens/tokens';
-import { convertSymbolTokenMapToAddressTokenMap } from '../../util/convertSymbolTokenMapToAddressTokenMap';
+const { leechfinance } = require('./platforms/leechfinance');
+const { chainlink } = require('./platforms/chainlink');
+const { cometh } = require('./platforms/cometh');
+const { dfyn } = require('./platforms/dfyn');
+const { polyzap } = require('./platforms/polyzap');
+const { quickswap } = require('./platforms/quickswap');
+const { sushi } = require('./platforms/sushi');
+const { wault } = require('./platforms/wault');
+const { polycat } = require('./platforms/polycat');
+const { iron } = require('./platforms/iron');
+const polyyeld = require('./platforms/polyyeld');
+const polypup = require('./platforms/polypup');
+const { apeswap } = require('./platforms/apeswap');
+const { brainswap } = require('./platforms/brainswap');
+const mai = require('./platforms/mai');
+const jetswap = require('./platforms/jetswap');
+const { farmhero } = require('./platforms/farmhero');
+const { polywise } = require('./platforms/polywise');
+const { polysage } = require('./platforms/polysage');
+const { tokens } = require('./tokens/tokens');
+const { convertSymbolTokenMapToAddressTokenMap } = require('../../util/convertSymbolTokenMapToAddressTokenMap');
 
 const _polygon = {
   platforms: {
@@ -46,4 +46,6 @@ const _polygon = {
   tokenAddressMap: convertSymbolTokenMapToAddressTokenMap(tokens),
 };
 
-export const polygon = _polygon;
+module.exports = {
+  polygon: _polygon,
+};

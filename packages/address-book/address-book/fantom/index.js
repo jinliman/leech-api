@@ -1,9 +1,9 @@
-import { leechfinance } from './platforms/leechfinance';
-import { spookyswap } from './platforms/spookyswap';
-import { spiritswap } from './platforms/spiritswap';
-import { sushiFtm } from './platforms/sushiFtm';
-import { tokens } from './tokens/tokens';
-import { convertSymbolTokenMapToAddressTokenMap } from '../../util/convertSymbolTokenMapToAddressTokenMap';
+const { leechfinance } = require('./platforms/leechfinance');
+const { spookyswap } = require('./platforms/spookyswap');
+const { spiritswap } = require('./platforms/spiritswap');
+const { sushiFtm } = require('./platforms/sushiFtm');
+const { tokens } = require('./tokens/tokens');
+const { convertSymbolTokenMapToAddressTokenMap } = require('../../util/convertSymbolTokenMapToAddressTokenMap');
 
 const _fantom = {
   platforms: {
@@ -15,4 +15,7 @@ const _fantom = {
   tokens,
   tokenAddressMap: convertSymbolTokenMapToAddressTokenMap(tokens),
 };
-export const fantom = _fantom;
+
+module.exports = {
+  fantom: _fantom,
+};

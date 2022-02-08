@@ -35,7 +35,7 @@ const getMdexBscLpApys = async () => {
     const simpleApr = item.simpleApr;
     const vaultApr = simpleApr.times(shareAfterLeechPerformanceFee);
     const vaultApy = compound(simpleApr, BASE_HPY, 1, shareAfterLeechPerformanceFee);
-    const tradingApr = tradingAprs[item.address.toLowerCase()] ?? new BigNumber(0);
+    const tradingApr = tradingAprs[item.address.toLowerCase()] || new BigNumber(0);
     const totalApy = getFarmWithTradingFeesApy(simpleApr, tradingApr, BASE_HPY, 1, 0.955);
     const legacyApyValue = { [item.name]: totalApy };
     // Add token to APYs object
@@ -70,9 +70,9 @@ const getPoolApy = async (mdxPool, pool) => {
     getTotalStaked = getTotalStakedInUsd(
       mdxPool,
       pool.address,
-      pool.oracle ?? 'tokens',
+      pool.oracle || 'tokens',
       pool.oracleId,
-      pool.decimals ?? '1e18'
+      pool.decimals || '1e18'
     );
   } else {
     getTotalStaked = getTotalStakedInUsd(mdxPool, pool.address, 'lps', pool.name);

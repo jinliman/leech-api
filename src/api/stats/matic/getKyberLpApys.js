@@ -47,7 +47,7 @@ const getKyberLpApys = async () => {
     const vaultApy = compound(simpleApy, BASE_HPY, 1, shareAfterLeechPerformanceFee);
 
     const tradingApr =
-      tradingAprs[pool.lp0.address.concat('_', pool.lp1.address).toLowerCase()] ?? new BigNumber(0);
+      tradingAprs[pool.lp0.address.concat('_', pool.lp1.address).toLowerCase()] || new BigNumber(0);
     const totalApy = getFarmWithTradingFeesApy(
       simpleApy,
       tradingApr,

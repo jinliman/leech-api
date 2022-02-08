@@ -2,7 +2,7 @@ const { getMasterChefApys } = require('./getMaticMasterChefApys');
 const MasterChefAbi = require('../../../abis/matic/MaiFarmChef.json');
 const pools = require('../../../data/matic/maiLpPools.json');
 const { quickClient } = require('../../../apollo/client');
-const { addressBook } = require('../../../../packages/blockchain-addressbook/build/address-book');
+const { addressBook } = require('../../../../packages/address-book/address-book');
 
 const mai = addressBook.polygon.platforms.mai;
 

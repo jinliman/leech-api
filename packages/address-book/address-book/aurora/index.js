@@ -1,7 +1,7 @@
-import { leechfinance } from './platforms/leechfinance';
-import { trisolaris } from './platforms/trisolaris';
-import { tokens } from './tokens/tokens';
-import { convertSymbolTokenMapToAddressTokenMap } from '../../util/convertSymbolTokenMapToAddressTokenMap';
+const { leechfinance } = require('./platforms/leechfinance');
+const { trisolaris } = require('./platforms/trisolaris');
+const { tokens } = require('./tokens/tokens');
+const { convertSymbolTokenMapToAddressTokenMap } = require('../../util/convertSymbolTokenMapToAddressTokenMap');
 
 const _aurora = {
   platforms: {
@@ -12,4 +12,6 @@ const _aurora = {
   tokenAddressMap: convertSymbolTokenMapToAddressTokenMap(tokens),
 };
 
-export const aurora = _aurora;
+module.exports = {
+  aurora: _aurora,
+};

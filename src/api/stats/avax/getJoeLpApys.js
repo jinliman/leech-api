@@ -49,7 +49,7 @@ const getJoeApys = async () => {
     const vaultApr = simpleApy.times(shareAfterLeechPerformanceFee);
     const vaultApy = compound(simpleApy, BASE_HPY, 1, shareAfterLeechPerformanceFee);
 
-    const tradingApr = tradingAprs[pool.address.toLowerCase()] ?? new BigNumber(0);
+    const tradingApr = tradingAprs[pool.address.toLowerCase()] || new BigNumber(0);
     const totalApy = getFarmWithTradingFeesApy(
       simpleApy,
       tradingApr,

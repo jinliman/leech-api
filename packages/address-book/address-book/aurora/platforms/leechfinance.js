@@ -2,7 +2,7 @@ const cowllector = '0xd529b1894491a0a26B18939274ae8ede93E81dbA';
 const zeroAddress = '0x0000000000000000000000000000000000000000';
 const treasury = '0x8c2d54BA94f4638f1bb91f623F378B66d6023324';
 
-export const leechfinance = {
+const leechfinance = {
   devMultisig: zeroAddress,
   treasuryMultisig: zeroAddress,
   strategyOwner: '0x2d04969ED7D1b186797C44dF5F5634Eb9C89aF6b',
@@ -15,4 +15,8 @@ export const leechfinance = {
   treasury,
   leechFeeRecipient: '0x9dA9f3C6c45F1160b53D395b0A982aEEE1D212fE',
   multicall: '0x1198f78efd67DFc917510aaA07d49545f4B24f11',
+};
+
+module.exports = {
+  leechfinance,
 };

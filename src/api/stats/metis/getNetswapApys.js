@@ -4,7 +4,7 @@ const { getMasterChefApys } = require('../common/getMasterChefApys');
 const { getEDecimals } = require('../../../utils/getEDecimals');
 const pools = require('../../../data/metis/netswapLpPools.json');
 const { netswapClient } = require('../../../apollo/client');
-const { addressBook } = require('../../../../packages/blockchain-addressbook/build/address-book');
+const { addressBook } = require('../../../../packages/address-book/address-book');
 const {
   metis: {
     platforms: {

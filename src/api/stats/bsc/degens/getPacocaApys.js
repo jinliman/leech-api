@@ -124,8 +124,8 @@ const getStratTotalLpStakedInUsd = async (masterchef, pool) => {
   const tokenPairContract = new web3.eth.Contract(ERC20, pool.address);
   const totalStaked = new BigNumber(await tokenPairContract.methods.balanceOf(masterchef).call());
   const tokenPrice = await fetchPrice({
-    oracle: pool.oracle ?? 'lps',
-    id: pool.oracleId ?? pool.name,
+    oracle: pool.oracle || 'lps',
+    id: pool.oracleId || pool.name,
   });
   return totalStaked.times(tokenPrice).dividedBy('1e18');
 };
@@ -134,8 +134,8 @@ const getTotalLpStakedInUsd = async pool => {
   const strategyContract = new web3.eth.Contract(AutoStrat, pool.strat);
   const totalStaked = new BigNumber(await strategyContract.methods.wantLockedTotal().call());
   const tokenPrice = await fetchPrice({
-    oracle: pool.oracle ?? 'lps',
-    id: pool.oracleId ?? pool.name,
+    oracle: pool.oracle || 'lps',
+    id: pool.oracleId || pool.name,
   });
   return totalStaked.times(tokenPrice).dividedBy('1e18');
 };

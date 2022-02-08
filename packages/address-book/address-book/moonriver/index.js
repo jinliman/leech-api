@@ -1,9 +1,9 @@
-import { leechfinance } from './platforms/leechfinance';
-import { solarbeam } from './platforms/solarbeam';
-import { sushi } from './platforms/sushi';
-import { finn } from './platforms/finn';
-import { tokens } from './tokens/tokens';
-import { convertSymbolTokenMapToAddressTokenMap } from '../../util/convertSymbolTokenMapToAddressTokenMap';
+const { leechfinance } = require('./platforms/leechfinance');
+const { solarbeam } = require('./platforms/solarbeam');
+const { sushi } = require('./platforms/sushi');
+const { finn } = require('./platforms/finn');
+const { tokens } = require('./tokens/tokens');
+const { convertSymbolTokenMapToAddressTokenMap } = require('../../util/convertSymbolTokenMapToAddressTokenMap');
 
 const _moonriver = {
   platforms: {
@@ -16,4 +16,6 @@ const _moonriver = {
   tokenAddressMap: convertSymbolTokenMapToAddressTokenMap(tokens),
 };
 
-export const moonriver = _moonriver;
+module.exports = {
+  moonriver: _moonriver,
+};

@@ -1,6 +1,3 @@
-import { ConstRecord } from '../../../types/const';
-import Token from '../../../types/token';
-
 const CELO = {
   name: 'CELO',
   address: '0x471EcE3750Da237f93B8E339c536989b8978a438',
@@ -158,4 +155,6 @@ const _tokens = {
   },
 };
 
-export const tokens = _tokens;
+module.exports = {
+  tokens: _tokens,
+};
