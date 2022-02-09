@@ -22,7 +22,7 @@ const secondsPerYear = 31536000;
 
 const liquidityProviderFee = 0.0025;
 const leechPerformanceFee = 0.045;
-const shareAfterLeechPerformanceFee = 1 - LeechPerformanceFee;
+const shareAfterLeechPerformanceFee = 1 - leechPerformanceFee;
 
 const getJoeApys = async () => {
   let apys = {};

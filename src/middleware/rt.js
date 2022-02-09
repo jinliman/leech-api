@@ -7,6 +7,4 @@ async function rt(ctx, next) {
   ctx.set('X-Response-Time', `${ms}ms`);
 }
 
-module.exports = {
-  rt
-};
+module.exports = rt;

@@ -14,19 +14,19 @@ const { metis } = require('./metis');
 const { ChainId } = require('../types/chainid');
 
 const _addressBook = {
-  polygon: ChainId.polygon,
-  bsc: ChainId.bsc,
-  avax: ChainId.avax,
-  fantom: ChainId.fantom,
-  heco: ChainId.heco,
-  one: ChainId.one,
-  arbitrum: ChainId.arbitrum,
-  celo: ChainId.celo,
-  moonriver: ChainId.moonriver,
-  cronos: ChainId.cronos,
-  aurora: ChainId.aurora,
-  fuse: ChainId.fuse,
-  metis: ChainId.metis,
+  polygon,
+  bsc,
+  avax,
+  fantom,
+  heco,
+  one,
+  arbitrum,
+  celo,
+  moonriver,
+  cronos,
+  aurora,
+  fuse,
+  metis,
 };
 
 const _addressBookByChainId = {

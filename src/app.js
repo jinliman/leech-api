@@ -7,9 +7,9 @@ const cors = require('@koa/cors');
 const conditional = require('koa-conditional-get');
 const etag = require('koa-etag');
 
-const { rt } = require('./middleware/rt');
-const { powered } = require('./middleware/powered');
-const { router } = require('./router');
+const rt = require('./middleware/rt');
+const powered = require('./middleware/powered');
+const router = require('./router');
 
 const app = new Koa();
 
