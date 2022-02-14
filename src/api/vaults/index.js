@@ -6,7 +6,6 @@ async function multichainVaults(ctx) {
     ctx.status = 200;
     ctx.body = [...multichainVaults];
   } catch (err) {
-    console.error(err);
     ctx.status = 500;
   }
 }

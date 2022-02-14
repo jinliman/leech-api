@@ -18,9 +18,7 @@ const getCurveBaseApys = async (pools, url) => {
       const apy = new BigNumber(getBaseApy(apyData, pool));
       apys = { ...apys, ...{ [pool.name]: apy } };
     });
-  } catch (err) {
-    console.error(err);
-  }
+  } catch (err) {}
   return apys;
 };
 
@@ -33,7 +31,6 @@ const getBaseApy = (baseApyData, pool) => {
       baseApyData.total[pool.baseApyKey]
     );
   } catch (err) {
-    console.error(err);
     return 0;
   }
 };
@@ -49,9 +46,7 @@ const getCurveFactoryApy = async (address, url) => {
         apys = { ...apys, ...{ [address.toLowerCase()]: apy } };
       }
     });
-  } catch (err) {
-    console.error(err);
-  }
+  } catch (err) {}
   return apys;
 };
 

@@ -38,9 +38,7 @@ const get3PoolBaseApy = async () => {
     const url = `https://api-v2.iron.finance/swap/total-volume?chainId=137&from=${from}&to=${to}`;
     const response = await axios.get(url);
     volume = new BigNumber(response.data.value);
-  } catch (err) {
-    console.error(err);
-  }
+  } catch (err) {}
 
   const address = '0xb4d09ff3dA7f9e9A2BA029cb0A81A989fd7B8f17';
   const lpFee = 0.0001;

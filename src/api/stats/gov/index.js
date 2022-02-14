@@ -6,7 +6,6 @@ async function earnings(ctx) {
     ctx.status = 200;
     ctx.body = await getEarnings();
   } catch (err) {
-    console.error(err);
     ctx.status = 500;
   }
 }
@@ -16,7 +15,6 @@ async function holderCount(ctx) {
     ctx.status = 200;
     ctx.body = await getHolderCount();
   } catch (err) {
-    console.error(err);
     ctx.status = 500;
   }
 }

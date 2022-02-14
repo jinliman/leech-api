@@ -38,7 +38,7 @@ const getNonAmmPrices = async tokenPrices => {
   ];
 
   // Setup error logs
-  promises.forEach(p => p.catch(e => console.warn('getNonAmmPrices error', e)));
+  promises.forEach(p => p.catch());
 
   const results = await Promise.allSettled(promises);
 

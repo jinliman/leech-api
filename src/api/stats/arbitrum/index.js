@@ -22,7 +22,6 @@ const getArbitrumApys = async () => {
 
   for (const result of results) {
     if (result.status !== 'fulfilled') {
-      console.warn('getArbitrumApys error', result.reason);
       continue;
     }
 

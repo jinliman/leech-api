@@ -16,7 +16,6 @@ const getOneApys = async () => {
 
   for (const result of results) {
     if (result.status !== 'fulfilled') {
-      console.warn('getOneApys error', result.reason);
       continue;
     }
 

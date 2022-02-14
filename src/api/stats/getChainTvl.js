@@ -18,7 +18,6 @@ const getChainTvl = async chain => {
     const vault = vaults[i];
 
     if (EXCLUDED_IDS_FROM_TVL.includes(vault.id)) {
-      console.warn('Excluding', vault.id, 'from tvl');
       continue;
     }
 
@@ -26,9 +25,7 @@ const getChainTvl = async chain => {
     let tokenPrice = 0;
     try {
       tokenPrice = await fetchPrice({ oracle: vault.oracle, id: vault.oracleId });
-    } catch (e) {
-      console.error('getTvl fetchPrice', chainId, vault.oracle, vault.oracleId, e);
-    }
+    } catch (e) {}
     const tvl = vaultBal.times(tokenPrice).dividedBy(10 ** (vault.tokenDecimals || 18));
 
     let item = { [vault.id]: 0 };
@@ -72,15 +69,7 @@ const getGovernanceTvl = async (chainId, governancePool) => {
 
   try {
     tokenPrice = await fetchPrice({ oracle: governancePool.oracle, id: governancePool.oracleId });
-  } catch (e) {
-    console.error(
-      'getGovernanceTvl fetchPrice',
-      chainId,
-      governancePool.oracle,
-      governancePool.oracleId,
-      e
-    );
-  }
+  } catch (e) {}
 
   const excludedBalance = excludedBalances.reduce(
     (tot, cur) => tot.plus(cur.times(tokenPrice).dividedBy(governancePool.tokenDecimals)),

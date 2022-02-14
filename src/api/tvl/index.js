@@ -6,7 +6,6 @@ async function vaultTvl(ctx) {
     ctx.status = 200;
     ctx.body = { ...vaultTvl };
   } catch (err) {
-    console.error(err);
     ctx.status = 500;
   }
 }

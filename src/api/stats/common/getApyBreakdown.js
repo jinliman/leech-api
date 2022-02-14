@@ -18,7 +18,9 @@ const getApyBreakdown = (
     const simpleApr = (farmAprs[i] || '0').toNumber();
     const vaultApr = simpleApr * SHARE_AFTER_PERFORMANCE_FEE;
     const vaultApy = compound(simpleApr, BASE_HPY, 1, SHARE_AFTER_PERFORMANCE_FEE);
-    const tradingApr = (tradingAprs[pool.address.toLowerCase()] || '0').toNumber();
+    let tradingApr = 0
+    if (tradingAprs[pool.address.toLowerCase()])
+      tradingApr = tradingAprs[pool.address.toLowerCase()].toNumber();
     const totalApy = getFarmWithTradingFeesApy(
       simpleApr,
       tradingApr,

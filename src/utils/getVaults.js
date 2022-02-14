@@ -8,7 +8,6 @@ const getVaults = async vaultsEndpoint => {
     vaults = eval(vaults);
     return vaults;
   } catch (err) {
-    console.error(err);
     return 0;
   }
 };

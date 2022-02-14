@@ -35,9 +35,7 @@ const getTradingFeeApr = async (
         .times(365)
         .dividedBy(pairDayData.reserveUSD);
     }
-  } catch (e) {
-    console.error('> getTradingFeeApr error', pairAddresses[0]);
-  }
+  } catch (e) {}
 
   return pairAddressToAprMap;
 };
@@ -78,9 +76,7 @@ const getTradingFeeAprSushi = async (
           .dividedBy(avgReserve);
       }
     }
-  } catch (e) {
-    console.error('> getTradingFeeAprSushi error', pairAddresses[0]);
-  }
+  } catch (e) {}
 
   return pairAddressToAprMap;
 };
@@ -117,9 +113,7 @@ const getTradingFeeAprBalancer = async (
         .times(365)
         .dividedBy(pool.totalLiquidity);
     }
-  } catch (e) {
-    console.error('> getTradingFeeAprBalancer error', pairAddresses[0]);
-  }
+  } catch (e) {}
 
   return pairAddressesToAprMap;
 };
@@ -147,9 +141,7 @@ const getVariableTradingFeeApr = async (
         .dividedBy(pairDayData.reserveUSD);
       i++;
     }
-  } catch (e) {
-    console.error('> getVariableTradingFeeApr error', pairAddresses[0]);
-  }
+  } catch (e) {}
 
   return pairAddressToAprMap;
 };
@@ -174,13 +166,9 @@ const getYearlyPlatformTradingFees = async (
 
   try {
     let data = await client.query({ query: dayDataQuery(timestamp) });
-
     const dailyVolumeUSD = new BigNumber(data.data.uniswapDayData.dailyVolumeUSD);
-
     yearlyTradingFeesUsd = dailyVolumeUSD.times(liquidityProviderFee).times(365);
-  } catch (e) {
-    console.error('> getYearlyPlatformTradingFees error');
-  }
+  } catch (e) {}
 
   return yearlyTradingFeesUsd;
 };
@@ -194,13 +182,9 @@ const getYearlyJoePlatformTradingFees = async (
 
   try {
     let data = await client.query({ query: joeDayDataQuery(timestamp) });
-
     const dailyVolumeUSD = new BigNumber(data.data.dayData.volumeUSD);
-
     yearlyTradingFeesUsd = dailyVolumeUSD.times(liquidityProviderFee).times(365);
-  } catch (e) {
-    console.error('> getYearlyJoePlatformTradingFees error');
-  }
+  } catch (e) {}
 
   return yearlyTradingFeesUsd;
 };
@@ -222,11 +206,8 @@ const getYearlyBalancerPlatformTradingFees = async (
     const pastSwapFee = new BigNumber(pastData.data.balancers[0].totalSwapFee);
 
     const dailySwapFeeUsd = currentSwapFee.minus(pastSwapFee);
-
     yearlyTradingFeesUsd = dailySwapFeeUsd.times(365).times(liquidityProviderFeeShare);
-  } catch (e) {
-    console.error('> getYearlyBalancerPlatformTradingFees error');
-  }
+  } catch (e) {}
 
   return yearlyTradingFeesUsd;
 };

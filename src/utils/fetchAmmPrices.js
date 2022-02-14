@@ -75,9 +75,7 @@ const fetchAmmPrices = async (pools, knownPrices) => {
       let buf = [];
       try {
         buf = await multicall.getLpInfo(batch);
-      } catch (e) {
-        console.error('fetchAmmPrices', e);
-      }
+      } catch (e) {}
 
       // Merge fetched data
       for (let j = 0; j < batch.length; j++) {

@@ -14,7 +14,6 @@ const getCeloApys = async () => {
 
   for (const result of results) {
     if (result.status !== 'fulfilled') {
-      console.warn('getCeloApys error', result.reason);
       continue;
     }
 

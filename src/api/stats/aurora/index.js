@@ -12,7 +12,6 @@ const getAuroraApys = async () => {
 
   for (const result of results) {
     if (result.status !== 'fulfilled') {
-      console.warn('getAuroraApys error', result.reason);
       continue;
     }
 

@@ -57,8 +57,6 @@ const getBeltTokenPrice = async (beltToken, tokenPrices) => {
   const tokenSymbol = beltToken.token;
   if (tokenPrices.hasOwnProperty(tokenSymbol)) {
     tokenPrice = tokenPrices[tokenSymbol];
-  } else {
-    console.error(`Unknown token '${tokenSymbol}'. Consider adding it to .json file`);
   }
 
   const price = Number(sharePrice.dividedBy(DECIMALS).times(tokenPrice).toFixed(6));

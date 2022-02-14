@@ -44,9 +44,7 @@ const updateMultichainVaults = async () => {
         }
       }
     }
-  } catch (err) {
-    console.error('> vaults update failed', err);
-  }
+  } catch (err) {}
 
   setTimeout(updateMultichainVaults, REFRESH_INTERVAL);
 };

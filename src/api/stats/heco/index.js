@@ -28,7 +28,6 @@ const getHecoApys = async () => {
 
   for (const result of results) {
     if (result.status !== 'fulfilled') {
-      console.warn('getHecoApys error', result.reason);
       continue;
     }
 

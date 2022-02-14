@@ -34,9 +34,7 @@ const getSpiritApys = async () => {
 
   const results = await Promise.allSettled([spirit, gaugeAPYs]);
   for (const result of results) {
-    if (result.status !== 'fulfilled') {
-      console.warn('getSpiritApys error', result.reason);
-    } else {
+    if (result.status === 'fulfilled') {
       apys = { ...apys, ...result.value.apys };
       apyBreakdowns = { ...apyBreakdowns, ...result.value.apyBreakdowns };
     }

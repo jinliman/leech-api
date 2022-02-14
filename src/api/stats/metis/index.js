@@ -11,7 +11,6 @@ const getMetisApys = async () => {
 
   for (const result of results) {
     if (result.status !== 'fulfilled') {
-      console.warn('getMetisApys error', result.reason);
       continue;
     }
 

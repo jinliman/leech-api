@@ -47,9 +47,7 @@ const getBaseApys = async () => {
       const apy = new BigNumber((pool.apy || 0) / 100);
       apys = { ...apys, ...{ [pool.address.toLowerCase()]: apy } };
     });
-  } catch (err) {
-    console.error(err);
-  }
+  } catch (err) {}
   return apys;
 };
 

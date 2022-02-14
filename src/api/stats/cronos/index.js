@@ -18,7 +18,6 @@ const getCronosApys = async () => {
 
   for (const result of results) {
     if (result.status !== 'fulfilled') {
-      console.warn('getCronosApys error', result.reason);
       continue;
     }
 

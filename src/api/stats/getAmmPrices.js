@@ -447,7 +447,6 @@ const updateAmmPrices = async () => {
       lpPrices,
     };
   } catch (err) {
-    console.error(err);
   } finally {
     setTimeout(updateAmmPrices, REFRESH_INTERVAL);
   }
@@ -466,7 +465,6 @@ const getAmmTokenPrice = async tokenSymbol => {
   if (tokenPrices.hasOwnProperty(tokenSymbol)) {
     return tokenPrices[tokenSymbol];
   }
-  console.error(`Unknown token '${tokenSymbol}'. Consider adding it to .json file`);
 };
 
 const getAmmLpPrice = async lpName => {
@@ -474,7 +472,6 @@ const getAmmLpPrice = async lpName => {
   if (lpPrices.hasOwnProperty(lpName)) {
     return lpPrices[lpName];
   }
-  console.error(`Unknown liquidity pair '${lpName}'. Consider adding it to .json file`);
 };
 
 const init =

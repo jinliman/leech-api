@@ -65,7 +65,6 @@ const getMaticApys = async () => {
 
   for (const result of results) {
     if (result.status !== 'fulfilled') {
-      console.warn('getMaticApys error', result.reason);
       continue;
     }
 

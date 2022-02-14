@@ -81,7 +81,6 @@ const fetchBeltLpBaseApr = async pool => {
     }
     return apr;
   } catch (err) {
-    console.error(err);
     return 0;
   }
 };

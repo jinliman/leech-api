@@ -56,7 +56,6 @@ const getFantomApys = async () => {
 
   for (const result of results) {
     if (result.status !== 'fulfilled') {
-      console.warn('getFantomApys error', result.reason);
       continue;
     }
 

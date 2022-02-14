@@ -68,7 +68,6 @@ const getDegensLpApys = async () => {
 
   for (const result of results) {
     if (result.status !== 'fulfilled') {
-      console.warn('getDegensApys error', result.reason);
       continue;
     }
 

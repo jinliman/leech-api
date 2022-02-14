@@ -59,7 +59,6 @@ const getBSCApys = async () => {
 
   for (const result of results) {
     if (result.status !== 'fulfilled') {
-      console.warn('getBscApys error', result.reason);
       continue;
     }
 

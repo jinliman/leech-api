@@ -5,7 +5,7 @@ const { multicallAddress } = require('../../../utils/web3');
 const { fetchPrice } = require('../../../utils/fetchPrice');
 const { getApyBreakdown } = require('./getApyBreakdown');
 
-// trading apr
+// Trading APR
 const { SUSHI_LPF } = require('../../../constants');
 const { getTradingFeeAprSushi, getTradingFeeApr } = require('../../../utils/getTradingFeeApr');
 
@@ -32,7 +32,6 @@ const getMiniChefApys = async (params) => {
     tradingAprs = {};
   }
   const farmApys = await getFarmApys(params);
-
   return getApyBreakdown(pools, tradingAprs, farmApys, fee);
 };
 

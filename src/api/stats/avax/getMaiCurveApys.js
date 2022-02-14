@@ -46,9 +46,7 @@ const getCurveBaseApy = async address => {
         apys = { ...apys, ...{ [address.toLowerCase()]: apy } };
       }
     });
-  } catch (err) {
-    console.error(err);
-  }
+  } catch (err) {}
   return apys;
 };
 

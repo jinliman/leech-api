@@ -38,7 +38,6 @@ const fetchPpfs = async pools => {
     try {
       res = await multicall.all([ppfsCalls]);
     } catch (e) {
-      console.error('fetchMooPrices', e);
       continue;
     }
 

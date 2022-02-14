@@ -39,7 +39,6 @@ const fetchHfiStats = async () => {
     const response = await axios.get('https://api.hfi.one/apy', { httpsAgent: agent });
     return response.data.data;
   } catch (err) {
-    console.error(err);
     return {};
   }
 };

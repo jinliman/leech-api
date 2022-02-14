@@ -46,7 +46,6 @@ const getAvaxApys = async () => {
 
   for (const result of results) {
     if (result.status !== 'fulfilled') {
-      console.warn('getAvaxApys error', result.reason);
       continue;
     }
 

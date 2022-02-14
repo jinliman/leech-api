@@ -58,8 +58,6 @@ const getTokenPrice = (tokenPrices, oracleId) => {
   const tokenSymbol = oracleId;
   if (tokenPrices.hasOwnProperty(tokenSymbol)) {
     tokenPrice = tokenPrices[tokenSymbol];
-  } else {
-    console.error(`Unknown token '${tokenSymbol}'. Consider adding it to .json file`);
   }
   return tokenPrice;
 };

@@ -46,7 +46,6 @@ const getJetswapApys = async () => {
 
   for (const result of results) {
     if (result.status !== 'fulfilled') {
-      console.warn('getJetswapApys error', result.reason);
       continue;
     }
 

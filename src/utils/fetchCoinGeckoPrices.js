@@ -12,9 +12,7 @@ const fetchCoinGeckoPrices = async coins => {
       const price = Number(data[coin].usd);
       prices = { ...prices, ...{ [coin]: price } };
     });
-  } catch (e) {
-    console.error('> fetchCoinGeckoPrices', e);
-  }
+  } catch (e) {}
   return prices;
 };
 

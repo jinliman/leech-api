@@ -35,9 +35,7 @@ const getGeistApys = async () => {
     apyData.forEach(apy => {
       apys = { ...apys, ...{ [apy.tokenAddress]: apy.apy / 2 } }; // 50% penalty fee
     });
-  } catch (err) {
-    console.error(err);
-  }
+  } catch (err) {}
   return apys;
 };
 

@@ -40,9 +40,7 @@ const vaults = async ctx => {
       promises.push(fetchVaultTvl({ vault }));
     });
     await Promise.all(promises);
-  } catch (err) {
-    console.error('CMC error');
-  }
+  } catch (err) {}
 
   ctx.body = vaults_json;
 };
